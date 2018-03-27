@@ -20,6 +20,8 @@
         <h1>{{greeting}}</h1>
     </div>
 
+Hello World
+
     <!--input ng-model="name" type="text" placeholder="Your name please"-->
     <h1>{{name}}</h1>
 
