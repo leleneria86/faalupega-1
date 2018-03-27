@@ -11,6 +11,7 @@
 
 
 <script src="js/apps/myApp.js"></script>
+<script src="js/model/as.js"></script>
 <script src="js/controllers/my_controller.js"></script>
 <script src="js/services/MyService.js"></script>
 

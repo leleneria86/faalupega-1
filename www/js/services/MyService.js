@@ -54,34 +54,23 @@ myApp.factory('MyService', function($http)
 
     service.listGrandchildrenJson = function() {
 
-        var data = [{id:1,name:"Aua",
-                        content:[{"Fa'alupega":["Afio mai le Sa'ousoali'i o Unutoa, Le tama aitu ma tagata",
-                                "Le Matua or Lifau ma Liufau",
-                                "Susu mai Ali'i of le Faleono"]},
-                                {"Malaefono":["Paepaeulupo'o"]}],
-                        parent_id:1},
-                    {id:2,name:"Leloaloa",
-                        content:"Afio mai Ma'opu(Faumuina ma Uti), Afio mai le ali'i o le Ao(Vaivao)",
-                        parent_id:1},
-                    {id:3,name:"Amouli", content:"Afio mai Utu ma le Suafa o Gogo, Ali'i o le Faleono", parent_id:2}];
+        var data = [];
+        var as = new Aua();
+        data.push(as.getAuaContent());
+        data.push(as.getLeloaloaContent());
+
+        // var data = [{id:1,name:"Aua",
+        //                 content:[{"Fa'alupega":["Afio mai le Sa'ousoali'i o Unutoa, Le tama aitu ma tagata",
+        //                         "Le Matua or Lifau ma Liufau",
+        //                         "Susu mai Ali'i of le Faleono"]},
+        //                         {"Malaefono":["Paepaeulupo'o"]}],
+        //                 parent_id:1},
+        //             {id:2,name:"Leloaloa",
+        //                 content:"Afio mai Ma'opu(Faumuina ma Uti), Afio mai le ali'i o le Ao(Vaivao)",
+        //                 parent_id:1},
+        //             {id:3,name:"Amouli", content:"Afio mai Utu ma le Suafa o Gogo, Ali'i o le Faleono", parent_id:2}];
 
         return data;
-    };
-
-    service.getAuaContent = function() {
-
-        var val = [];
-        val.push({key:"Fa'alupega", value:"Afio mai le Sa'ousoali'i o Unutoa, Le tama aitu ma tagata, Le Matua or Lifau ma Liufau, Susu mai Ali'i of le Faleono"});
-        val.push({key:"Malaefono",value:"Paepaeulupo'o"});
-        return val;
-    };
-
-    service.getLeloaloaContent = function() {
-
-        var val = [];
-        val.push({key:"Fa'alupega", value:"Afio mai Ma'opu(Faumuina ma Uti), Afio mai le ali'i o le Ao(Vaivao)"});
-        val.push({key:"Malaefono",value:"Tala o Gagamoe"});
-        return val;
     };
 
     return service;
