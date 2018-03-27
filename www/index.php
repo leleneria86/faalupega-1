@@ -4,8 +4,7 @@
 
 <!DOCTYPE html>
 
-<!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script-->
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
@@ -20,7 +19,7 @@
         <h1>{{greeting}}</h1>
     </div>
 
-Hello World
+Hello There
 
     <!--input ng-model="name" type="text" placeholder="Your name please"-->
     <h1>{{name}}</h1>
