@@ -30,7 +30,7 @@ var myApp = angular.module('MyApp');
                 },
                 function(result) {
 
-                    $.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
+                    //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
                 });
         };
 
