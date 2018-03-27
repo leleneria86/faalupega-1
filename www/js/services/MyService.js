@@ -11,7 +11,7 @@ myApp.factory('MyService', function($http)
         // data.parents = service.listParentJson();
         // data.grandchildren = service.listGrandchildrenJson();
 
-        return $http.get('/php/testapi.php').then(
+        return $http.get('../../php/testapi.php').then(
 
             function(result) {
 
