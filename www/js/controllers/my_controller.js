@@ -14,24 +14,24 @@ var myApp = angular.module('MyApp');
 
         $scope.load = function() {
 
-            // var data = MyService.load();
-            // $scope.children = data.children;
-            // $scope.parents = data.parents;
-            // $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
-            // $scope.selected_parent = $scope.parents[0];
+            var data = MyService.load();
+            $scope.children = data.children;
+            $scope.parents = data.parents;
+            $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
+            $scope.selected_parent = $scope.parents[0];
 
-            MyService.load().then(function(data) {
-
-                    $scope.children = data.children;
-                    $scope.parents = data.parents;
-                    $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
-                    $scope.selected_parent = $scope.parents[0];
-                    $scope.safeApply();
-                },
-                function(result) {
-
-                    //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
-                });
+            // MyService.load().then(function(data) {
+            //
+            //         $scope.children = data.children;
+            //         $scope.parents = data.parents;
+            //         $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
+            //         $scope.selected_parent = $scope.parents[0];
+            //         $scope.safeApply();
+            //     },
+            //     function(result) {
+            //
+            //         //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
+            //     });
         };
 
         $scope.onChangeParent = function() {

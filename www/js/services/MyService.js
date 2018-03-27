@@ -6,30 +6,30 @@ myApp.factory('MyService', function($http)
 
     service.load = function() {
 
-        //var data = [];
-        // data.children = service.listChildrenJson();
-        // data.parents = service.listParentJson();
-        // data.grandchildren = service.listGrandchildrenJson();
+        var data = [];
+        data.children = service.listChildrenJson();
+        data.parents = service.listParentJson();
+        data.grandchildren = service.listGrandchildrenJson();
 
-        return $http.get('../../php/testapi.php').then(
+        // return $http.get('../../php/testapi.php').then(
+        //
+        //     function(result) {
+        //
+        //         if (result.data) {
+        //
+        //             var data = result.data;
+        //             data.children = service.listChildrenJson();
+        //             data.parents = service.listParentJson();
+        //             //data.grandchildren = service.listGrandchildrenJson();
+        //
+        //             return data;
+        //         } else {
+        //
+        //             return $q.reject();
+        //         }
+        //     });
 
-            function(result) {
-
-                if (result.data) {
-
-                    var data = result.data;
-                    data.children = service.listChildrenJson();
-                    data.parents = service.listParentJson();
-                    //data.grandchildren = service.listGrandchildrenJson();
-
-                    return data;
-                } else {
-
-                    return $q.reject();
-                }
-            });
-
-        //return data;
+        return data;
     };
 
     service.listParentJson = function() {
@@ -58,10 +58,10 @@ myApp.factory('MyService', function($http)
                         content:[{"Fa'alupega":["Afio mai le Sa'ousoali'i o Unutoa, Le tama aitu ma tagata",
                                 "Le Matua or Lifau ma Liufau",
                                 "Susu mai Ali'i of le Faleono"]},
-                                {"Malaefono":["Paepaeulupo'o"]}]},
+                                {"Malaefono":["Paepaeulupo'o"]}],
+                        parent_id:1},
                     {id:2,name:"Leloaloa",
                         content:"Afio mai Ma'opu(Faumuina ma Uti), Afio mai le ali'i o le Ao(Vaivao)",
-                        content2:"Tala o Gagamoe",
                         parent_id:1},
                     {id:3,name:"Amouli", content:"Afio mai Utu ma le Suafa o Gogo, Ali'i o le Faleono", parent_id:2}];
 
