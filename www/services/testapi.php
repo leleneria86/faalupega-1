@@ -1,6 +1,6 @@
 <?php
 
-$ret['data'] = [];
+$ret['data'] = array();
 
 $ret['grandchildren'][] = getAua();
 $ret['grandchildren'][] = getLeloaloa();
@@ -9,7 +9,7 @@ echo json_encode($ret);
 
 function getAua() {
 
-    $aua = [];
+    $aua = array();
     $aua['id'] = 1;
     $aua['parent_id'] = 1;
     $aua['name'] = 'Aua';
@@ -22,7 +22,7 @@ function getAua() {
 
 function getLeloaloa() {
 
-    $aua = [];
+    $aua = array();
     $aua['id'] = 2;
     $aua['parent_id'] = 1;
     $aua['name'] = 'Leloaloa';
