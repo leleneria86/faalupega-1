@@ -6,30 +6,30 @@ myApp.factory('MyService', function($http)
 
     service.load = function() {
 
-        var data = [];
-        data.children = service.listChildrenJson();
-        data.parents = service.listParentJson();
-        data.grandchildren = service.listGrandchildrenJson();
+        // var data = [];
+        // data.children = service.listChildrenJson();
+        // data.parents = service.listParentJson();
+        // data.grandchildren = service.listGrandchildrenJson();
 
-        // return $http.get('../../php/testapi.php').then(
-        //
-        //     function(result) {
-        //
-        //         if (result.data) {
-        //
-        //             var data = result.data;
-        //             data.children = service.listChildrenJson();
-        //             data.parents = service.listParentJson();
-        //             //data.grandchildren = service.listGrandchildrenJson();
-        //
-        //             return data;
-        //         } else {
-        //
-        //             return $q.reject();
-        //         }
-        //     });
+        return $http.get('../../php/testapi.php').then(
 
-        return data;
+            function(result) {
+
+                if (result.data) {
+
+                    var data = result.data;
+                    data.children = service.listChildrenJson();
+                    data.parents = service.listParentJson();
+                    //data.grandchildren = service.listGrandchildrenJson();
+
+                    return data;
+                } else {
+
+                    return $q.reject();
+                }
+            });
+
+        //return data;
     };
 
     service.listParentJson = function() {
