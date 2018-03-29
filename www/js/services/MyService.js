@@ -18,7 +18,7 @@ myApp.factory('MyService', function($http)
                 if (result.data) {
 
                     var data = result.data;
-                    data.children = service.listChildrenJson();
+                    //data.children = service.listChildrenJson();
                     data.parents = service.listParentJson();
                     //data.grandchildren = service.listGrandchildrenJson();
 
@@ -35,7 +35,7 @@ myApp.factory('MyService', function($http)
     service.listParentJson = function() {
 
         var data = [{id:0, name:"All", content:"",parent_id:null},
-                    {id:1,name:"Tutuila",content:"Sua ma le Vaifanua, Fofo ma Aitulagi, Itu'au ma Alataua, Sa'ole ma le Saleaaumua, ma le Launiusaelua"},
+                    {id:1,name:"Tutuila",content:""},
                     {id:2,name:"Upolu",content:"Tumua ma Pule, Itu'au ma Alatau, Aiga i le Tai ma le Va'a o Fonoti"},
                     {id:3,name:"Savai'i",content:"Pule e ono"}];
 

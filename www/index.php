@@ -50,7 +50,9 @@
 
         <div ng-show="selected_child.content.length > 0">
             <br/>
-            {{selected_child.content}}
+            <div ng-repeat="line in selected_child.content">
+                {{line}}
+            </div>
         </div>
 
         <br/>
