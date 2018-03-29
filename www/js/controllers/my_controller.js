@@ -1,6 +1,5 @@
 var myApp = angular.module('MyApp');
     myApp.controller('MyController', function($scope, $filter, MyService) {
-        $scope.greeting = null;
         $scope.name = null;
         $scope.children;
         $scope.children_filtered;

@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script src="js/apps/myApp.js"></script>
 <script src="js/model/as.js"></script>
@@ -16,18 +16,16 @@
 <script src="js/services/MyService.js"></script>
 
 <div ng-app="MyApp" ng-controller="MyController" data-ng-init="load()">
-    <div>
-        <h1>{{greeting}}</h1>
-    </div>
-
-Hello There
 
     <!--input ng-model="name" type="text" placeholder="Your name please"-->
     <h1>{{name}}</h1>
 
-    <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
+    <div class="col-sm-12" ng-hide="selected_grandchild">
 
-    <div ng-hide="selected_grandchild">
+        <div>
+            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
+        </div>
+        <br/>
         <div>
             <select id="parentSelect" name="parentSelect" class="form-control"
                     ng-model="selected_parent"
