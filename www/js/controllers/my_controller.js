@@ -38,7 +38,7 @@ var myApp = angular.module('MyApp');
             if($scope.selected_parent) {
 
                 $scope.setChildren($scope.selected_parent.id);
-                $scope.selected_child = $scope.children[0];
+                $scope.selected_child = $scope.children_filtered[0];
                 $scope.onChangeEvent();
             }
         };

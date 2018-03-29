@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <div ng-show="selected_grandchild">
+    <div class="col-sm-12" ng-show="selected_grandchild">
         <br/>
         <b>{{selected_grandchild.name}}</b>
         <br/>
