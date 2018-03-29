@@ -55,7 +55,7 @@
 
         <br/>
         <div ng-show="selected_child || search_text" ng-repeat="grandchild in grandchildren_filtered | filter:{parent_id:selected_child.id,content:search_text}">
-            <span ng-click="onGrandchild(grandchild);" style="color:blue;cursor:pointer">{{grandchild.name}}</span>
+            <span ng-click="onGrandchild(grandchild);" style="color:blue;cursor:pointer;font-size: large">{{grandchild.name}}</span>
         </div>
     </div>
 
