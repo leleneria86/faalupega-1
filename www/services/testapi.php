@@ -1,70 +1,39 @@
 <?php
 
-$ret = [];
+require_once('classes/Upolu.php');
+require_once('classes/Tutuila.php');
+require_once ('classes/Savaii.php');
 
-$ret['children'] = getMaopu();
-$ret['grandchildren'][] = getAua();
-$ret['grandchildren'][] = getLeloaloa();
-$ret['grandchildren'][] = getPagoPago();
+use classes\Upolu;
+use classes\Tutuila;
+use classes\Savaii;
+
+$ret = [];
+$ret['children'] = getItumalos();
+$ret['grandchildren'] = getNuus();
 
 echo json_encode($ret);
 
-function getMaopu()
-{
-    $data = [
-            ["id"=>0, "name"=>"All", "content"=>"","parent_id"=>null],
-            ["id"=>1, "name"=>"Launiusaelua","parent_id"=>1, "content"=>["Afio maia lau Afioga Mauga, o le tama fa'asausau a Sua ma le Vaifanua, Fofo ma Itulagi, Itu'au ma Alataua",
-                                                                        "Susu mai Sa'ousoali'i",
-                                                                        "Susu mai Ma'opu (Tei ma Anoalo)",
-                                                                        "Mamalu mai lau tofa Tua'olo na faleagaulu ai le motu, ma le Launiusaelua"]]
-    ];
-    return $data;
+function getItumalos() {
+
+    $itumalos = [["id"=>0, "name"=>"All", "content"=>"","parent_id"=>null]];
+    $upolu = new Upolu();
+    $itumalo_upolu = $upolu->getItumalo();
+    $tutuila = new Tutuila();
+    $itumalo_tutuila = $tutuila->getItumalo();
+    $savaii = new Savaii();
+    $itumalo_savaii = $savaii->getItumalo();
+    return  array_merge($itumalos, $itumalo_upolu, $itumalo_tutuila, $itumalo_savaii);
 }
 
-function getAua() {
+function getNuus() {
 
-    $aua = [];
-    $aua['id'] = 1;
-    $aua['parent_id'] = 1;
-    $aua['name'] = 'Aua';
-    $aua['content'][] = ["Fa'alupega" => ["Afio mai le Sa'ousoali'i (Unutoa)",
-        "Afio mai le Matua o Lifau o le Tama a Aitu ma Tagata",
-        "Susu mai le faleono (Uli, Niumatalolo, Ponausuia, Saoimanulua, Tilo, Afu)",
-        "Mamalu mai le fetalaiga ia Paopaoailua ma Tufaga me le launiusaelua"]];
-    $aua['content'][] = ["Malaefono" => ["Paepaeulupo'o", "Paepae alå"]];
-    return $aua;
+    $upolu = new Upolu();
+    $tutuila = new Tutuila();
+    $savaii = new Savaii();
+    $nuu_tutuila = $tutuila->getNuus();
+    $nuu_upolu = $upolu->getNuus();
+    $nuu_savaii = $savaii->getNuus();
+    return array_merge($nuu_tutuila, $nuu_upolu, $nuu_savaii);
 }
 
-function getLeloaloa() {
-
-    $aua = [];
-    $aua['id'] = 2;
-    $aua['parent_id'] = 1;
-    $aua['name'] = 'Leloaloa';
-    $aua['content'][] = ["Fa'alupega" => ["Afio mai oulua Ma'opu (Faumuina ma Uti)",
-                                        "susu mai le ali'i o le ao (Vaivao)",
-                                        "Maliu mai la oulua fetalaiga (Loloaso ma Tauanuu)",
-                                        "Mamalu mai le lauti na laulelei i le Launiusaelua"]];
-    $aua['content'][] = ["Malaefono" => ["Tala o Gagamoe"]];
-    return $aua;
-}
-
-function getPagoPago() {
-
-    $aua = [];
-    $aua['id'] = 3;
-    $aua['parent_id'] = 1;
-    $aua['name'] = 'Pago Pago';
-    $aua['content'][] = ["Fa'alupega" => ["Afio mai Mauga o le Ma'oputasi,",
-                                            "o le Tama fa'asausau o Sua ma le Vaifanua, Fofo ma Aitulagi, Itu'au ma Alataua",
-                                            "Susu mai Tei (Fanene, Uifa'atali, Lealaifuaneva)",
-                                            "Susu mai Anoalo (Te'o, Asuega, Tiumaletavai, Olotoa, Leota)",
-                                            "Susu mai Matua (Taito, Pulumataala)",
-                                            "Susu mai Nofo fanau (Ni, Vaivao)",
-                                            "Susu mai Anoaloifale (Lea'oa, Fa'afitinalo)",
-                                            "Mamalu mai lau tofa Tua'olo na Faleagafulu ai le motu",
-                                            "ma le Falefa (Fuga, Mageo, Poiali'i, Logo",
-                                            "Maliu mai oe le Launiusaelua"]];
-    $aua['content'][] = ["Malaefono" => ["Gagamoe"]];
-    return $aua;
-}
