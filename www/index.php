@@ -20,7 +20,7 @@
     <!--input ng-model="name" type="text" placeholder="Your name please"-->
     <h1>{{name}}</h1>
 
-    <div class="col-sm-12" ng-hide="selected_grandchild">
+    <div class="col-sm-2" ng-hide="selected_grandchild">
 
         <div>
             <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
