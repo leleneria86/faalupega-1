@@ -26,6 +26,8 @@ class Tutuila
         $ret[] = $this->getAua();
         $ret[] = $this->getLeloaloa();
         $ret[] = $this->getPagoPago();
+        $ret[] = $this->getFagatogo();
+        $ret[] = $this->getFagaalu();
         return $ret;
     }
 
@@ -74,6 +76,36 @@ class Tutuila
             "ma le Falefa (Fuga, Mageo, Poiali'i, Logo",
             "Maliu mai oe le Launiusaelua"]];
         $aua['content'][] = ["Malaefono" => ["Gagamoe"]];
+        return $aua;
+    }
+
+    function getFagatogo() {
+
+        $aua = [];
+        $aua['id'] = 4;
+        $aua['parent_id'] = 1;
+        $aua['name'] = 'Fagatogo';
+        $aua['content'][] = ["Fa'alupega" => ["Afio mai le Sa'ousoalii (Lutu)",
+            "Susu mai le Toealii (Ma'ilo)",
+            "Susu mai oulua Tapunuu (Faagata ma Tiumalu)",
+            "Afio mai le Aloalii (Afoafouvale)",
+            "Maliu mai le fetalaiga ia Taesalialii ma Taamuvaigafa",
+            "Mamalu mai upu i le Launiusaelua ia te outlua Tinaeatule ma Faasamisamia"]];
+        $aua['content'][] = ["Malaefono" => ["Malaeoletalu"]];
+        return $aua;
+    }
+
+    function getFagaalu() {
+
+        $aua = [];
+        $aua['id'] = 4;
+        $aua['parent_id'] = 1;
+        $aua['name'] = 'Fagaalu';
+        $aua['content'][] = ["Fa'alupega" => ["Afio mai le Afioga i Ma'opu (Fano, Amituana'i)",
+            "Susu mai le Nofo Fanau (Naisoa)",
+            "Maliu mai le Launiusaelua (Usoagalelei ma Faatiliga)",
+            "Ma le Lauti na Laulelei"]];
+        $aua['content'][] = ["Malaefono" => ["Vaovai"]];
         return $aua;
     }
 }
