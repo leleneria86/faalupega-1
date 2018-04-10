@@ -18,12 +18,10 @@
 
 <div ng-app="MyApp" ng-controller="MyController" data-ng-init="load()">
 
-    <!--input ng-model="name" type="text" placeholder="Your name please"-->
-    <h1>{{name}}</h1>
-
     <div class="col-sm-2" ng-hide="selected_grandchild">
 
         <div>
+            <br/>
             <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
         </div>
         <br/>
@@ -63,8 +61,6 @@
     </div>
 
     <div class="col-sm-12" ng-show="selected_grandchild">
-        <br/>
-        <b>{{selected_grandchild.name}}</b>
         <br/>
         <div ng-repeat="content in selected_grandchild.content">
             <div ng-repeat="(key,lines) in content">

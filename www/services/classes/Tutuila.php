@@ -37,7 +37,7 @@ class Tutuila
         $aua['id'] = 1;
         $aua['parent_id'] = 1;
         $aua['name'] = 'Aua';
-        $aua['content'][] = ["Fa'alupega" => ["Afio mai le Sa'ousoali'i (Unutoa)",
+        $aua['content'][] = ["Aua" => ["Afio mai le Sa'ousoali'i (Unutoa)",
             "Afio mai le Matua o Lifau o le Tama a Aitu ma Tagata",
             "Susu mai le faleono (Uli, Niumatalolo, Ponausuia, Saoimanulua, Tilo, Afu)",
             "Mamalu mai le fetalaiga ia Paopaoailua ma Tufaga me le launiusaelua"]];
@@ -51,7 +51,7 @@ class Tutuila
         $aua['id'] = 2;
         $aua['parent_id'] = 1;
         $aua['name'] = 'Leloaloa';
-        $aua['content'][] = ["Fa'alupega" => ["Afio mai oulua Ma'opu (Faumuina ma Uti)",
+        $aua['content'][] = ["Leloaloa" => ["Afio mai oulua Ma'opu (Faumuina ma Uti)",
             "susu mai le ali'i o le ao (Vaivao)",
             "Maliu mai la oulua fetalaiga (Loloaso ma Tauanuu)",
             "Mamalu mai le lauti na laulelei i le Launiusaelua"]];
@@ -65,7 +65,7 @@ class Tutuila
         $aua['id'] = 3;
         $aua['parent_id'] = 1;
         $aua['name'] = 'Pago Pago';
-        $aua['content'][] = ["Fa'alupega" => ["Afio mai Mauga o le Ma'oputasi,",
+        $aua['content'][] = ["Pago Pago" => ["Afio mai Mauga o le Ma'oputasi,",
             "o le Tama fa'asausau o Sua ma le Vaifanua, Fofo ma Aitulagi, Itu'au ma Alataua",
             "Susu mai Tei (Fanene, Uifa'atali, Lealaifuaneva)",
             "Susu mai Anoalo (Te'o, Asuega, Tiumaletavai, Olotoa, Leota)",
@@ -85,7 +85,7 @@ class Tutuila
         $aua['id'] = 4;
         $aua['parent_id'] = 1;
         $aua['name'] = 'Fagatogo';
-        $aua['content'][] = ["Fa'alupega" => ["Afio mai le Sa'ousoalii (Lutu)",
+        $aua['content'][] = ["Fagatogo" => ["Afio mai le Sa'ousoalii (Lutu)",
             "Susu mai le Toealii (Ma'ilo)",
             "Susu mai oulua Tapunuu (Faagata ma Tiumalu)",
             "Afio mai le Aloalii (Afoafouvale)",
@@ -101,7 +101,7 @@ class Tutuila
         $aua['id'] = 4;
         $aua['parent_id'] = 1;
         $aua['name'] = 'Fagaalu';
-        $aua['content'][] = ["Fa'alupega" => ["Afio mai le Afioga i Ma'opu (Fano, Amituana'i)",
+        $aua['content'][] = ["Fagaalu" => ["Afio mai le Afioga i Ma'opu (Fano, Amituana'i)",
             "Susu mai le Nofo Fanau (Naisoa)",
             "Maliu mai le Launiusaelua (Usoagalelei ma Faatiliga)",
             "Ma le Lauti na Laulelei"]];

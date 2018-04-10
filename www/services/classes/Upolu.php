@@ -38,7 +38,7 @@ class Upolu
         $content['id'] = 109;
         $content['parent_id'] = 100;
         $content['name'] = "Fasito'o - uta";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai le aiga Satuala, o le aiga faalagilagi ia te oulua suafa (Aiono ma Leaupepe)",
+        $content['content'][] = ["Fasito'o - uta" => ["Afio mai le aiga Satuala, o le aiga faalagilagi ia te oulua suafa (Aiono ma Leaupepe)",
             "Susu mai e na tautua i Suafa (Tuala, Fina'i, Suamatai'a, Tuisaninoga, Taimaaiono ma Talamatavao)",
             "Susu mai Su'a o le maopu o Nafanua",
             "Afio mai Toleafoa o le Tapaau faasisina ma le Taauso (Misa, Tuifaiga, Aiolupotea, Nonumalo ma Lolomatauama)",
@@ -58,7 +58,7 @@ class Upolu
         $content['id'] = 101;
         $content['parent_id'] = 100;
         $content['name'] = "Nofoali'i";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai Satuala, o le aiga fa'alagilagi na tausi e Leulumoega",
+        $content['content'][] = ["Nofoali'i" => ["Afio mai Satuala, o le aiga fa'alagilagi na tausi e Leulumoega",
             "Susu mai Tanuvase, o le la'au na fausia na itulua a i A'ana",
             "Afio mai Taimalieutu o le fofoga of Satuala me le falefa of Ailaoa (Maluifaatoaga, Taualelei, Peoali'i, Matagitau)",
             "Afio mai Muagututi'a o le tama o le aiga o Satuala",
@@ -75,7 +75,7 @@ class Upolu
         $content['id'] = 102;
         $content['parent_id'] = 100;
         $content['name'] = "Leulumoega";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai lo outou Tapa'au, o lau Afioga a le Tuia'ana ma ou Tafa'i (Umaga ma Pasese)",
+        $content['content'][] = ["Leulumoega" => ["Afio mai lo outou Tapa'au, o lau Afioga a le Tuia'ana ma ou Tafa'i (Umaga ma Pasese)",
             "Afio mai Sooa'emalelagi",
             "Afio mai alo o Tamalelagi (Tuioti ma Taualofa'i)",
             "Afio mai lau Afioga Salamasina",
@@ -96,7 +96,7 @@ class Upolu
         $content['id'] = 103;
         $content['parent_id'] = 100;
         $content['name'] = "Fasito'o - tai";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai le aiga Taulagi",
+        $content['content'][] = ["Fasito'o - tai" => ["Afio mai le aiga Taulagi",
             "Afio mai Vaafusuaga ma Toleafoa",
             "Afio mai Afamasaga, o le Matua of Usoalii na e fai alaga ma e matematea malo",
             "Afio mai Toleafoa ma le Falefa o ou alo (Lealaisalanoa, Laumatiamanu, Nonumalo ma Ufagalilo)",
@@ -115,7 +115,7 @@ class Upolu
         $content['id'] = 104;
         $content['parent_id'] = 100;
         $content['name'] = "Faleatiu";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai lau Afioga Letelemaa'ana",
+        $content['content'][] = ["Faleatiu" => ["Afio mai lau Afioga Letelemaa'ana",
             "Afio mai le alo o Tamalelagi i lau Afioga Feiloivao",
             "Afio mai le Taufia (Muni, Mase ma Lelevaga)",
             "Afio mai le Tauiliili ma le Matua of Fonoilotoa",
@@ -131,7 +131,7 @@ class Upolu
         $content['id'] = 105;
         $content['parent_id'] = 100;
         $content['name'] = "Satapuala";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai To'alepaialii o le matua o tofiga o le aiga Satuala",
+        $content['content'][] = ["Satapuala" => ["Afio mai To'alepaialii o le matua o tofiga o le aiga Satuala",
             "Maliu mai lau fetalaiga Vaili",
             "O le la'aunafausia, o le Tootoo o Ma'auga",
             "Faapea foi le nofo a Tapuala ma le lautinalaulelei ma upu i le Faleana"]];
@@ -145,7 +145,7 @@ class Upolu
         $content['id'] = 106;
         $content['parent_id'] = 100;
         $content['name'] = "Satuimalufilufi";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai Saipaia o le Aloalii",
+        $content['content'][] = ["Satuimalufilufi" => ["Afio mai Saipaia o le Aloalii",
             "Afio mai Sauimalae",
             "Afio mai le Matua taulagi o Taito",
             "Afio mai lou Tapaau o Lilomaiava",
@@ -170,7 +170,7 @@ class Upolu
         $content['id'] = 107;
         $content['parent_id'] = 100;
         $content['name'] = "Samatau";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai le Falefa o Usoalii",
+        $content['content'][] = ["Samatau" => ["Afio mai le Falefa o Usoalii",
             "Afio mai le Gafa",
             "Afio mai Fiame ma le tamaitai o Taetele",
             "Afio mai alo o Tamalelagi",
@@ -187,7 +187,7 @@ class Upolu
         $content['id'] = 108;
         $content['parent_id'] = 100;
         $content['name'] = "Falelatai";
-        $content['content'][] = ["Fa'alupega" => ["Afio mai Tuimalealiifano o le tama a aiga",
+        $content['content'][] = ["Falelatai" => ["Afio mai Tuimalealiifano o le tama a aiga",
             "Afio mai le Falefitu, o le aiga Tauaana o le aiga o le Tuimalealiifano",
             "Afio mai lau Afioga Faasavalu ma le aiga o Sa Faasavalu (O Salu ma Auvaaipeau)",
             "Afio mai Taiivao na falefia i ai aiga (Aifilofilo)",
