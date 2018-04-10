@@ -9,15 +9,27 @@ namespace classes;
 
 class Savaii
 {
+    protected $faasaleleaga_id = 3100;
+    protected $salega_id = 3200;
+    protected $asau_id = 3300;
+
     function getItumalo()
     {
         $data = [
-            ["id"=>200, "name"=>"Fa'asalele'aga","parent_id"=>3, "content"=>["Fa'alupega o Fa'asalele"]]
+            ["id"=>$this->faasaleleaga_id, "name"=>"Fa'asalele'aga","parent_id"=>3, "content"=>["Fa'alupega o Fa'asalele"]],
+            ["id"=>$this->salega_id, "name"=>"Salega","parent_id"=>3, "content"=>["Fa'alupega o Salega"]],
+            ["id"=>$this->asau_id, "name"=>"Asau","parent_id"=>3, "content"=>["Fa'alupega o Asau"]]
         ];
         return $data;
     }
 
     function getNuus() {
+
+        $faasaleleaga = $this->getFaasaleleaga();
+        return array_merge($faasaleleaga);
+    }
+
+    function getFaasaleleaga() {
 
         $ret = [];
         $ret[] = $this->getTafua();
@@ -39,8 +51,8 @@ class Savaii
     function getTafua() {
 
         $content = [];
-        $content['id'] = 201;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 1;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Tafua";
         $content['content'][] = ["Tafua" => ["Afio mai Taufaasisina ma Alalamatuatala",
             "Afio mai Matautia ma Tofa",
@@ -55,8 +67,8 @@ class Savaii
     function getSalelologa() {
 
         $content = [];
-        $content['id'] = 202;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 2;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Salelologa";
         $content['content'][] = ["Salelologa" => ["Afio mai Ti'a ma le aiga o Saluamanuvae ma la outou tama o Tinousi",
             "Susu mai Su'a ma le Aiga",
@@ -72,8 +84,8 @@ class Savaii
     function getSalelavalu() {
 
         $content = [];
-        $content['id'] = 203;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 3;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Salelavalu";
         $content['content'][] = ["Salelavalu" => ["Susu mai le Maopu o Nafanua, o lau susuga Su'a ma le Aumaga o le Tupu na tausi e Safotulafai",
             "Susu mai Su'aalii, o le fofoga o le aiga Sa Su'a",
@@ -88,8 +100,8 @@ class Savaii
     function getIva() {
 
         $content = [];
-        $content['id'] = 204;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 4;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Iva";
         $content['content'][] = ["Iva" => ["Afio mai le Aiga o Salevalasi",
             "Afio mai le tootoo alii (Tofilau)",
@@ -127,8 +139,8 @@ class Savaii
     function getSapapalii() {
 
         $content = [];
-        $content['id'] = 205;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 5;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Sapapali'i";
         $content['content'][] = ["Sapapali'i" => [
             "Susu mai Malietoa na faalogo i ai Samoa",
@@ -142,8 +154,8 @@ class Savaii
     function getSafotulafai() {
 
         $content = [];
-        $content['id'] = 206;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 6;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Safotulafai";
         $content['content'][] = ["Safotulafai" => [
             "Afio mai Leilua ma le To'alima o ou alo (Tau'ili'ili, Tuisa'emo, 'Ae, Mata'utia, Agavale)",
@@ -162,8 +174,8 @@ class Savaii
     function getTapueleele() {
 
         $content = [];
-        $content['id'] = 207;
-        $content['parent_id'] = 200;
+        $content['id'] = $this->faasaleleaga_id + 7;
+        $content['parent_id'] = $this->faasaleleaga_id;
         $content['name'] = "Tapueleele";
         $content['content'][] = ["Tapueleele" => [
             "Afio mai Salevalasi",

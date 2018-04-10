@@ -9,18 +9,32 @@ namespace classes;
 
 class Tutuila
 {
+    protected $launiusaelua_id = 1100;
+    protected $sua_id = 1200;
+    protected $vaifanua_id = 1300;
+    protected $ituau_id = 1400;
+
     function getItumalo()
     {
         $data = [
-            ["id"=>1, "name"=>"Launiusaelua","parent_id"=>1, "content"=>["Afio maia lau Afioga Mauga, o le tama fa'asausau a Sua ma le Vaifanua, Fofo ma Itulagi, Itu'au ma Alataua",
+            ["id"=>$this->launiusaelua_id, "name"=>"Launiusaelua","parent_id"=>1, "content"=>["Afio maia lau Afioga Mauga, o le tama fa'asausau a Sua ma le Vaifanua, Fofo ma Itulagi, Itu'au ma Alataua",
                 "Susu mai Sa'ousoali'i",
                 "Susu mai Ma'opu (Tei ma Anoalo)",
-                "Mamalu mai lau tofa Tua'olo na faleagaulu ai le motu, ma le Launiusaelua"]]
+                "Mamalu mai lau tofa Tua'olo na faleagaulu ai le motu, ma le Launiusaelua"]],
+            ["id"=>$this->sua_id, "name"=>"Sua","parent_id"=>1, "content"=>["Afio mai Sua"]],
+            ["id"=>$this->vaifanua_id, "name"=>"Vaifanua","parent_id"=>1, "content"=>["Afio mai Vaifanua"]],
+            ["id"=>$this->ituau_id, "name"=>"Itu'au","parent_id"=>1, "content"=>["Afio mai Itu'au"]]
         ];
         return $data;
     }
 
     function getNuus() {
+
+        $launiusaelua = $this->getLauniusaelua();
+        return array_merge($launiusaelua);
+    }
+
+    function getLauniusaelua() {
 
         $ret = [];
         $ret[] = $this->getAua();
@@ -34,8 +48,8 @@ class Tutuila
     function getAua() {
 
         $aua = [];
-        $aua['id'] = 1;
-        $aua['parent_id'] = 1;
+        $aua['id'] = $this->launiusaelua_id + 1;
+        $aua['parent_id'] = $this->launiusaelua_id;
         $aua['name'] = 'Aua';
         $aua['content'][] = ["Aua" => ["Afio mai le Sa'ousoali'i (Unutoa)",
             "Afio mai le Matua o Lifau o le Tama a Aitu ma Tagata",
@@ -48,8 +62,8 @@ class Tutuila
     function getLeloaloa() {
 
         $aua = [];
-        $aua['id'] = 2;
-        $aua['parent_id'] = 1;
+        $aua['id'] = $this->launiusaelua_id + 2;
+        $aua['parent_id'] = $this->launiusaelua_id;
         $aua['name'] = 'Leloaloa';
         $aua['content'][] = ["Leloaloa" => ["Afio mai oulua Ma'opu (Faumuina ma Uti)",
             "susu mai le ali'i o le ao (Vaivao)",
@@ -62,8 +76,8 @@ class Tutuila
     function getPagoPago() {
 
         $aua = [];
-        $aua['id'] = 3;
-        $aua['parent_id'] = 1;
+        $aua['id'] = $this->launiusaelua_id + 3;
+        $aua['parent_id'] = $this->launiusaelua_id;
         $aua['name'] = 'Pago Pago';
         $aua['content'][] = ["Pago Pago" => ["Afio mai Mauga o le Ma'oputasi,",
             "o le Tama fa'asausau o Sua ma le Vaifanua, Fofo ma Aitulagi, Itu'au ma Alataua",
@@ -82,8 +96,8 @@ class Tutuila
     function getFagatogo() {
 
         $aua = [];
-        $aua['id'] = 4;
-        $aua['parent_id'] = 1;
+        $aua['id'] = $this->launiusaelua_id + 4;
+        $aua['parent_id'] = $this->launiusaelua_id;
         $aua['name'] = 'Fagatogo';
         $aua['content'][] = ["Fagatogo" => ["Afio mai le Sa'ousoalii (Lutu)",
             "Susu mai le Toealii (Ma'ilo)",
@@ -98,8 +112,8 @@ class Tutuila
     function getFagaalu() {
 
         $aua = [];
-        $aua['id'] = 4;
-        $aua['parent_id'] = 1;
+        $aua['id'] = $this->launiusaelua_id + 5;
+        $aua['parent_id'] = $this->launiusaelua_id;
         $aua['name'] = 'Fagaalu';
         $aua['content'][] = ["Fagaalu" => ["Afio mai le Afioga i Ma'opu (Fano, Amituana'i)",
             "Susu mai le Nofo Fanau (Naisoa)",

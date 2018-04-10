@@ -11,8 +11,18 @@ use classes\Savaii;
 $ret = [];
 $ret['children'] = getItumalos();
 $ret['grandchildren'] = getNuus();
+$ret['parents'] = getMotu();
 
 echo json_encode($ret);
+
+function getMotu() {
+
+    $motu = [["id"=>0, "name"=>"All", "content"=>"","parent_id"=>null],
+                ["id"=>1000, "name"=>"Tutuila","content"=>""],
+                ["id"=>2000, "name"=>"Upolu","content"=>"Tumua ma Pule, Itu'au ma Alatau, Aiga i le Tai ma le Va'a o Fonoti"],
+                "id"=>3000,"name"=>"Savai'i","content"=>"Pule e ono"];
+    return $motu;
+}
 
 function getItumalos() {
 
