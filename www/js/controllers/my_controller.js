@@ -10,14 +10,9 @@ var myApp = angular.module('MyApp');
         $scope.parents;
         $scope.selected_parent;
         $scope.search_text;
+        $scope.show_child_content;
 
         $scope.load = function() {
-
-            // var data = MyService.load();
-            // $scope.children = data.children;
-            // $scope.parents = data.parents;
-            // $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
-            // $scope.selected_parent = $scope.parents[0];
 
             MyService.load().then(function(data) {
 
@@ -47,9 +42,14 @@ var myApp = angular.module('MyApp');
 
             if ($scope.selected_child) {
 
+
                 $scope.setGrandChildren($scope.selected_child.id);
-                //$scope.grandchildren_filtered = $filter('filterChild')($scope.grandchildren_filtered, $scope.search_text);
             }
+        };
+
+        $scope.onClickChildContents = function() {
+
+            $scope.show_child_content = !$scope.show_child_content;
         };
 
         $scope.onGrandchild = function(grandchild) {

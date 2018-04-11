@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
 
 <script src="js/apps/myApp.js"></script>
 <script src="js/model/as.js"></script>
@@ -45,9 +46,11 @@
                     ng-change="onChangeEvent()"
                     ng-options="child.name for child in children_filtered" style="width:200px">
             </select>
+            <span ng-show="selected_child && !show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-expand"></i></span>
+            <span ng-show="selected_child && show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-compress"></i></span>
         </div>
 
-        <div ng-show="selected_child.content.length > 0">
+        <div ng-show="show_child_content && selected_child.content.length > 0">
             <br/>
             <div ng-repeat="line in selected_child.content">
                 {{line}}
