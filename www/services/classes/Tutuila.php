@@ -31,10 +31,121 @@ class Tutuila
     function getNuus() {
 
         $launiusaelua = $this->getLauniusaelua();
-        return array_merge($launiusaelua);
+        $sua = $this->getSua();
+        return array_merge($launiusaelua, $sua);
     }
 
-    function getLauniusaelua() {
+    function getSua() {
+
+        $ret = [];
+        $ret[] = $this->getFagaitua();
+        $ret[] = $this->getAmaua();
+        $ret[] = $this->getLaulii();
+        $ret[] = $this->getAfono();
+        $ret[] = $this->getMasefau();
+        $ret[] = $this->getSailele();
+        return $ret;
+    }
+
+    function getFagaitua() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 1;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = "Faga'itua";
+        $aua['content'][] = ["Faga'itua" => [
+            "Afio mai Laiato o le na autasi i ai Sua ma le Vaifanua",
+            "Susu mai le Tumua, oe le Lufilufi tauese, o lau Afioga Leiato ma ou aiga",
+            "Susu mai Sa'o (Lefao ma Lauatua'a)",
+            "Mamalu mai le fetalaiga i e na leleo i le maota i Utumoea'au ma Fatulegae'e (Malepeai ma Vimalefetau)",
+            "Maliu mai le fofoga o Aiga i lau tofa Leota",
+            "Maliu mai Utoafili, o le manu o le tuasivi e fagota i tai e lua, o le tai papa'u ma le tai sua",
+            "Alala mai oe le Atiiato ma upu i le Alataua"]];
+        $aua['content'][] = ["Malaefono" => ["Malotumau", "Utumoea'au", "Fatulegae'e", "Faga'itua"]];
+        return $aua;
+    }
+
+    function getAmaua() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 2;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = 'Amaua';
+        $aua['content'][] = ["Amaua" => [
+            "Afio mai oulua Ma'opu (Tialavea ma Savea)",
+            "Maliu mai i la'ua Matua, ma le fetalaiga ia te oe le Atisua, ma upu i le Alataua"]];
+        $aua['content'][] = ["Malaefono" => ["Laloniu", "Falemalama"]];
+        return $aua;
+    }
+
+    function getLaulii() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 3;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = "Lauli'i";
+        $aua['content'][] = ["Lauli'i" => [
+            "Afio mai Laalaisalanoa, o le tama a malili e fa",
+            "Susu mai le Autapa'au (Paleafei)",
+            "Susu mai le Ma'ava a Sua ma le Vaifanua (Leaana)",
+            "Maliu mai oulua Matua (Mulitauaopele ma Fiataui'au'ualava)",
+            "Maliu mai le fetalaiga i le Atisua ma upu i le Alataua"]];
+        $aua['content'][] = ["Malaefono" => ["Laloniu", "Falemalama"]];
+        return $aua;
+    }
+
+    function getAfono() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 4;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = "Afono";
+        $aua['content'][] = ["Afono" => [
+            "Afio mai lau Afioga Mata'utia o le na ulua'i sa'o i papa",
+            "Susu mai le sa'o fetalai (Laupola)",
+            "Susu mai le matua (Tela)",
+            "Susu mai Tamapa'a (Tuimavave)",
+            "Susu mai Faasuamaleaui, o le alo o Mata'afa",
+            "Susu mai le aloalii (Tulafono)",
+            "Maliu mai Ao (Sua, Matagaono, I'aulualo, Aoelua)",
+            "Maliu mai le fetalaiga ia Afonotele"]];
+        $aua['content'][] = ["Malaefono" => ["Malaefono", "Avagafono"]];
+        return $aua;
+    }
+
+    function getMasefau() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 5;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = "Masefau";
+        $aua['content'][] = ["Masefau" => [
+            "Afio mai lau Afioga Sagapolutele",
+            "Susu mai le Matua (Foutanu)",
+            "Susu mai alii o le Falefitu (Faamausili, Taamai, Talaeai, Fesili, Ufanafa, Misa, Tagoa'i)",
+            "Susu mai le Maiava-aitu, o le Launatausala",
+            "Mamalu mai le fetalaiga i le faiga (Taloolemaagao, Maga, Salausa)"]];
+        $aua['content'][] = ["Malaefono" => ["Lalofau", "Olotele"]];
+        return $aua;
+    }
+
+    function getSailele() {
+
+        $aua = [];
+        $aua['id'] = $this->sua_id + 6;
+        $aua['parent_id'] = $this->sua_id;
+        $aua['name'] = "Sailele ma Masausi";
+        $aua['content'][] = ["Sailele ma Masausi" => [
+            "Susu mai le matua (Togiola)",
+            "Afio mai Lemanu",
+            "Afio mai Fiaseu ma Igafo",
+            "Afio mai le alii o aiga (Tuinei)",
+            "Maliu mai oulua o lo'o nonofo i ala fale (Migi, Vaisau)",
+            "Faapea le mamalu i aiga"]];
+        $aua['content'][] = ["Malaefono" => ["Malotumau", "Utumoea'au", "Fatulegae'e", "Faga'itua"]];
+
+
+        function getLauniusaelua() {
 
         $ret = [];
         $ret[] = $this->getAua();
