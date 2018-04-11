@@ -9,6 +9,7 @@ namespace classes;
 
 class Upolu
 {
+    protected $parent_id = 2000;
     protected $aana_id = 2100;
     protected $atua_id = 2200;
     protected $tuamasaga_id = 2300;
@@ -16,9 +17,9 @@ class Upolu
     function getItumalo()
     {
         $data = [
-            ["id"=>$this->aana_id, "name"=>"A'ana","parent_id"=>2, "content"=>["Fa'alupega o A'ana"]],
-            ["id"=>$this->atua_id, "name"=>"Atua","parent_id"=>2, "content"=>["Fa'alupega o Atua"]],
-            ["id"=>$this->tuamasaga_id, "name"=>"Tuamasaga","parent_id"=>2, "content"=>["Fa'alupega o Tuamasaga"]]
+            ["id"=>$this->aana_id, "name"=>"A'ana","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o A'ana"]],
+            ["id"=>$this->atua_id, "name"=>"Atua","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o Atua"]],
+            ["id"=>$this->tuamasaga_id, "name"=>"Tuamasaga","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o Tuamasaga"]]
         ];
         return $data;
     }

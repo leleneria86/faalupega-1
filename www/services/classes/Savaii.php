@@ -9,6 +9,7 @@ namespace classes;
 
 class Savaii
 {
+    protected $parent_id = 3000;
     protected $faasaleleaga_id = 3100;
     protected $salega_id = 3200;
     protected $asau_id = 3300;
@@ -16,9 +17,9 @@ class Savaii
     function getItumalo()
     {
         $data = [
-            ["id"=>$this->faasaleleaga_id, "name"=>"Fa'asalele'aga","parent_id"=>3, "content"=>["Fa'alupega o Fa'asalele"]],
-            ["id"=>$this->salega_id, "name"=>"Salega","parent_id"=>3, "content"=>["Fa'alupega o Salega"]],
-            ["id"=>$this->asau_id, "name"=>"Asau","parent_id"=>3, "content"=>["Fa'alupega o Asau"]]
+            ["id"=>$this->faasaleleaga_id, "name"=>"Fa'asalele'aga","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o Fa'asalele"]],
+            ["id"=>$this->salega_id, "name"=>"Salega","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o Salega"]],
+            ["id"=>$this->asau_id, "name"=>"Asau","parent_id"=>$this->parent_id, "content"=>["Fa'alupega o Asau"]]
         ];
         return $data;
     }
