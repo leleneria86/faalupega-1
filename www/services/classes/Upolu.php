@@ -57,6 +57,9 @@ class Upolu
         $ret[] = $this->getSagauga();
         $ret[] = $this->getFaleata();
         $ret[] = $this->getFaleula();
+        $ret[] = $this->getMalie();
+        $ret[] = $this->getAfega();
+        $ret[] = $this->getTuanai();
         return $ret;
     }
 
@@ -285,6 +288,59 @@ class Upolu
             "Maliu mai le tagata foun o le Malietoa o lau fetalaiga Laupa",
             "Mamalu maia oe le Faletolu"]];
         $content['content'][] = ["Malaefono" => ["Foga'a"]];
+        return $content;
+    }
+
+    function getMalie() {
+
+        $content = [];
+        $content['id'] = $this->tuamasaga_matu_id + 6;
+        $content['parent_id'] = $this->tuamasaga_matu_id;
+        $content['name'] = "Malie";
+        $content['content'][] = ["Malie" => [
+            "Susu mai le Tapa'au faasisina, o lau susuga Malietoa o le na faafofoga i ai Samoa",
+            "Afio mai Maualaivao ma le aiga Sa Maualaivao",
+            "Afio mai le Matua o Faamausili",
+            "Afio mai le Fuaialii, o lau susuga Taito",
+            "Susu mai lau susuga Seiuli",
+            "Maliu mai pou e fitu o le fale o Malietoa, ma upu ia te oe Auimatagi"]];
+        $content['content'][] = ["Malaefono" => ["Malie"]];
+        return $content;
+    }
+
+    function getAfega() {
+
+        $content = [];
+        $content['id'] = $this->tuamasaga_matu_id + 7;
+        $content['parent_id'] = $this->tuamasaga_matu_id;
+        $content['name'] = "Afega";
+        $content['content'][] = ["Afega" => [
+            "Afifio mai aiga Sa Gauifaleai",
+            "Afifio mai oulua Alalatama (Savea, Ututaaloga)",
+            "Afio mai oe le matua (Manuaifua)",
+            "Afio mai le Usoalii (Laa, Maposua)",
+            "Afio mai Leuluaialiii",
+            "Afio mai alo o Tofigaalii (Pualau, Tagitagialemanu)",
+            "susu mai lo oulua toalua o Fata ma Maulolo o Tuitui o le Natoaitele",
+            "Susu mai Tuisamau",
+            "Maliu mai le vagana i Tulafale, o Leu ma Vaitimu na au taele ai Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Vaitoelau"]];
+        return $content;
+    }
+
+    function getTuanai() {
+
+        $content = [];
+        $content['id'] = $this->tuamasaga_matu_id + 8;
+        $content['parent_id'] = $this->tuamasaga_matu_id;
+        $content['name'] = "Tuana'i";
+        $content['content'][] = ["Tuana'i" => [
+            "Afio mai Saena ma le aiga Sa Saena",
+            "Susu mai le alo o Fuatino (Luafãtasaga)",
+            "Afio mai Tuitea o lē na tofia pãpã",
+            "Afio mai mai Alalatama (Fa'avaoga, Ututaaloga)",
+            "Maliu mai Lefale ma le afu Alataua ma lau fetalaiga Tupailesa"]];
+        $content['content'][] = ["Malaefono" => ["Tanumafili"]];
         return $content;
     }
 
