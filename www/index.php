@@ -46,8 +46,8 @@
                     ng-change="onChangeEvent()"
                     ng-options="child.name for child in children_filtered" style="width:200px">
             </select>
-            <span ng-show="selected_child && !show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-expand"></i></span>
-            <span ng-show="selected_child && show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-compress"></i></span>
+            <span ng-show="selected_child.id != 0 && !show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-expand"></i></span>
+            <span ng-show="selected_child.id != 0 && show_child_content" style="cursor:pointer" ng-click="onClickChildContents()"><i class="fa fa-compress"></i></span>
         </div>
 
         <div ng-show="show_child_content && selected_child.content.length > 0">
