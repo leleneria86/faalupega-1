@@ -40,6 +40,7 @@ class Savaii
         $ret[] = $this->getSapapalii();
         $ret[] = $this->getSafotulafai();
         $ret[] = $this->getTapueleele();
+        $ret[] = $this->getFaga();
         return $ret;
     }
 
@@ -169,6 +170,40 @@ class Savaii
             "Susu mai Letufuga Alofa ma lau Fa'atufugaga",
             "Maliu mai la oulua fetalaiga Tuilagi ma Namulau'ulu ma le mamalu o oe Safotulafai"]];
         $content['content'][] = ["Malaefono" => ["Ga'utaala - Fuifatu", "Gataiala - Ma'auga"]];
+
+        $content['content'][] = ["'Eve'eve ma Vaimaga" => [
+            "Afio mai Leilua ma le To'alima o ou alo",
+            "Afio mai Sa Alalatoa (Letufuga, Tuma'ai)",
+            "Maliu mai Ma'opu Tufuga ma le mamalu ia te oe Safotulafai"]];
+
+        $content['content'][] = ["Fuifatu ma Fusi" => [
+            "Afio mai Leilua ma le To'alima o ou alo",
+            "Afio mai Sa Alalatoa (Pa'u i Olopoto)",
+            "Maliu mai Ma'opu Tufuga",
+            "Maliu mai lau Tofa Fau'olo, o le na Aimalae",
+            "ma le Mamalu ia te oe Safotulafai"]];
+
+        $content['content'][] = ["Fatausi" => [
+            "Afio mai Alii o le Au Fono (Tauiliili)",
+            "Afio mai lau Afioga Leilua",
+            "Afio mai le Suafa o Kea",
+            "Maliu mai Tuilagi ma lau Au Fono (Pasia, Legaoi, Tano, Tuifiti Fa'asalaia'i",
+            "ma le Mamalu ia te oe Safotulafai"]];
+
+        $content['content'][] = ["Fogapoa" => [
+            "Susu mai alo o Malietoa (Moananu, Taulapapa)",
+            "Susu mai le Tei o Leota",
+            "Afio mai le Ma'opu o Fepulea'i",
+            "Maliu mai Namulau'ulu ma le aiga Sa Namulau'ulu",
+            "Maliu mai le Falefia ma le Matua o Laufiso (Falefia o Su)"]];
+
+        $content['content'][] = ["Tuasivi" => [
+            "Afio mai le aiga Sa Alalatoa, Pa'u me le matua o Alalatoa",
+            "Maliu mai le Ma'opu Tufuga (Lema'i)",
+            "Malie mai le Tapuafanua o le eleele (Motunuu)",
+            "Mamalu mai le Fuaiala o le Tuiatua o le Mua'au faalele a le Safotulafai"]];
+
+
         return $content;
     }
 
@@ -186,6 +221,38 @@ class Savaii
             "Faapea le Vainalepa ma le Lautinalaulelei, i le nofo a aufono, Pau ma Puna e oo i le pa i Aeaauli",
             "ma le mamalu ia Safotulafai"]];
         $content['content'][] = ["Malaefono" => ["Limuula"]];
+        return $content;
+    }
+
+    function getFaga() {
+
+        $content = [];
+        $content['id'] = $this->faasaleleaga_id + 8;
+        $content['parent_id'] = $this->faasaleleaga_id;
+        $content['name'] = "Faga";
+        $content['content'][] = ["Faga (Aotelega)" => [
+            "Afio mai ia lo outou toaono o alii o le Faga (Unasa, Nonumalo, To'ala, Leafinealii, Ufagalilo, Sooaemalelagi)",
+            "Afai mai ia le Taulagi (Vaafusuaga, Toleafoa)",
+            "Maliu mai lo outou toafa (Pigi, Vaisau, Laufiso, Tapuala) ma tagata matutua",
+            "Ma upu ia te oe le Faleaana ma le Salemuliaga"]];
+
+        $content['content'][] = ["Fuaiaia o Faga" => [""]];
+
+        $content['content'][] = ["Si'ufaga" => [
+            "Afio mai lo outou aiga Sa Unasa",
+            "Afio mai lau Afioga Maseuli",
+            "Afio mai Vaafusuaga",
+            "Maliu mai Laufiso ma Tapuala ma le Musuia ma Sa Luasa",
+            "Maliu mai le Faleaana"]];
+
+        $content['content'][] = ["Sapigi" => [
+            "Afio mai lau Afioga Unasa",
+            "Afio mai lau Afioga Leafinealii",
+            "Afio mai lau Afioga Sooaemalelagi",
+            "Maliu mai lau fetalaiga Pigi ma oe Sa Pigi",
+            "Maliu mai oe le Faleaana"]];
+
+        $content['content'][] = ["Malaefono" => ["Maota - Tua o Fuifatu"]];
         return $content;
     }
 }
