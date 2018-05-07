@@ -327,4 +327,41 @@ class Savaii
             "Maliu mai lau fetalaiga Taua, ma upu ia te oe Salimu"]];
         return $content;
     }
+    
+    function getAmoaisisifo() {
+
+        $content = [];
+        $content['id'] = $this->faasaleleaga_id + 10;
+        $content['parent_id'] = $this->faasaleleaga_id;
+        $content['name'] = "Amoa i Sisifo";
+        $content['content'][] = ["Lano, Asaga, Puipa'a" => [
+            "Afio mai le Falefia o Alo o Sa Vui (O Satuala foi na)",
+            "Vui Umumalu, Vui Tafilipepe, Vui Seigafolava, Vui Alafouaina (teine)",
+            "Susu mai lau susuga I'iga o le Ma'opu",
+            "Afio maia lau afioga Falenaoti (Ma'opu lava lea)",
+            "Afio Alo o Vaafusuaga, Lutu ma Ape ma lau susuga Su'a",
+            "Maliu mai lau fetalaiga Malaeulu le Matua Fetalai",
+            "Maliu mai Salemuliaga, o le faleupolu o tofiga"]];
+
+        $content['content'][] = ["Malaefono" => ["Maota"]];
+
+        $content['content'][] = ["Asaga" => [
+            "Afio Sa Matafeo ma le Matua (Lualua)",
+            "Afio mai lau Afioga Tuifeama'alo",
+            "Maliu mai lau fetalaiga Leatuavao",
+            "ma upu ia Salepatū ma Salemuliaga",
+            "(E ao lava ia Falenaoti ona fa'amalumalu)"]];
+
+        $content['content'][] = ["Pu'apu'a" => [
+            "Afio le aiga Sa Pesetã (Sa Tuala)",
+            "Susu mai I'iga le Ma'opu (O ia foi o le Falenaoti)",
+            "Afio mai le Matua o Lemalu",
+            "Afio mai Ugapo ma Sauia na fuaao ia Salemuliaga",
+            "Maliu mai le Pule a Sealiimalietoa",
+            "Maliu mai oe Salemuliaga"]];
+
+        $content['content'][] = ["Malaefono" => ["Olomaile"]];
+
+        return $content;
+    }
 }
