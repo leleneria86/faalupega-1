@@ -41,6 +41,8 @@ class Savaii
         $ret[] = $this->getSafotulafai();
         $ret[] = $this->getTapueleele();
         $ret[] = $this->getFaga();
+        $ret[] = $this->getAmoaisasae();
+        $ret[] = $this->getAmoaisisifo();
         return $ret;
     }
 
