@@ -587,7 +587,7 @@ class Upolu
         $content['parent_id'] = $this->atua_id;
         $content['name'] = "Falealili";
         $content['content'][] = ["" => [
-            "Afio mai Alalagafa, ma le la nofo o Tulafale, faapea fo'i le Tauãga eseese ia te oe Falealili",
+            "Afio mai Alalagafa, ma le la nofo o Tulafale, faapea fo'i le Tauãga eseese ia te oe Falealili"]];
 
         $content['content'][] = ["Sãga (Saleilua, Poutasi, Vaovai, Matautu)" => [
             "Susu mai lau susuga Tuatagaloa, le Sa'ofetalai, o le To'o o le Savili, o le Ki o le Malo",
