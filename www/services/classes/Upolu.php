@@ -44,7 +44,15 @@ class Upolu
 
         $aana = $this->getAana();
         $tuamasaga_matu = $this->getTuamasagaMatu();
-        return array_merge($aana, $tuamasaga_matu);
+        $atua = $this->getAtua();
+        return array_merge($aana, $tuamasaga_matu, $atua);
+    }
+    
+    function getAtua() {
+
+        $ret = [];
+        $ret[] = $this->getFalealili();
+        return $ret;
     }
 
     function getTuamasagaMatu() {
@@ -569,6 +577,33 @@ class Upolu
             "Maliu mai Vaatuitui, o le tagata o le vavau",
             "Maliu mai vae o le nofoa fia, ma upu ia te oe Falelatai"]];
         $content['content'][] = ["Malaefono" => ["Fata -  O le tua o Ma'auga"]];
+        return $content;
+    }
+    
+    function getFalealili() {
+
+        $content = [];
+        $content['id'] = $this->atua_id + 1;
+        $content['parent_id'] = $this->atua_id;
+        $content['name'] = "Falealili";
+        $content['content'][] = ["" => [
+            "Afio mai Alalagafa, ma le la nofo o Tulafale, faapea fo'i le Tauãga eseese ia te oe Falealili",
+
+        $content['content'][] = ["Sãga (Saleilua, Poutasi, Vaovai, Matautu)" => [
+            "Susu mai lau susuga Tuatagaloa, le Sa'ofetalai, o le To'o o le Savili, o le Ki o le Malo",
+            "Afio mai lau Afioga Meleisea, o le Sa'oaualuma",
+            "Afio mai Leilua ma au Tamatane (Touli, Asuao, Tapu, Lealiiee)",
+            "Afio mai le Matua o Fanene",
+            "Afio mai Salevalasi (Mata'utia, Tupuola)",
+            "Susu mai Tuisamoa o le Tapa'au Fa'asisina, o le Solomuli o Manumea",
+            "Susu mai le pa'ia o le Usoalii",
+            "Susu mai Lufilufi ma upu ia te oe Taulauniu"]];
+
+        $content['content'][] = ["Malaefono" => [
+            "Poutasi - O le Tua o Falefasa, Afifio ai Tuatagloa ma Meleisea",
+            "Lalofau - Afio ai Fanene",
+            "Leatumalama - Afio ai Leilua"]];
+
         return $content;
     }
 }
