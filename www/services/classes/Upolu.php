@@ -603,6 +603,45 @@ class Upolu
             "Poutasi - O le Tua o Falefasa, Afifio ai Tuatagloa ma Meleisea",
             "Lalofau - Afio ai Fanene",
             "Leatumalama - Afio ai Leilua"]];
+        
+        $content['content'][] = ["Tafatafa" => [
+            "Susu mai oulua Suafa o Salea ma Sa'oleititi",
+            "Afio mai oe le Matua o lau Afioga Alaimoana",
+            "Maliu mai Sa Alaimoana, faapea le mamalu ia te oe Falealili"]];
+        
+        $content['content'][] = ["Matavai" => [
+            "Susu mai oulua Suafa o Taito ma Ula",
+            "Maliu mai oe Tala'olefale, o lau Tofa Falaila ma le Lautinalaulelei ia te oe Falealili"]];
+        
+        $content['content'][] = ["Malaemalu" => [
+            "Susu mai Pulotu o le alo o Tuatagaloa",
+            "Maliu mai le Alii o aiga, o lau tofa Talauega",
+            "Maliu mai le Anofale ma ou Manū, faapea upu ia te oe Falealili"]];
+        
+        $content['content'][] = ["Satalo" => [
+            "Afio mai alo o Fanene",
+            "Afio mai Te'o, o oe o le Anavataua na faaleo ai Pãpã o Tupua (O le Alii o Aiga)",
+            "Afio mai Fonoti na e alaala Maota i Falefasa",
+            "Susu mai le Usaoalii o Alo o Tuatagaloa (Uliuli'aleava, Maisoa Alo ma Soi)",
+            "Maliu mai le Aiga Satalo",
+            "Maliu mai lau Tofa Taloolema'agao, o le Sa'o ia Tuiatua",
+            "Maliu mai lau Tofa Fualautoalasi, o oe o le Sa'ofetalai",
+            "Maliu mai le Alii o Aiga, o lau Tofa Talauega",
+            "Maliu mai le Tei o lau Tofa Taveuveu",
+            "Maliu mai lau Tofa Onofia, o oe o le Matua",
+            "Maliu mai Salele'aalii ma lou Tapa'au o le Fa'atufugã",
+            "Maliu maia le Lautinalaulelei ia te oe Falealili"]];
+        
+        $content['content'][] = ["Faapuupuuga o Satalo" => [
+            "Afio mai Alo o Fanene",
+            "Susu mai lo outou Usoalii",
+            "Maliu mai le Aiga Satalo, i Lau Tofa Taloolema'agao ma le Usonatotõ",
+            "Maliu mai le Matua ma Salele'aalii ma le Lautinalaulelei"]];
+        
+        $content['content'][] = ["Malaefono" => [
+            "Fanuatanu",
+            "Papa",
+            "Fa'atiuga"]];
 
         return $content;
     }
