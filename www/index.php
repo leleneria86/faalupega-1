@@ -20,9 +20,6 @@
 <div ng-app="MyApp" ng-controller="MyController" data-ng-init="load()">
 
     <div class="col-sm-2" ng-hide="selected_nuu">
-
-        <div id="like_button_container"></div>
-
         <div>
             <br/>
             <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
@@ -116,7 +113,6 @@
 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-<script src="js/components/like_button.js"></script>
 </body>
 </html>
 
