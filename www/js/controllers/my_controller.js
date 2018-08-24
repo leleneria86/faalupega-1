@@ -1,25 +1,31 @@
 var myApp = angular.module('MyApp');
     myApp.controller('MyController', function($scope, $filter, MyService) {
         $scope.name = null;
-        $scope.children;
-        $scope.children_filtered;
-        $scope.selected_child;
-        $scope.grandchildren;
-        $scope.grandchildren_filtered;
-        $scope.selected_grandchild;
-        $scope.parents;
-        $scope.selected_parent;
+        $scope.itumalos;
+        $scope.itumalos_filtered;
+        $scope.selected_itumalo;
+        $scope.nuus;
+        $scope.nuus_filtered;
+        $scope.selected_nuu;
+        $scope.selected_pitonuu;
+        $scope.pitonuus_filtered;
+        $scope.motus;
+        $scope.selected_motu;
         $scope.search_text;
-        $scope.show_child_content;
+        $scope.show_itumalo_content;
+        $scope.current_nuu;
+        $scope.nuu_view = false;
+        $scope.pitonuu_view = false;
 
         $scope.load = function() {
 
             MyService.load().then(function(data) {
 
-                    $scope.children = data.children;
-                    $scope.parents = data.parents;
-                    $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
-                    $scope.selected_parent = $scope.parents[0];
+                    $scope.itumalos = data.itumalos;
+                    $scope.motus = data.motus;
+                    $scope.nuus_filtered = $scope.nuus = data.nuus;
+                    $scope.pitonuus_filtered = $scope.pitonuus = data.pitonuus;
+                    $scope.selected_motu = $scope.motus[0];
                     $scope.safeApply();
                 },
                 function(result) {
@@ -28,67 +34,104 @@ var myApp = angular.module('MyApp');
                 });
         };
 
-        $scope.onChangeParent = function() {
+        $scope.onChangeMotu = function() {
 
-            if($scope.selected_parent) {
+            if($scope.selected_motu) {
 
-                $scope.setChildren($scope.selected_parent.id);
-                $scope.selected_child = $scope.children_filtered[0];
-                $scope.onChangeEvent();
+                $scope.setItumalos($scope.selected_motu.id);
+                $scope.selected_itumalo = $scope.itumalos_filtered[0];
+                $scope.onChangeItumalo();
             }
         };
 
-        $scope.onChangeEvent = function() {
+        $scope.onChangeItumalo = function() {
 
-            if ($scope.selected_child) {
+            if ($scope.selected_itumalo) {
 
-
-                $scope.setGrandChildren($scope.selected_child.id);
+                $scope.setNuus($scope.selected_itumalo.id);
             }
         };
 
-        $scope.onClickChildContents = function() {
+        $scope.onClickItumaloContents = function() {
 
-            $scope.show_child_content = !$scope.show_child_content;
+            $scope.show_itumalo_content = !$scope.show_itumalo_content;
         };
 
-        $scope.onGrandchild = function(grandchild) {
+        $scope.onNuu = function(nuu) {
 
-            $scope.selected_grandchild = grandchild;
+            //$scope.nuu_view = true;
+            $scope.selected_nuu = nuu;
+            $scope.pitonuus_filtered = $scope.selected_nuu.pitonuus;
+            //$scope.setPitonuus(nuu.motu_id);
+        };
+
+        $scope.onPitonuu = function(pitonuu) {
+
+            // $scope.nuu_view = false;
+            // $scope.pitonuu_view = true;
+            $scope.current_nuu = $scope.selected_nuu;
+            pitonuu.expanded = !pitonuu.expanded;
+            $scope.selected_pitonuu = pitonuu;
         };
 
         $scope.onBack = function() {
 
-            $scope.selected_grandchild = null;
-            $scope.onChangeEvent();
+            // $scope.nuu_view = false;
+            // $scope.pitonuu_view = false;
+            $scope.selected_nuu = null;
+            $scope.onChangeItumalo();
         };
 
-        $scope.setChildren = function(parent_id) {
+        $scope.onBackToNuu = function() {
 
-            $scope.children_filtered = [{id:0, name:"All", content:"",parent_id:null}];
-            for(var i = 0; i < $scope.children.length; i++) {
+            // $scope.nuu_view = true;
+            // $scope.pitonuu_view = false;
+            $scope.selected_pitonuu = null;
+            $scope.selected_nuu = $scope.current_nuu;
+        };
 
-                if($scope.children[i].parent_id == parent_id) {
+        $scope.setItumalos = function(motu_id) {
 
-                    $scope.children_filtered.push($scope.children[i]);
+            $scope.itumalos_filtered = [{id:0, name:"All", content:"",motu_id:null}];
+            for(var i = 0; i < $scope.itumalos.length; i++) {
+
+                if($scope.itumalos[i].motu_id == motu_id) {
+
+                    $scope.itumalos_filtered.push($scope.itumalos[i]);
                 }
             }
         };
 
-        $scope.setGrandChildren = function(parent_id) {
+        $scope.setNuus = function(motu_id) {
 
-            $scope.grandchildren_filtered = [];
-            if(parent_id > 0) {
+            $scope.nuus_filtered = [];
+            if(motu_id > 0) {
 
-                for (var i = 0; i < $scope.grandchildren.length; i++) {
+                for (var i = 0; i < $scope.nuus.length; i++) {
 
-                    if ($scope.grandchildren[i].parent_id == parent_id) {
+                    if ($scope.nuus[i].motu_id == motu_id) {
 
-                        $scope.grandchildren_filtered.push($scope.grandchildren[i]);
+                        $scope.nuus_filtered.push($scope.nuus[i]);
                     }
                 }
             }
         };
+
+        // $scope.setPitonuus = function(motu_id) {
+        //
+        //     $scope.pitonuus_filtered = [];
+        //     if(motu_id > 0) {
+        //
+        //         for (var i = 0; i < $scope.pitonuus.length; i++) {
+        //
+        //             if ($scope.pitonuus[i].motu_id == motu_id) {
+        //
+        //                 $scope.pitonuus_filtered.push($scope.pitonuus[i]);
+        //             }
+        //         }
+        //     }
+        // };
+
 
         $scope.safeApply = function(fn) {
             var phase = this.$root.$$phase;
