@@ -110,8 +110,6 @@
         <span ng-click="onBackToNuu();" style="color:blue;cursor:pointer">Back</span>
     </div-->
 </div>
-<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
 </body>
 </html>
