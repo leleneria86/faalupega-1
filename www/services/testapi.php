@@ -9,15 +9,16 @@ use classes\Tutuila;
 use classes\Savaii;
 
 $ret = [];
-$ret['children'] = getItumalos();
-$ret['grandchildren'] = getNuus();
-$ret['parents'] = getMotu();
+$ret['itumalos'] = getItumalos();
+$ret['nuus'] = getNuus();
+$ret['pitonuus'] = getPitonuus();
+$ret['motus'] = getMotu();
 
 echo json_encode($ret);
 
 function getMotu() {
 
-    $motu = [["id"=>0, "name"=>"All", "content"=>"","parent_id"=>null],
+    $motu = [["id"=>0, "name"=>"All", "content"=>"","motu_id"=>null],
                 ["id"=>1000, "name"=>"Tutuila","content"=>""],
                 ["id"=>2000, "name"=>"Upolu","content"=>"Tumua ma Pule, Itu'au ma Alatau, Aiga i le Tai ma le Va'a o Fonoti"],
                 ["id"=>3000,"name"=>"Savai'i","content"=>"Pule e ono"]];
@@ -26,7 +27,7 @@ function getMotu() {
 
 function getItumalos() {
 
-    $itumalos = [["id"=>0, "name"=>"All", "content"=>"","parent_id"=>null]];
+    $itumalos = [["id"=>0, "name"=>"All", "content"=>"","motu_id"=>null]];
     $upolu = new Upolu();
     $itumalo_upolu = $upolu->getItumalo();
     $tutuila = new Tutuila();
@@ -44,6 +45,17 @@ function getNuus() {
     $nuu_tutuila = $tutuila->getNuus();
     $nuu_upolu = $upolu->getNuus();
     $nuu_savaii = $savaii->getNuus();
+    return array_merge($nuu_tutuila, $nuu_upolu, $nuu_savaii);
+}
+
+function getPitonuus() {
+
+    $upolu = new Upolu();
+    $tutuila = new Tutuila();
+    $savaii = new Savaii();
+    $nuu_tutuila = $tutuila->getPitonuus();
+    $nuu_upolu = $upolu->getPitonuus();
+    $nuu_savaii = $savaii->getPitonuus();
     return array_merge($nuu_tutuila, $nuu_upolu, $nuu_savaii);
 }
 
