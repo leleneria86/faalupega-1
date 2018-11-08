@@ -59,6 +59,7 @@ class Savaii
 
         $content['pitonuus'][] = $this->getFoailalo($id);
         $content['pitonuus'][] = $this->getFoailuga($id);
+        $content['pitonuus'][] = $this->getSatuiatua($id);
         return $content;
     }
 
@@ -88,6 +89,21 @@ class Savaii
             "Itualamavae ma le tame a le fale",
             "Maliu mai le nofo a ituaiga i le Ailoaa"]];
         $content['content'][] = ["Malaefono" => ["Fa'alautaume"]];
+        return $content;
+    }
+    
+    function getSatuiatua($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 3;
+        $content['itumalo_id'] = $this->palauli_id;
+        $content['name'] = "Satuiatua";
+        $content['content'][] = ["Satuiatua" => ["Afio mai lau afioga i le Sa'o (Fa'atupuinati)",
+            "Afio mai Tu'uauato ma le falesefulu o Pesefeamanaia",
+            "Afio mai alo o Lilomaiava ma le nofo a Usoali'i",
+            "Maliu mai ia na ta'i ma upu ia Gaga'emalae"]];
+        $content['content'][] = ["Malaefono" => ["Falemaii", "Fogatia"]];
         return $content;
     }
 
