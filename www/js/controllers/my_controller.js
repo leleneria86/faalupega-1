@@ -11,7 +11,7 @@ var myApp = angular.module('MyApp');
         $scope.pitonuus_filtered;
         $scope.motus;
         $scope.selected_motu;
-        $scope.search_text;
+        $scope.search_text = null;
         $scope.show_itumalo_content;
         $scope.current_nuu;
         $scope.nuu_view = false;
@@ -34,21 +34,51 @@ var myApp = angular.module('MyApp');
                 });
         };
 
+        $scope.onChangeSearch = function() {
+
+            $scope.nuus_filtered = [];
+            if($scope.search_text && $scope.search_text.length > 2) {
+
+                $scope.nuus_filtered = $scope.filterArray($scope.nuus, $scope.search_text);
+
+                $scope.changeMotu();
+
+                if ($scope.selected_itumalo && $scope.selected_itumalo.id) {
+
+                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus_filtered);
+                }
+            }
+        };
+
         $scope.onChangeMotu = function() {
 
             if($scope.selected_motu) {
 
-                $scope.setItumalos($scope.selected_motu.id);
-                $scope.selected_itumalo = $scope.itumalos_filtered[0];
-                $scope.onChangeItumalo();
+                if($scope.selected_motu.id) {
+
+                    $scope.nuus_filtered = $scope.nuus;
+
+                    $scope.setItumalos($scope.selected_motu.id);
+                    $scope.selected_itumalo = $scope.itumalos_filtered[0];
+                }
+
+                $scope.changeMotu();
+            }
+        };
+
+        $scope.changeMotu = function() {
+
+            if($scope.selected_motu.id) {
+
+                $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_motu.id, $scope.nuus_filtered);
             }
         };
 
         $scope.onChangeItumalo = function() {
 
-            if ($scope.selected_itumalo) {
+            if ($scope.selected_itumalo.id) {
 
-                $scope.setNuus($scope.selected_itumalo.id);
+                $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus);
             }
         };
 
@@ -102,36 +132,140 @@ var myApp = angular.module('MyApp');
             }
         };
 
-        $scope.setNuus = function(motu_id) {
+        $scope.filterNuusByMotuId = function(motu_id, nuus) {
 
-            $scope.nuus_filtered = [];
+            let nuus_filtered = [];
             if(motu_id > 0) {
 
-                for (var i = 0; i < $scope.nuus.length; i++) {
+                for (var i = 0; i < nuus.length; i++) {
 
-                    if ($scope.nuus[i].motu_id == motu_id) {
+                    if (nuus[i].motu_id == motu_id) {
 
-                        $scope.nuus_filtered.push($scope.nuus[i]);
+                        nuus_filtered.push(nuus[i]);
                     }
                 }
             }
+            return nuus_filtered;
         };
 
-        // $scope.setPitonuus = function(motu_id) {
-        //
-        //     $scope.pitonuus_filtered = [];
-        //     if(motu_id > 0) {
-        //
-        //         for (var i = 0; i < $scope.pitonuus.length; i++) {
-        //
-        //             if ($scope.pitonuus[i].motu_id == motu_id) {
-        //
-        //                 $scope.pitonuus_filtered.push($scope.pitonuus[i]);
-        //             }
-        //         }
-        //     }
-        // };
+        $scope.filterNuusByItumaloId = function(motu_id, nuus) {
 
+            let nuus_filtered = [];
+            if(motu_id > 0) {
+
+                for (var i = 0; i < nuus.length; i++) {
+
+                    if (nuus[i].itumalo_id == motu_id) {
+
+                        nuus_filtered.push(nuus[i]);
+                    }
+                }
+            }
+            return nuus_filtered;
+        };
+
+        $scope.filterArray = function(nuus, search_term) {
+
+            let temp_nuus = [];
+            for(var i = 0; i < nuus.length; i++) {
+
+                let nuu = nuus[i];
+                if($scope.myFilter(nuu, search_term)) {
+
+                    temp_nuus.push(nuu);
+                }
+            }
+            return temp_nuus;
+        };
+
+
+        $scope.myFilter = function(nuu, search_term){
+
+            let match = $scope.searchMatch(nuu, search_term);
+
+            if(!match && nuu.pitonuus){
+
+                for(let i = 0; i < nuu.pitonuus.length; i++) {
+
+                    match = $scope.searchMatch(nuu.pitonuus[i], search_term);
+                    if(match) {
+
+                        break;
+                    }
+                }
+            }
+
+            return match;
+        };
+
+        $scope.searchMatch = function(nuu, search_term) {
+
+            let found = false;
+
+            if(search_term && search_term.length > 2 && nuu.content) {
+
+                let term = search_term.toLowerCase();
+                for(var i = 0; i < nuu.content.length; i++) {
+
+                    let content = nuu.content[i];
+                    for (var k in content) {
+
+                        if (content.hasOwnProperty(k)) {
+
+                            let lines = content[k];
+                            for(var j = 0; j < lines.length; j++) {
+
+                                let str = lines[j].toLowerCase();
+                                let term1 = " " + term + " ";
+                                found = (str.indexOf(term1) > -1);
+                                if(found) {
+
+                                    break;
+                                }
+
+                                term1 = "(" + term + ")";
+                                found = (str.indexOf(term1) > -1);
+                                if(found) {
+
+                                    break;
+                                }
+
+                                term1 = "(" + term + ",";
+                                found = (str.indexOf(term1) > -1);
+                                if(found) {
+
+                                    break;
+                                }
+
+                                term1 = " " + term + ")";
+                                found = (str.indexOf(term1) > -1);
+                                if(found) {
+
+                                    break;
+                                }
+
+                                erm1 = " " + term + ",";
+                                found = (str.indexOf(term1) > -1);
+                                if(found) {
+
+                                    break;
+                                }
+                            }
+                        }
+                        if(found) {
+
+                            break;
+                        }
+                    }
+                    if(found) {
+
+                        break;
+                    }
+                }
+            }
+
+            return found;
+        };
 
         $scope.safeApply = function(fn) {
             var phase = this.$root.$$phase;
@@ -143,30 +277,4 @@ var myApp = angular.module('MyApp');
                 this.$apply(fn);
             }
         };
-    });
-
-    myApp.filter('filterChild', function() {
-        return function(dataArray, searchTerm){
-            if(!dataArray ) {
-                return;
-            }
-            /* when term is cleared, return full array*/
-            if( !searchTerm){
-                return dataArray;
-            }else{
-                /* otherwise filter the array */
-                var term=searchTerm.toLowerCase();
-                return dataArray.filter(function(item){
-
-                    var match = false;
-                    if(item.id !== null &&
-                        item.name.toLowerCase().indexOf(term) > -1
-                    )
-                    {
-                        match = true;
-                    }
-                    return match;
-                });
-            }
-        }
     });
