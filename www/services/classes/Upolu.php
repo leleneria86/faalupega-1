@@ -82,7 +82,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 1;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Lauli'i";
         $content['content'][] = ["Lauli'i" => [
             "Afio mai le paia o Salevalasi",
@@ -101,7 +102,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 2;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Letogo";
         $content['content'][] = ["Letogo" => [
             "Afio mai oulua fofoga o Alataua (Tuliaupupu ma Tuliaupupu)",
@@ -118,7 +120,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 3;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Saleupolu (Vailele, Niniva ma Fagali'i)";
         $content['content'][] = ["Saleupolu (Vailele, Niniva ma Fagali'i)" => [
             "Afio mai le Falefia o Alii (Samoa, Tavui, Taufagaafa) ma lo outou Maopu (Savaiinaea)",
@@ -151,7 +154,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 3;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Fualiupolu (Moata'a, Vaiala, Magiagi)";
         $content['content'][] = ["Fualiupolu (Moata'a, Vaiala, Magiagi)" => [
             "Afio mai lau Afioga a le Matua (Tofaeono)",
@@ -183,7 +187,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $id = $this->tuamasaga_matu_id + 3;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Sagauga (Matutu, Apia, Tanugamanono)";
         $content['content'][] = ["Sagauga (Matutu, Apia, Tanugamanono)" => [
             "Afio mai alo o Sina (Seumanutafa, Toomalatai)",
@@ -250,7 +255,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 4;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Faleata";
         $content['content'][] = ["Faleata" => [
             "Afio mai tama a le fale (Faumuina, Matai'a)",
@@ -316,7 +322,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 5;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Faleula";
         $content['content'][] = ["Faleula" => [
             "Susu mai le Tapa'au faasisina",
@@ -337,7 +344,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 6;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Malie";
         $content['content'][] = ["Malie" => [
             "Susu mai le Tapa'au faasisina, o lau susuga Malietoa o le na faafofoga i ai Samoa",
@@ -354,7 +362,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 7;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Afega";
         $content['content'][] = ["Afega" => [
             "Afifio mai aiga Sa Gauifaleai",
@@ -374,7 +383,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->tuamasaga_matu_id + 8;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Tuana'i";
         $content['content'][] = ["Tuana'i" => [
             "Afio mai Saena ma le aiga Sa Saena",
@@ -390,7 +400,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $id = $this->tuamasaga_matu_id + 8;
-        $content['motu_id'] = $this->tuamasaga_matu_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->tuamasaga_matu_id;
         $content['name'] = "Saleimoa";
         $content['content'][] = ["Saleimoa (Faalupega aoao tetele)" => [
             "Afio mai aiga e tolu (Pulatele, Tilialo, Luatuanuu)",
@@ -477,7 +488,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 10;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Faleasi'u";
         $content['content'][] = ["Faleasi'u" => [
             "Afio mai le aiga o Mavaega (Maiava, Tamapaa, Matua o Talamatãvao)",
@@ -494,7 +506,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 9;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Fasito'o - uta";
         $content['content'][] = ["Fasito'o - uta" => ["Afio mai le aiga Satuala, o le aiga faalagilagi ia te oulua suafa (Aiono ma Leaupepe)",
             "Susu mai e na tautua i Suafa (Tuala, Fina'i, Suamatai'a, Tuisaninoga, Taimaaiono ma Talamatavao)",
@@ -514,7 +527,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 1;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Nofoali'i";
         $content['content'][] = ["Nofoali'i" => ["Afio mai Satuala, o le aiga fa'alagilagi na tausi e Leulumoega",
             "Susu mai Tanuvase, o le la'au na fausia na itulua a i A'ana",
@@ -531,7 +545,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 2;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Leulumoega";
         $content['content'][] = ["Leulumoega" => ["Afio mai lo outou Tapa'au, o lau Afioga a le Tuia'ana ma ou Tafa'i (Umaga ma Pasese)",
             "Afio mai Sooa'emalelagi",
@@ -552,7 +567,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 3;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Fasito'o - tai";
         $content['content'][] = ["Fasito'o - tai" => ["Afio mai le aiga Taulagi",
             "Afio mai Vaafusuaga ma Toleafoa",
@@ -571,7 +587,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 4;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Faleatiu";
         $content['content'][] = ["Faleatiu" => ["Afio mai lau Afioga Letelemaa'ana",
             "Afio mai le alo o Tamalelagi i lau Afioga Feiloivao",
@@ -587,7 +604,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 5;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Satapuala";
         $content['content'][] = ["Satapuala" => ["Afio mai To'alepaialii o le matua o tofiga o le aiga Satuala",
             "Maliu mai lau fetalaiga Vaili",
@@ -601,7 +619,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 6;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Satuimalufilufi";
         $content['content'][] = ["Satuimalufilufi" => ["Afio mai Saipaia o le Aloalii",
             "Afio mai Sauimalae",
@@ -626,7 +645,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 7;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Samatau";
         $content['content'][] = ["Samatau" => ["Afio mai le Falefa o Usoalii",
             "Afio mai le Gafa",
@@ -643,7 +663,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $this->aana_id + 8;
-        $content['motu_id'] = $this->aana_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Falelatai";
         $content['content'][] = ["Falelatai" => ["Afio mai Tuimalealiifano o le tama a aiga",
             "Afio mai le Falefitu, o le aiga Tauaana o le aiga o le Tuimalealiifano",
@@ -662,7 +683,8 @@ class Upolu
 
         $content = [];
         $content['id'] = $id = $this->atua_id + 1;
-        $content['motu_id'] = $this->atua_id;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->atua_id;
         $content['pitonuus'] = [];
         $content['name'] = "Falealili";
         $content['content'][] = ["Falealili" => [
