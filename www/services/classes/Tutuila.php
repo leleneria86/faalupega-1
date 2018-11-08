@@ -9,22 +9,23 @@ namespace classes;
 
 class Tutuila
 {
-    protected $parent_id = 1000;
+    protected $motu_id = 1000;
     protected $launiusaelua_id = 1100;
     protected $sua_id = 1200;
     protected $vaifanua_id = 1300;
     protected $ituau_id = 1400;
+    protected $pitonuus = [];
 
     function getItumalo()
     {
         $data = [
-            ["id"=>$this->launiusaelua_id, "name"=>"Launiusaelua","parent_id"=>$this->parent_id, "content"=>["Afio maia lau Afioga Mauga, o le tama fa'asausau a Sua ma le Vaifanua, Fofo ma Itulagi, Itu'au ma Alataua",
+            ["id"=>$this->launiusaelua_id, "name"=>"Launiusaelua","motu_id"=>$this->motu_id, "content"=>["Afio maia lau Afioga Mauga, o le tama fa'asausau a Sua ma le Vaifanua, Fofo ma Itulagi, Itu'au ma Alataua",
                 "Susu mai Sa'ousoali'i",
                 "Susu mai Ma'opu (Tei ma Anoalo)",
                 "Mamalu mai lau tofa Tua'olo na faleagaulu ai le motu, ma le Launiusaelua"]],
-            ["id"=>$this->sua_id, "name"=>"Sua","parent_id"=>$this->parent_id, "content"=>["Afio mai Sua"]],
-            ["id"=>$this->vaifanua_id, "name"=>"Vaifanua","parent_id"=>$this->parent_id, "content"=>["Afio mai Vaifanua"]],
-            ["id"=>$this->ituau_id, "name"=>"Itu'au","parent_id"=>$this->parent_id, "content"=>["Afio mai Itu'au"]]
+            ["id"=>$this->sua_id, "name"=>"Sua","motu_id"=>$this->motu_id, "content"=>["Afio mai Sua"]],
+            ["id"=>$this->vaifanua_id, "name"=>"Vaifanua","motu_id"=>$this->motu_id, "content"=>["Afio mai Vaifanua"]],
+            ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Afio mai Itu'au"]]
         ];
         return $data;
     }
@@ -34,6 +35,11 @@ class Tutuila
         $launiusaelua = $this->getLauniusaelua();
         $sua = $this->getSua();
         return array_merge($launiusaelua, $sua);
+    }
+
+    function getPitonuus() {
+
+        return $this->pitonuus;
     }
 
     function getSua() {
@@ -52,7 +58,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->sua_id + 1;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = "Faga'itua";
         $nuu['content'][] = ["Faga'itua" => [
             "Afio mai Laiato o le na autasi i ai Sua ma le Vaifanua",
@@ -70,7 +76,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->sua_id + 2;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = 'Amaua';
         $nuu['content'][] = ["Amaua" => [
             "Afio mai oulua Ma'opu (Tialavea ma Savea)",
@@ -83,7 +89,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->sua_id + 3;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = "Lauli'i";
         $nuu['content'][] = ["Lauli'i" => [
             "Afio mai Laalaisalanoa, o le tama a malili e fa",
@@ -99,7 +105,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->sua_id + 4;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = "Afono";
         $nuu['content'][] = ["Afono" => [
             "Afio mai lau Afioga Mata'utia o le na ulua'i sa'o i papa",
@@ -118,7 +124,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->sua_id + 5;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = "Masefau";
         $nuu['content'][] = ["Masefau" => [
             "Afio mai lau Afioga Sagapolutele",
@@ -134,7 +140,7 @@ class Tutuila
     {
         $nuu = [];
         $nuu['id'] = $this->sua_id + 6;
-        $nuu['parent_id'] = $this->sua_id;
+        $nuu['motu_id'] = $this->sua_id;
         $nuu['name'] = "Sailele ma Masausi";
         $nuu['content'][] = ["Sailele ma Masausi" => [
             "Susu mai le matua (Togiola)",
@@ -162,7 +168,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->launiusaelua_id + 1;
-        $nuu['parent_id'] = $this->launiusaelua_id;
+        $nuu['motu_id'] = $this->launiusaelua_id;
         $nuu['name'] = 'Aua';
         $nuu['content'][] = ["Aua" => ["Afio mai le Sa'ousoali'i (Unutoa)",
             "Afio mai le Matua o Lifau o le Tama a Aitu ma Tagata",
@@ -176,7 +182,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->launiusaelua_id + 2;
-        $nuu['parent_id'] = $this->launiusaelua_id;
+        $nuu['motu_id'] = $this->launiusaelua_id;
         $nuu['name'] = 'Leloaloa';
         $nuu['content'][] = ["Leloaloa" => ["Afio mai oulua Ma'opu (Faumuina ma Uti)",
             "susu mai le ali'i o le ao (Vaivao)",
@@ -190,7 +196,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->launiusaelua_id + 3;
-        $nuu['parent_id'] = $this->launiusaelua_id;
+        $nuu['motu_id'] = $this->launiusaelua_id;
         $nuu['name'] = 'Pago Pago';
         $nuu['content'][] = ["Pago Pago" => ["Afio mai Mauga o le Ma'oputasi,",
             "o le Tama fa'asausau o Sua ma le Vaifanua, Fofo ma Aitulagi, Itu'au ma Alataua",
@@ -210,7 +216,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->launiusaelua_id + 4;
-        $nuu['parent_id'] = $this->launiusaelua_id;
+        $nuu['motu_id'] = $this->launiusaelua_id;
         $nuu['name'] = 'Fagatogo';
         $nuu['content'][] = ["Fagatogo" => ["Afio mai le Sa'ousoalii (Lutu)",
             "Susu mai le Toealii (Ma'ilo)",
@@ -226,7 +232,7 @@ class Tutuila
 
         $nuu = [];
         $nuu['id'] = $this->launiusaelua_id + 5;
-        $nuu['parent_id'] = $this->launiusaelua_id;
+        $nuu['motu_id'] = $this->launiusaelua_id;
         $nuu['name'] = 'Fagaalu';
         $nuu['content'][] = ["Fagaalu" => ["Afio mai le Afioga i Ma'opu (Fano, Amituana'i)",
             "Susu mai le Nofo Fanau (Naisoa)",
