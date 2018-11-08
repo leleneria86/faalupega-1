@@ -8,7 +8,7 @@ var myApp = angular.module('MyApp');
         $scope.grandchildren_filtered;
         $scope.selected_grandchild;
         $scope.parents;
-        $scope.selected_parent;
+        $scope.selected_motu;
         $scope.search_text;
         $scope.show_child_content;
 
@@ -19,7 +19,7 @@ var myApp = angular.module('MyApp');
                     $scope.children = data.children;
                     $scope.parents = data.parents;
                     $scope.grandchildren_filtered = $scope.grandchildren = data.grandchildren;
-                    $scope.selected_parent = $scope.parents[0];
+                    $scope.selected_motu = $scope.parents[0];
                     $scope.safeApply();
                 },
                 function(result) {
@@ -30,9 +30,9 @@ var myApp = angular.module('MyApp');
 
         $scope.onChangeParent = function() {
 
-            if($scope.selected_parent) {
+            if($scope.selected_motu) {
 
-                $scope.setChildren($scope.selected_parent.id);
+                $scope.setChildren($scope.selected_motu.id);
                 $scope.selected_child = $scope.children_filtered[0];
                 $scope.onChangeEvent();
             }

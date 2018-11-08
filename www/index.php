@@ -27,10 +27,10 @@
         </div>
         <br/>
         <div>
-            <select id="parentSelect" name="parentSelect" class="form-control"
-                    ng-model="selected_parent"
+            <select id="motuSelect" name="motuSelect" class="form-control"
+                    ng-model="selected_motu"
                     ng-change="onChangeParent()"
-                    ng-options="parent.name for parent in parents" style="width:200px">
+                    ng-options="motu.name for motu in parents" style="width:200px">
             </select>
         </div>
 
