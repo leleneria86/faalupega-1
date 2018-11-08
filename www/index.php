@@ -22,7 +22,7 @@
     <div class="col-sm-2" ng-hide="selected_nuu">
         <div>
             <br/>
-            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
+            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeSearch()">
         </div>
         <br/>
         <div>
@@ -57,7 +57,7 @@
         </div>
 
         <br/>
-        <div ng-show="selected_itumalo || search_text" ng-repeat="nuu in nuus_filtered | filter:{motu_id:selected_itumalo.id,content:search_text}">
+        <div ng-show="search_text || (selected_motu.id && selected_itumalo.id)" ng-repeat="nuu in nuus_filtered">
             <span ng-click="onNuu(nuu);" style="color:blue;cursor:pointer;font-size: large">{{nuu.name}}</span>
         </div>
 
