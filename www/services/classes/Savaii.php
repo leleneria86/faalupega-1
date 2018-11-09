@@ -61,6 +61,8 @@ class Savaii
         $content['pitonuus'][] = $this->getFoailuga($id);
         $content['pitonuus'][] = $this->getSatuiatua($id);
         $content['pitonuus'][] = $this->getSalailua($id);
+        $content['pitonuus'][] = $this->getSiutu($id);
+        $content['pitonuus'][] = $this->getTaga($id);
         return $content;
     }
 
