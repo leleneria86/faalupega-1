@@ -185,6 +185,10 @@ class Savaii
         $content['id'] = $id + 7;
         $content['itumalo_id'] = $this->palauli_id;
         $content['name'] = "Gataivai";
+        $content['content'][] = ["Faapuupuuga o Gataivai" => ["Afio mai le aiga pa'ia o Salevalasi ma le Laulu",
+                                                     "Maliu mai le Ituala mavae i lau fetalaiga Tiatia",
+                                                     "Maliu mai le Togia'i ma le Fa'ala'a me le mamalu i le faleupolu o tofiga, o upu ia te oe Salemuliaga"]];
+
         $content['content'][] = ["Gataivai" => ["Afio mai le aiga pa'ia o Salevalasi",
             "Afio mai le pāpā i lau afioga le Laulu",
             "Afio mai Mapuilesua ma le ma'opu o Leulua'iali'i", 
@@ -199,10 +203,7 @@ class Savaii
             "Maliu mai le nofoaala ma le mamalu ia Salemuliaga, o le faleupolu o tofiga"]];
         $content['content'][] = ["Malaefono" => ["Nuuuli","Leatunonofo"]];
         
-        $content['content'][] = ["Faapuupuuga o Gataivai" => ["Afio mai le aiga pa'ia o Salevalasi ma le Laulu",
-                                                             "Maliu mai le Ituala mavae i lau fetalaiga Tiatia",
-                                                             "Maliu mai le Togia'i ma le Fa'ala'a me le mamalu i le faleupolu o tofiga, o upu ia te oe Salemuliaga"]];
-        return $content;
+         return $content;
     }
     
     function getGautavaiMaSili($id)
