@@ -12,10 +12,12 @@ var myApp = angular.module('MyApp');
         $scope.motus;
         $scope.selected_motu;
         $scope.search_text = null;
+        $scope.show_motu_content;
         $scope.show_itumalo_content;
         $scope.current_nuu;
         $scope.nuu_view = false;
         $scope.pitonuu_view = false;
+        $scope.exact_match = true;
 
         $scope.load = function() {
 
@@ -34,51 +36,53 @@ var myApp = angular.module('MyApp');
                 });
         };
 
-        $scope.onChangeSearch = function() {
+        $scope.isSearchable = function() {
+
+            return (($scope.search_text && $scope.search_text.length > 1));
+        };
+
+        $scope.onChangeEvent = function() {
 
             $scope.nuus_filtered = [];
-            if($scope.search_text && $scope.search_text.length > 2) {
 
-                $scope.nuus_filtered = $scope.filterArray($scope.nuus, $scope.search_text);
-
-                $scope.changeMotu();
-
-                if ($scope.selected_itumalo && $scope.selected_itumalo.id) {
-
-                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus_filtered);
-                }
-            }
+            $scope.filterNuus();
         };
 
         $scope.onChangeMotu = function() {
 
-            if($scope.selected_motu) {
+            $scope.setItumalos($scope.selected_motu.id);
+            $scope.selected_itumalo = $scope.itumalos_filtered[0];
 
-                if($scope.selected_motu.id) {
-
-                    $scope.nuus_filtered = $scope.nuus;
-
-                    $scope.setItumalos($scope.selected_motu.id);
-                    $scope.selected_itumalo = $scope.itumalos_filtered[0];
-                }
-
-                $scope.changeMotu();
-            }
+            $scope.filterNuus();
         };
 
-        $scope.changeMotu = function() {
+        $scope.filterNuus = function() {
+
+            if($scope.isSearchable()) {
+
+                $scope.nuus_filtered = $scope.filterArray($scope.nuus, $scope.search_text);
+            }
 
             if($scope.selected_motu.id) {
 
-                $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_motu.id, $scope.nuus_filtered);
+                if($scope.nuus_filtered.length == 0) {
+
+                    $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_itumalo.id, $scope.nuus);
+                } else {
+
+                    $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_motu.id, $scope.nuus_filtered);
+                }
             }
-        };
 
-        $scope.onChangeItumalo = function() {
+            if ($scope.selected_itumalo && $scope.selected_itumalo.id) {
 
-            if ($scope.selected_itumalo.id) {
+                if($scope.nuus_filtered.length == 0) {
 
-                $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus);
+                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus);
+                } else {
+
+                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus_filtered);
+                }
             }
         };
 
@@ -87,18 +91,19 @@ var myApp = angular.module('MyApp');
             $scope.show_itumalo_content = !$scope.show_itumalo_content;
         };
 
+        $scope.onClickMotuContents = function() {
+
+            $scope.show_motu_content = !$scope.show_motu_content;
+        };
+
         $scope.onNuu = function(nuu) {
 
-            //$scope.nuu_view = true;
             $scope.selected_nuu = nuu;
             $scope.pitonuus_filtered = $scope.selected_nuu.pitonuus;
-            //$scope.setPitonuus(nuu.motu_id);
         };
 
         $scope.onPitonuu = function(pitonuu) {
 
-            // $scope.nuu_view = false;
-            // $scope.pitonuu_view = true;
             $scope.current_nuu = $scope.selected_nuu;
             pitonuu.expanded = !pitonuu.expanded;
             $scope.selected_pitonuu = pitonuu;
@@ -106,16 +111,12 @@ var myApp = angular.module('MyApp');
 
         $scope.onBack = function() {
 
-            // $scope.nuu_view = false;
-            // $scope.pitonuu_view = false;
             $scope.selected_nuu = null;
             $scope.onChangeItumalo();
         };
 
         $scope.onBackToNuu = function() {
 
-            // $scope.nuu_view = true;
-            // $scope.pitonuu_view = false;
             $scope.selected_pitonuu = null;
             $scope.selected_nuu = $scope.current_nuu;
         };
@@ -128,6 +129,28 @@ var myApp = angular.module('MyApp');
                 if($scope.itumalos[i].motu_id == motu_id) {
 
                     $scope.itumalos_filtered.push($scope.itumalos[i]);
+                }
+            }
+        };
+
+        $scope.getMotuNameById = function(id) {
+
+            for(var i = 0; i < $scope.motus.length; i++) {
+
+                if(id == $scope.motus[i].id) {
+
+                    return $scope.motus[i].name;
+                }
+            }
+        };
+
+        $scope.getItumaloNameById = function(id) {
+
+            for(var i = 0; i < $scope.itumalos.length; i++) {
+
+                if(id == $scope.itumalos[i].id) {
+
+                    return $scope.itumalos[i].name;
                 }
             }
         };
@@ -216,39 +239,49 @@ var myApp = angular.module('MyApp');
                             for(var j = 0; j < lines.length; j++) {
 
                                 let str = lines[j].toLowerCase();
-                                let term1 = " " + term + " ";
-                                found = (str.indexOf(term1) > -1);
-                                if(found) {
+                                if($scope.exact_match) {
 
-                                    break;
-                                }
+                                    let term1 = " " + term + " ";
+                                    found = (str.indexOf(term1) > -1);
+                                    if (found) {
 
-                                term1 = "(" + term + ")";
-                                found = (str.indexOf(term1) > -1);
-                                if(found) {
+                                        break;
+                                    }
 
-                                    break;
-                                }
+                                    term1 = "(" + term + ")";
+                                    found = (str.indexOf(term1) > -1);
+                                    if (found) {
 
-                                term1 = "(" + term + ",";
-                                found = (str.indexOf(term1) > -1);
-                                if(found) {
+                                        break;
+                                    }
 
-                                    break;
-                                }
+                                    term1 = "(" + term + ",";
+                                    found = (str.indexOf(term1) > -1);
+                                    if (found) {
 
-                                term1 = " " + term + ")";
-                                found = (str.indexOf(term1) > -1);
-                                if(found) {
+                                        break;
+                                    }
 
-                                    break;
-                                }
+                                    term1 = " " + term + ")";
+                                    found = (str.indexOf(term1) > -1);
+                                    if (found) {
 
-                                erm1 = " " + term + ",";
-                                found = (str.indexOf(term1) > -1);
-                                if(found) {
+                                        break;
+                                    }
 
-                                    break;
+                                    erm1 = " " + term + ",";
+                                    found = (str.indexOf(term1) > -1);
+                                    if (found) {
+
+                                        break;
+                                    }
+                                } else {
+
+                                    found = (str.indexOf(term) > -1);
+                                    if (found) {
+
+                                        break;
+                                    }
                                 }
                             }
                         }
