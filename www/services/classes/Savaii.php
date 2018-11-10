@@ -197,6 +197,10 @@ class Savaii
             "Maliu mai le falevalu (Gapao, Lema, Soso, Letoi)",
             "Maliu mai le nofoaala ma le mamalu ia Salemuliaga, o le faleupolu o tofiga"]];
         $content['content'][] = ["Malaefono" => ["Nuuuli","Leatunonofo"]];
+        
+        $content['content'][] = ["Faapuupuuga o Gataivai" => ["Afio mai le aiga pa'ia o Salevalasi ma le Laulu",
+                                                             "Maliu mai le Ituala mavae i lau fetalaiga Tiatia",
+                                                             "Maliu mai le Togia'i ma le Fa'ala'a me le mamalu i le faleupolu o tofiga, o upu ia te oe Salemuliaga"]];
         return $content;
     }
     
