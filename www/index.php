@@ -19,34 +19,41 @@
 
 <div ng-app="MyApp" ng-controller="MyController" data-ng-init="load()">
 
-    <div class="col-sm-2" ng-hide="selected_nuu">
+    <div class="col-sm-12" ng-hide="selected_nuu">
         <div>
             <br/>
-            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeSearch()">
+            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
+            <input type="checkbox" ng-model="exact_match"/>&nbspExact Match
         </div>
         <br/>
-        <div>
+        <div class="input-group">
             <select id="motuSelect" name="motuSelect" class="form-control"
                     ng-model="selected_motu"
                     ng-change="onChangeMotu()"
-                    ng-options="motu.name for motu in motus" style="width:200px">
+                    ng-options="motu.name for motu in motus" style="width:160px">
             </select>
+            &nbsp;
+            <span ng-show="selected_motu.id != 0 && !show_motu_content" style="cursor:pointer" ng-click="onClickMotuContents()"><i class="fa fa-expand"></i></span>
+            <span ng-show="selected_motu.id != 0 && show_motu_content" style="cursor:pointer" ng-click="onClickMotuContents()"><i class="fa fa-compress"></i></span>
         </div>
 
-        <div ng-show="selected_motu.content.length > 0">
+        <div ng-show="show_motu_content && selected_motu.content.length > 0">
             <br/>
-            {{selected_motu.content}}
+            <div ng-repeat="line in selected_motu.content">
+                {{line}}
+            </div>
         </div>
 
-        <div ng-show="itumalos_filtered.length > 0">
+        <div ng-show="itumalos_filtered.length > 0" class="input-group">
             <br/>
-            <select id="itumaloSelect" name="itumaloSelect" class="form-control"
-                    ng-model="selected_itumalo"
-                    ng-change="onChangeItumalo()"
-                    ng-options="itumalo.name for itumalo in itumalos_filtered" style="width:200px">
-            </select>
-            <span ng-show="selected_itumalo.id != 0 && !show_itumalo_content" style="cursor:pointer" ng-click="onClickItumaloContents()"><i class="fa fa-expand"></i></span>
-            <span ng-show="selected_itumalo.id != 0 && show_itumalo_content" style="cursor:pointer" ng-click="onClickItumaloContents()"><i class="fa fa-compress"></i></span>
+                <select id="itumaloSelect" name="itumaloSelect" class="form-control"
+                        ng-model="selected_itumalo"
+                        ng-change="onChangeEvent()"
+                        ng-options="itumalo.name for itumalo in itumalos_filtered" style="width:160px">
+                </select>
+            &nbsp;
+                <span ng-show="selected_itumalo.id != 0 && !show_itumalo_content" style="cursor:pointer" ng-click="onClickItumaloContents()"><i class="fa fa-expand"></i></span>
+                <span ng-show="selected_itumalo.id != 0 && show_itumalo_content" style="cursor:pointer" ng-click="onClickItumaloContents()"><i class="fa fa-compress"></i></span>
         </div>
 
         <div ng-show="show_itumalo_content && selected_itumalo.content.length > 0">
@@ -58,7 +65,7 @@
 
         <br/>
         <div ng-show="search_text || (selected_motu.id && selected_itumalo.id)" ng-repeat="nuu in nuus_filtered">
-            <span ng-click="onNuu(nuu);" style="color:blue;cursor:pointer;font-size: large">{{nuu.name}}</span>
+            <span ng-click="onNuu(nuu);" style="color:blue;cursor:pointer;font-size: large">{{nuu.name}}</span> <span ng-show="!selected_itumalo.id"> - {{getItumaloNameById(nuu.itumalo_id)}}</span>
         </div>
 
         <!--div ng-show="selected_nuu || search_text" ng-repeat="greatgrandchild in greatgranditumalo_filtered | filter:{motu_id:selected_nuu.id,content:search_text}">
@@ -113,3 +120,4 @@
 
 </body>
 </html>
+
