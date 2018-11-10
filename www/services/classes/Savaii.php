@@ -161,7 +161,44 @@ class Savaii
         $content['content'][] = ["Malaefono" => ["Nuuuli"]];
         return $content;
     }
+    
+    function getPalauliLeFalefa() {
 
+        $content = [];
+        $content['id'] = $id = $this->palauli_id + 2;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->palauli_id;
+        $content['name'] = "Palauli Le Falefa";
+        $content['content'][] = ["Palauli Le Falefa" => ["Afifio mai Ao e fa",
+            "Maliu mai Felupolu e fa"]];
+
+        $content['pitonuus'][] = $this->getGataivai($id);
+        return $content;
+    }
+    
+    function getGataivai($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 7;
+        $content['itumalo_id'] = $this->palauli_id;
+        $content['name'] = "Gataivai";
+        $content['content'][] = ["Gataivai" => ["Afio mai le aiga pa'ia o Salevalasi",
+            "Afio mai le pāpā i lau afioga le Laulu",
+            "Afio mai Mapuilesua ma le ma'opu o Leulua'iali'i", 
+            "Afio mai le matua o Toilolo",
+            "Afio mai le fofoga o aiga (Tuimaseve, Amituanai)",  
+            "Afio mai Laulu Logomu",                                    
+            "Susu mai le matua o Umumanaia ma ou alo (Maiava ma Togailago)",
+            "Susu mai Fuiavailiili ma le matua o Tuilau",                                    
+            "Maliu mai le Ituala mavae i lau fetalaiga Tiatia, o oe o le vainalepa, o le pae ma le auli",
+            "Maliu mai le Togia'i ma le Fa'ala'a Togia'i (Tulia ma Fagamalo) Fa'ala'a (Leuila ma Laupua)",
+            "Maliu mai le falevalu (Gapao, Lema, Soso, Letoi)",
+            "Maliu mai le nofoaala ma le mamalu ia Salemuliaga, o le faleupolu o tofiga"]];
+        $content['content'][] = ["Malaefono" => ["Nuuuli","Leatunonofo"]];
+        return $content;
+    }
+    
     function getFaasaleleaga() {
 
         $ret = [];
