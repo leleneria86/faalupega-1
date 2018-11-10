@@ -176,6 +176,7 @@ class Savaii
         $content['pitonuus'][] = $this->getGataivai($id);
         $content['pitonuus'][] = $this->getGautavaiMaSili($id);
         $content['pitonuus'][] = $this->getPuleia($id);
+        $content['pitonuus'][] = $this->getPapaIPuleia($id);
         return $content;
     }
     
@@ -241,6 +242,22 @@ class Savaii
             "Afio mai Toleafoa",                                    
             "Maliu mai lau tofa Laumau ma upu ia te oe Satala"]];
         $content['content'][] = ["Malaefono" => ["Fitoitonu"]];
+        return $content;
+    }
+    
+    function getPapaIPuleia($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 10;
+        $content['itumalo_id'] = $this->palauli_id;
+        $content['name'] = "Papa I Puleia";
+        $content['content'][] = ["Papa I Puleia" => 
+            ["Afio mai le Ulupoao",
+            "Afio mai Silofau ma Faumuina", 
+            "Afio mai le tamaitai (Taematua)",
+            "Maliu mai lau fetalaiga Mauisi'i ma upu ia te oe sa Uluitoga"]];
+        $content['content'][] = ["Malaefono" => ["Faleulu"]];
         return $content;
     }
     
