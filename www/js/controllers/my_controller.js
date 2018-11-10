@@ -112,7 +112,7 @@ var myApp = angular.module('MyApp');
         $scope.onBack = function() {
 
             $scope.selected_nuu = null;
-            $scope.onChangeItumalo();
+            $scope.onChangeEvent();
         };
 
         $scope.onBackToNuu = function() {
