@@ -43,6 +43,7 @@ class Savaii
     {
         $ret = [];
         $ret[] = $this->getPalauliISisifo();
+        $ret[] = $this->getPalauliLeFalefa();
         return $ret;
     }
 
