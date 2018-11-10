@@ -209,10 +209,10 @@ class Savaii
     {
         $content = [];
         $content['motu_id'] = $id;
-        $content['id'] = $id + 7;
+        $content['id'] = $id + 8;
         $content['itumalo_id'] = $this->palauli_id;
-        $content['name'] = "Gataivai";
-        $content['content'][] = ["Gataivai" => 
+        $content['name'] = "Ga'utavai ma Sili";
+        $content['content'][] = ["Ga'utavai ma Sili" => 
             ["Susu mai le Tagaloa o le alii o le nu'u",
             "Afio mai le aiga sa Amituanai (Sa Leota)", 
             "Susu mai le gafa (Faaolatane, Faaofunuu, Matautia)",
