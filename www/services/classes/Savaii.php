@@ -22,7 +22,8 @@ class Savaii
             ["id"=>$this->faasaleleaga_id, "name"=>"Fa'asalele'aga","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Fa'asalele"]],
             ["id"=>$this->salega_id, "name"=>"Salega","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Salega"]],
             ["id"=>$this->asau_id, "name"=>"Asau","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Asau"]],
-            ["id"=>$this->palauli_id, "name"=>"Palauli","motu_id"=>$this->motu_id, "content"=>["Itumalo o Palauli ma lona Itu"]]
+            ["id"=>$this->palauli_id, "name"=>"Palauli","motu_id"=>$this->motu_id, "content"=>["Itumalo o Palauli ma lona Itu",
+                                                                                              "Afifio mai Faasisina ma Sa Lilomaiava"]]
         ];
         return $data;
     }
