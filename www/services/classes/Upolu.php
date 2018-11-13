@@ -693,11 +693,11 @@ class Upolu
             "Mamalu mai oe Leulumoega"]];
 
         $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
-        $content['pitonuus'][] = $this->getSafaatoa($id);
-        $content['pitonuus'][] = $this->getTafagamanu($id);
-        $content['pitonuus'][] = $this->getSavaia($id);
-        $content['pitonuus'][] = $this->getGagaifo($id);
-        $content['pitonuus'][] = $this->getMatautu($id);
+//         $content['pitonuus'][] = $this->getSafaatoa($id);
+//         $content['pitonuus'][] = $this->getTafagamanu($id);
+//         $content['pitonuus'][] = $this->getSavaia($id);
+//         $content['pitonuus'][] = $this->getGagaifo($id);
+//         $content['pitonuus'][] = $this->getMatautu($id);
         return $content;
     }
     
