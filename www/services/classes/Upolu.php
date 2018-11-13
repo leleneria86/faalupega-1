@@ -697,7 +697,7 @@ class Upolu
        $content['pitonuus'][] = $this->getTafagamanu($id);
         $content['pitonuus'][] = $this->getSavaia($id);
         $content['pitonuus'][] = $this->getGagaifo($id);
-        $content['pitonuus'][] = $this->getMatautu($id);
+        //$content['pitonuus'][] = $this->getMatautu($id);
         return $content;
     }
     
@@ -785,9 +785,9 @@ class Upolu
     function getMatautu($id)
     {
         $content = [];
-        $content['motu_id'] = $id;
-        $content['id'] = $id + 6;
-        $content['name'] = "Matautu";
+//         $content['motu_id'] = $id;
+//         $content['id'] = $id + 6;
+//         $content['name'] = "Matautu";
 //         $content['content'][] = ["Matautu" => [
 //             "Susu mai Lemalu ma Le Mamea, ma lo oulua Fale na Toese",
 //             "Susu mai lo oulua Usoalii (Taimalie, Togia)",
