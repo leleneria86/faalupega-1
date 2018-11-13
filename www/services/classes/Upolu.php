@@ -686,11 +686,11 @@ class Upolu
         $content['motu_id'] = $this->motu_id;
         $content['itumalo_id'] = $this->aana_id;
         $content['name'] = "Lefaga";
-//         $content['content'][] = ["Lefaga" => [
-//             "Afio mai le Aiga Satuala",
-//             "Afio mai le Aiga Taulagi",
-//             "Maliu mai oe Tuisavailu'u, ma le Gaga'eolo, faapea oe le Faleaana",
-//             "Mamalu mai oe Leulumoega"]];
+        $content['content'][] = ["Lefaga" => [
+            "Afio mai le Aiga Satuala",
+            "Afio mai le Aiga Taulagi",
+            "Maliu mai oe Tuisavailu'u, ma le Gaga'eolo, faapea oe le Faleaana",
+            "Mamalu mai oe Leulumoega"]];
 
   //      $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
 //         $content['pitonuus'][] = $this->getSafaatoa($id);
