@@ -695,7 +695,7 @@ class Upolu
        $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
        $content['pitonuus'][] = $this->getSafaatoa($id);
        $content['pitonuus'][] = $this->getTafagamanu($id);
-//         $content['pitonuus'][] = $this->getSavaia($id);
+        $content['pitonuus'][] = $this->getSavaia($id);
 //         $content['pitonuus'][] = $this->getGagaifo($id);
 //         $content['pitonuus'][] = $this->getMatautu($id);
         return $content;
@@ -754,18 +754,18 @@ class Upolu
         return $content;
     }
     
-//     function getSavaia($id)
-//     {
-//         $content = [];
-// //         $content['motu_id'] = $id;
-// //         $content['id'] = $id + 4;
-// //         $content['name'] = "Savaia";
-// //         $content['content'][] = ["Savaia" => [
-// //             "Afifio mai Fui ma Malama",
-// //             "Afio mai lau Afioga Tusani",
-// //             "Maliu mai oe Leatialii"]];
-//         return $content;
-//     }
+    function getSavaia($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 4;
+        $content['name'] = "Savaia";
+        $content['content'][] = ["Savaia" => [
+            "Afifio mai Fui ma Malama",
+            "Afio mai lau Afioga Tusani",
+            "Maliu mai oe Leatialii"]];
+        return $content;
+    }
     
 //     function getGagaifo($id)
 //     {
