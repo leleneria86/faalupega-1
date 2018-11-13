@@ -694,7 +694,7 @@ class Upolu
 
        $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
        $content['pitonuus'][] = $this->getSafaatoa($id);
-//         $content['pitonuus'][] = $this->getTafagamanu($id);
+       $content['pitonuus'][] = $this->getTafagamanu($id);
 //         $content['pitonuus'][] = $this->getSavaia($id);
 //         $content['pitonuus'][] = $this->getGagaifo($id);
 //         $content['pitonuus'][] = $this->getMatautu($id);
@@ -737,22 +737,22 @@ class Upolu
         return $content;
     }
     
-//     function getTafagamanu($id)
-//     {
-//         $content = [];
-// //         $content['motu_id'] = $id;
-// //         $content['id'] = $id + 3;
-// //         $content['name'] = "Tafagamanu";
-// //         $content['content'][] = ["Tafagamanu" => [
-// //             "Afio mai le Aiga Satuala",
-// //             "Afio mai Tuala Tamaalelagi o le pāpā tausi Tuisavailuu",
-// //             "Afio mai Tusani",
-// //             "Afio mai Leaupepe",
-// //             "Susu mai le Matua o Palealemafuta",
-// //             "Maliu ai Sa'iauta"]];
-// //         $content['content'][] = ["Malaefono" => ["Tafagamanu"]];
-//         return $content;
-//     }
+    function getTafagamanu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 3;
+        $content['name'] = "Tafagamanu";
+        $content['content'][] = ["Tafagamanu" => [
+            "Afio mai le Aiga Satuala",
+            "Afio mai Tuala Tamaalelagi o le pāpā tausi Tuisavailuu",
+            "Afio mai Tusani",
+            "Afio mai Leaupepe",
+            "Susu mai le Matua o Palealemafuta",
+            "Maliu ai Sa'iauta"]];
+        $content['content'][] = ["Malaefono" => ["Tafagamanu"]];
+        return $content;
+    }
     
 //     function getSavaia($id)
 //     {
