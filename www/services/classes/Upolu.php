@@ -696,7 +696,7 @@ class Upolu
        $content['pitonuus'][] = $this->getSafaatoa($id);
        $content['pitonuus'][] = $this->getTafagamanu($id);
         $content['pitonuus'][] = $this->getSavaia($id);
-//         $content['pitonuus'][] = $this->getGagaifo($id);
+        $content['pitonuus'][] = $this->getGagaifo($id);
 //         $content['pitonuus'][] = $this->getMatautu($id);
         return $content;
     }
@@ -767,20 +767,20 @@ class Upolu
         return $content;
     }
     
-//     function getGagaifo($id)
-//     {
-//         $content = [];
-// //         $content['motu_id'] = $id;
-// //         $content['id'] = $id + 5;
-// //         $content['name'] = "Gagaifo";
-// //         $content['content'][] = ["Gagaifo" => [
-// //             "Susu mai lau susuga Su'a",
-// //             "Afio mai Faumui",
-// //             "Afio mai le Ma'opu o lau afioga Tuaopepe",
-// //         "Susu mai Usoalii (Toluma'anave, La'ulu, Manu'a)",
-// //         "Maliu mai Gagaifo o le vao"]];
-//         return $content;
-//     }
+    function getGagaifo($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 5;
+        $content['name'] = "Gagaifo";
+        $content['content'][] = ["Gagaifo" => [
+            "Susu mai lau susuga Su'a",
+            "Afio mai Faumui",
+            "Afio mai le Ma'opu o lau afioga Tuaopepe",
+        "Susu mai Usoalii (Toluma'anave, La'ulu, Manu'a)",
+        "Maliu mai Gagaifo o le vao"]];
+        return $content;
+    }
     
 //     function getMatautu($id)
 //     {
