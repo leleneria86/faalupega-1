@@ -38,7 +38,7 @@ class Upolu
         $ret[] = $this->getSatuimalufilufi();
         $ret[] = $this->getSamatau();
         $ret[] = $this->getFalelatai();
-        //$ret[] = $this->getLefaga();
+        $ret[] = $this->getLefaga();
         return $ret;
     }
 
@@ -680,26 +680,26 @@ class Upolu
         return $content;
     }
     
-//     function getLefaga() {
-//         $content = [];
-//         $content['id'] = $id = $this->aana_id + 9;
-//         $content['motu_id'] = $this->motu_id;
-//         $content['itumalo_id'] = $this->aana_id;
-//         $content['name'] = "Lefaga";
-// //         $content['content'][] = ["Lefaga" => [
-// //             "Afio mai le Aiga Satuala",
-// //             "Afio mai le Aiga Taulagi",
-// //             "Maliu mai oe Tuisavailu'u, ma le Gaga'eolo, faapea oe le Faleaana",
-// //             "Mamalu mai oe Leulumoega"]];
+    function getLefaga() {
+        $content = [];
+        $content['id'] = $id = $this->aana_id + 9;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->aana_id;
+        $content['name'] = "Lefaga";
+//         $content['content'][] = ["Lefaga" => [
+//             "Afio mai le Aiga Satuala",
+//             "Afio mai le Aiga Taulagi",
+//             "Maliu mai oe Tuisavailu'u, ma le Gaga'eolo, faapea oe le Faleaana",
+//             "Mamalu mai oe Leulumoega"]];
 
-//   //      $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
-// //         $content['pitonuus'][] = $this->getSafaatoa($id);
-// //         $content['pitonuus'][] = $this->getTafagamanu($id);
-// //         $content['pitonuus'][] = $this->getSavaia($id);
-// //         $content['pitonuus'][] = $this->getGagaifo($id);
-// //         $content['pitonuus'][] = $this->getMatautu($id);
-//         return $content;
-//     }
+  //      $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
+//         $content['pitonuus'][] = $this->getSafaatoa($id);
+//         $content['pitonuus'][] = $this->getTafagamanu($id);
+//         $content['pitonuus'][] = $this->getSavaia($id);
+//         $content['pitonuus'][] = $this->getGagaifo($id);
+//         $content['pitonuus'][] = $this->getMatautu($id);
+        return $content;
+    }
     
 //     function getFaleseelaMaMatafaa($id)
 //     {
