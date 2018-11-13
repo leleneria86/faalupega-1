@@ -788,11 +788,11 @@ class Upolu
         $content['motu_id'] = $id;
         $content['id'] = $id + 6;
         $content['name'] = "Matautu";
-        $content['content'][] = ["Matautu" => [
-            "Susu mai Lemalu ma Le Mamea, ma lo oulua Fale na Toese",
-            "Susu mai lo oulua Usoalii (Taimalie, Togia)",
-        "Maliu mai Salele'aalii"]];
-        $content['content'][] = ["Malaefono" => ["Malae o le toto"]];
+//         $content['content'][] = ["Matautu" => [
+//             "Susu mai Lemalu ma Le Mamea, ma lo oulua Fale na Toese",
+//             "Susu mai lo oulua Usoalii (Taimalie, Togia)",
+//         "Maliu mai Salele'aalii"]];
+        //$content['content'][] = ["Malaefono" => ["Malae o le toto"]];
         return $content;
     }
 
