@@ -692,7 +692,7 @@ class Upolu
             "Maliu mai oe Tuisavailu'u, ma le Gaga'eolo, faapea oe le Faleaana",
             "Mamalu mai oe Leulumoega"]];
 
-  //      $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
+       $content['pitonuus'][] = $this->getFaleseelaMaMatafaa($id);
 //         $content['pitonuus'][] = $this->getSafaatoa($id);
 //         $content['pitonuus'][] = $this->getTafagamanu($id);
 //         $content['pitonuus'][] = $this->getSavaia($id);
