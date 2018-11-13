@@ -38,6 +38,7 @@ class Upolu
         $ret[] = $this->getSatuimalufilufi();
         $ret[] = $this->getSamatau();
         $ret[] = $this->getFalelatai();
+        $ret[] = $this->getLefaga();
         return $ret;
     }
 
