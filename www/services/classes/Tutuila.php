@@ -13,7 +13,8 @@ class Tutuila
     protected $launiusaelua_id = 1100;
     protected $sua_id = 1200;
     protected $vaifanua_id = 1300;
-    protected $ituau_id = 1400;
+    protected $saole_id = 1400;
+    protected $ituau_id = 1500;
     protected $pitonuus = [];
 
     function getItumalo()
@@ -25,6 +26,7 @@ class Tutuila
                 "Mamalu mai lau tofa Tua'olo na faleagaulu ai le motu, ma le Launiusaelua"]],
             ["id"=>$this->sua_id, "name"=>"Sua","motu_id"=>$this->motu_id, "content"=>["Afio mai Sua"]],
             ["id"=>$this->vaifanua_id, "name"=>"Vaifanua","motu_id"=>$this->motu_id, "content"=>["Afio mai Vaifanua"]],
+            ["id"=>$this->saole_id, "name"=>"Sa'ole","motu_id"=>$this->motu_id, "content"=>["Afio maia lau afioga Faumuina, ma aiga","Susu mai Lupega","Susu mai le matua (Utu) ma le suafa o Gogo","Mamalu mai oulua le Sa'ole"]],
             ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Afio mai Itu'au"]]
         ];
         return $data;
@@ -34,12 +36,88 @@ class Tutuila
 
         $launiusaelua = $this->getLauniusaelua();
         $sua = $this->getSua();
-        return array_merge($launiusaelua, $sua);
+        $saole = $this->getSaole();
+        return array_merge($launiusaelua, $sua, $saole);
     }
 
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getSaole() {
+        $ret = [];
+        $ret[] = $this->getAunuu();
+        $ret[] = $this->getUtumea();
+        $ret[] = $this->getAmouli();
+        $ret[] = $this->getAlofau();
+        return $ret;
+    }
+    
+    function getAunuu() {
+        $nuu = [];
+        $nuu['id'] = $this->saole_id + 1;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->saole_id;
+        $nuu['name'] = "Aunu'u";
+        $nuu['content'][] = ["Aunu'u" => [
+            "Afio mai Lupega o Lutali ma Lemafa",
+            "Susu mai le Sa'o o Sagele",
+            "Susu mai le tama a aiga (Fonoti)",
+            "Susu mai Sa'ole, o le Ma'opu",
+            "Mamalu mai oulua fofoga o le Sa'ole o Taufi ma Fuiava",
+            "Faapea foi Saleaaumua (Tautolo, Lauvao, Matila)",
+            "Mamalu mai lau tofa Sagato, o le launatausala ia Sa'ole ma Saleaaumua"]];
+        $nuu['content'][] = ["Malaefono" => ["Malaefono"]];
+        return $nuu;
+    }
+    
+    function getUtumea() {
+        $nuu = [];
+        $nuu['id'] = $this->saole_id + 2;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->saole_id;
+        $nuu['name'] = "Utumea";
+        $nuu['content'][] = ["Utumea" => [
+            "Afio mai le sa'o (Fepuleai)",
+            "Susu mai le Seetalaluma (Tauaa)",
+            "Mamalu mai oulua fofoga, o Togia ma Sinanene"]];
+        $nuu['content'][] = ["Malaefono" => ["Malaefono"]];
+        return $nuu;
+    }
+    
+    function getAmouli() {
+        $nuu = [];
+        $nuu['id'] = $this->saole_id + 3;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->saole_id;
+        $nuu['name'] = "Amouli";
+        $nuu['content'][] = ["Amouli" => [
+            "Afio mai Utu, o le matua o Faumuina",
+            "Afio mai le suafa o Gogo",
+            "Susu mai Alii o le Faloeono (Anae, Savea, Paolo, Moenoa, Leulua'i, Aofaga)",
+            "Mamalu mai lau tofa Fuata ma le fofoga o Mamea",
+            "Maliu mai oe le Sa'oloe"]];
+        $nuu['content'][] = ["Malaefono" => ["Matāāva"]];
+        return $nuu;
+    }
+    
+    function getAlofau() {
+        $nuu = [];
+        $nuu['id'] = $this->saole_id + 4;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->saole_id;
+        $nuu['name'] = "Alofau";
+        $nuu['content'][] = ["Alofau" => [
+            "Afio mai lau Afioga a le Tupufia (Faumuina)",
+            "Susu mai Anoalo (Titoiaivao, Ufagafa)",
+            "Susu mai Uso Alii (Muagututia, Lealaitafea)",
+            "Susu mai le aiga sa Alaivanu (Tago, Alaivanu, Toomata, Titialii)",
+            "Susu mai le Tamaitai (Tauaa)",
+            "Mamalu mai le oulua Fetalaiga, Tuatoo ma Muafono",
+            "Ma upu ia te oe le Sa'ole"]];
+        $nuu['content'][] = ["Malaefono" => ["Alo i Tafuna"]];
+        return $nuu;
     }
 
     function getSua() {
