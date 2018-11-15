@@ -14,6 +14,7 @@ class Savaii
     protected $salega_id = 3200;
     protected $asau_id = 3300;
     protected $palauli_id = 3400;
+    protected $vaisigano_id = 3500;
     protected $pitonuus = [];
 
     function getItumalo()
@@ -26,7 +27,13 @@ class Savaii
                                                                                               "Afifio mai Faasisina ma Sa Lilomaiava",
                                                                                               "Afifio mai Tapa'au o le Itu",
                                                                                               "Mamalu mai To'oto'o o Vailoa, ma le faleupolu o tofiga",
-                                                                                              "Alalata'i le pule ia te oe Palauli"]]
+                                                                                              "Alalata'i le pule ia te oe Palauli"]],
+            ["id"=>$this->vaisigano_id, "name"=>"Vaisigano","motu_id"=>$this->motu_id, "content"=>[
+                                                                                              "Afifio mai le paia o Aiga ma Tapa'au o le Itu",
+                                                                                              "Alala mai To'oto'o o Mati'a ma Ti'atu'au",
+                                                                                              "Mamalu mai oe Salafai ma Faleupolu o tofiga",
+                                                                                              "Maliu mai oe le Tapuaiga"]]
+
         ];
         return $data;
     }
@@ -35,12 +42,21 @@ class Savaii
 
         $faasaleleaga = $this->getFaasaleleaga();
         $palauli = $this->getPalauli();
-        return array_merge($faasaleleaga, $palauli);
+        $vaisigano = $this->getVaisigano();
+        return array_merge($faasaleleaga, $palauli, $vaisigano);
     }
 
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getVaisigano()
+    {
+        $ret = [];
+        $ret[] = $this->getAsau();
+        $ret[] = $this->getVaisalaMaAuala();
+        return $ret;
     }
 
     function getPalauli()
