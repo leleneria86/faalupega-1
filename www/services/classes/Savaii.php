@@ -28,7 +28,7 @@ class Savaii
                                                                                               "Afifio mai Tapa'au o le Itu",
                                                                                               "Mamalu mai To'oto'o o Vailoa, ma le faleupolu o tofiga",
                                                                                               "Alalata'i le pule ia te oe Palauli"]],
-            ["id"=>$this->vaisigano_id, "name"=>"Vaisigano","motu_id"=>$this->motu_id, "content"=>[
+            ["id"=>$this->vaisigano_id, "name"=>"Vaisigano (Asau)","motu_id"=>$this->motu_id, "content"=>[
                                                                                               "Afifio mai le paia o Aiga ma Tapa'au o le Itu",
                                                                                               "Alala mai To'oto'o o Mati'a ma Ti'atu'au",
                                                                                               "Mamalu mai oe Salafai ma Faleupolu o tofiga",
@@ -57,6 +57,25 @@ class Savaii
         $ret[] = $this->getAsau();
         $ret[] = $this->getVaisalaMaAuala();
         return $ret;
+    }
+    
+    function getAsau() {
+
+        $content = [];
+        $content['id'] = $id = $this->vaisigano_id + 1;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->vaisigano_id;
+        $content['name'] = "Asau";
+        $content['content'][] = ["Faapuupuuga o Asau" => ["Afio mai Aiga", "Maliu mai Salafai ma oe le Pule"]];
+        $content['content'][] = ["Asau" => ["Afio Faasisina ma sa Lilomaiava",
+            "Alalata'i sa faleletaua na potopoto",
+            "Palauli ma lou itu, ma oe le pule"]];
+        $content['content'][] = ["Malaefono" => ["Vailoa"]];
+
+        $content['pitonuus'][] = $this->getVailoa($id);
+        $content['pitonuus'][] = $this->getVaitoomuli($id);
+        $content['pitonuus'][] = $this->getFaala($id);
+        return $content;
     }
 
     function getPalauli()
