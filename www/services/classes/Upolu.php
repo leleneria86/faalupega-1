@@ -812,6 +812,8 @@ class Upolu
         $content['pitonuus'][] = $this->getMatavai($id);
         $content['pitonuus'][] = $this->getMalaemalu($id);
         $content['pitonuus'][] = $this->getSatalo($id);
+        $content['pitonuus'][] = $this->getSapunaoaMaFaleulu($id);
+        $content['pitonuus'][] = $this->getPiu($id);
         return $content;
     }
 
@@ -905,6 +907,36 @@ class Upolu
             "Fanuatanu",
             "Papa",
             "Fa'atiuga"]];
+        return $content;
+    }
+    
+    function getSapunaoaMaFaleulu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 6;
+        $content['name'] = "Sapunaoa ma Faleulu";
+        $content['content'][] = ["Sapunaoa ma Faleulu" => [
+            "Susu mai Patea o le Alalatama, ma le alo o Malietoa o Ta'a",
+            "Susu mai Muliava o le fofoga o le vai",
+            "Maliu mai Maaelopa ma Leavasa o e na leoleo i le fale o Ituau ma Alataua",
+            "Maliu mai Tuiloma ma Taituuga o manu o le Tuasivi e fagogota i tai e lua, faapea upu ia Sapunaoa ma Sasala o le lotoifale o le Manusamoa"]];
+        $content['content'][] = ["Malaefono" => ["Falepunaoa"]];
+        return $content;
+    }
+    
+    function getPiu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 7;
+        $content['name'] = "Piu";
+        $content['content'][] = ["Piu" => [
+            "Susu mai lau Susuga Fuataufao",
+            "O oe o le suafa Faalupea",
+            "Alalatai mai e e matutua i le nuu",
+            "O lau tofa Maseafa ma Muliaga ma le Lautinalaulelei"]];
+        $content['content'][] = ["Malaefono" => ["Falepunaoa"]];
         return $content;
     }
 }
