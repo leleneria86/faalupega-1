@@ -168,7 +168,7 @@ class Savaii
         
         $content['content'][] = ["Faapuupuuga o Falealupo" => ["Afio mai Auvaa ma Usoalii",
             "Afio mai le Ma'opu ma le matua",
-            "Maliu mai le falefa o le Tapuaiga ma lau fetalaiga Silioulaei ma le lauti na laulelei"];
+            "Maliu mai le falefa o le Tapuaiga ma lau fetalaiga Silioulaei ma le lauti na laulelei"]];
         
         $content['content'][] = ["Falealupo" => ["Afio mai Auvaa o oe o le tupu faanofonofo",
             "Afio mai alo o Sina i lo outou aiga o sa Seumanutafa",
