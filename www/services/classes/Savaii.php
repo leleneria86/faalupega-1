@@ -58,6 +58,10 @@ class Savaii
         $ret[] = $this->getVaisalaMaAuala();
         $ret[] = $this->getFagasa();
         $ret[] = $this->getSataua();
+        $ret[] = $this->getPapa();
+        $ret[] = $this->getFalealupo();
+        $ret[] = $this->getNeiafu();
+        $ret[] = $this->getFalelima();
         return $ret;
     }
     
@@ -136,6 +140,82 @@ class Savaii
         $content['content'][] = ["Aotelega o Sataua" => ["Afio maia aiga",
             "Maliu mai le falefa o Taua",
             "Maliu mai lau fetalaiga Lealuga"]];
+        return $content;
+    }
+    
+    function getPapa() {
+
+        $content = [];
+        $content['id'] = $id = $this->vaisigano_id + 5;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->vaisigano_id;
+        $content['name'] = "Papa";
+        $content['content'][] = ["Papa" => ["Susu mai Su'a ma le Faavaoga",
+            "Afio mai Ili ma Vaitoe",
+            "Afio mai oe le matua (Tapusoa)",
+            "Maliu mai Sataua ma lau fetalaiga Lealuga"]];
+        $content['content'][] = ["Malaefono" => ["Faupapa (Faupāpā)"]];
+        return $content;
+    }
+    
+    function getFalealupo() {
+
+        $content = [];
+        $content['id'] = $id = $this->vaisigano_id + 6;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->vaisigano_id;
+        $content['name'] = "Falealupo";
+        
+        $content['content'][] = ["Faapuupuuga o Falealupo" => ["Afio mai Auvaa ma Usoalii",
+            "Afio mai le Ma'opu ma le matua",
+            "Maliu mai le falefa o le Tapuaiga ma lau fetalaiga Silioulaei ma le lauti na laulelei"];
+        
+        $content['content'][] = ["Falealupo" => ["Afio mai Auvaa o oe o le tupu faanofonofo",
+            "Afio mai alo o Sina i lo outou aiga o sa Seumanutafa",
+            "Susu mai le Gafa (Aeau, Ugapo, Faletagoai (O sa Amituanai lava lea))",
+            "Afio mai Ma'opu o Nafanua (Solia, Foaimea",
+            "Afio mai lau afioga a le matua (Lamositele)",
+            "Maliu mai le falefa o le Tapuaiga (Fuiono, Taofinuu, Soifua ma lau fetalaiga Silioulaei",
+            "Maliu mai le lauti na laulelei"]];
+        $content['content'][] = ["Malaefono" => ["Fili ma Puletuu na to ai manū", "Titiuatoa", "Tapusita"]];
+        return $content;
+    }
+                                 
+    function getNeiafu() {
+
+        $content = [];
+        $content['id'] = $id = $this->vaisigano_id + 7;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->vaisigano_id;
+        $content['name'] = "Neiafu";
+        $content['content'][] = ["Neiafu" => ["Afio mai le Tapaau o le Alataua i lau afioga a le Tonumaipea",
+            "Afio mai le Taauso ma lo outou matua o Nonumalo (Peseta, Aiolupotea)",
+            "Susu mai le matua o Tauiliili ma le na Aifaaoga (Aliimalemanu)",
+            "Susu mai le toafa o suafa (Pei, Safiu, Aunei, Lafaitele)",
+            "Maliu mai Tapaaulefano (Taatiti, Tuaiaufai)",
+            "Maliu mai le Fale'auga ma Nofoapule faapea oe le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Lepua ma Aliipoutasi (Neiafu)", "Falemoa (Alataua atoa)"]];
+        return $content;
+    }
+                                 
+    function getFalelima() {
+
+        $content = [];
+        $content['id'] = $id = $this->vaisigano_id + 8;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->vaisigano_id;
+        $content['name'] = "Falelima";
+        $content['content'][] = ["Falelima" => ["Afio mai le Taauso (Gisa, Tuifaiga, Nonumalo, Aiolupotea, Lolomatauama, Aloivaopili, Toleafoa",
+            "Afio mai le Tonumaipea ma le Tafa'i (Folasa)",
+            "Afio mai alo o Tamalelagi (Tuioti)",
+            "Afio mai le maopu o Tuiaana (Fuiavailiili)",
+            "Susu mai le gafa (Seiuli)",
+            "Afio mai Tanuvasamanaia ma lou falefia",
+            "Susu mai Alalamatuatala (Taituave, Tanuvasa) ma le maopu (Aiono)",
+            "Afio mai le Toalepaialii",
+            "Maliu mai le fofoga o pāpā i lau fetalaiga Folasa",
+            "Alala maia Tamafaiga ma upu ia te oe le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Si'uasave"]];
         return $content;
     }
 
