@@ -814,8 +814,8 @@ class Upolu
         $content['pitonuus'][] = $this->getSatalo($id);
         $content['pitonuus'][] = $this->getSapunaoaMaFaleulu($id);
         $content['pitonuus'][] = $this->getPiu($id);
-        $content['pitonuus'][] = $this-getSalesatele($id);
-        $content['pitonuus'][] = $this-getSiuniu($id);
+        $content['pitonuus'][] = $this->getSalesatele($id);
+        $content['pitonuus'][] = $this->getSiuniu($id);
         return $content;
     }
 
