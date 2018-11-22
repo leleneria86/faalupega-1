@@ -939,4 +939,34 @@ class Upolu
         $content['content'][] = ["Malaefono" => ["Falepunaoa"]];
         return $content;
     }
+    
+    function getSalesatele($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 8;
+        $content['name'] = "Salesatele";
+        $content['content'][] = ["Salesatele" => [
+            "Susu mai lau Susuga Satele ma ou Alo (Alaifea, Faleafaga)",
+            "Afio mai Alo o Leilua (Fonoti, Sialega)",
+            "Afio mai lau Afioga a le Aloalii (Paitomaleifi)",
+            "Susu mai le Alo o Taulapapa, o lau susuga Leota",
+        "Maliu mai le mamalu o lo outou Toafa o le Aiga Talimalama (Leleimalefaga, Lalau, Tauaefā, Tagitagiāpua)",
+        "Maliu mai upu i le Ala o Usoalii (Mali'o) ma le Tama a Malae e lua (Faleafaga)",
+        "Maliu mai upu i le Tuānuu ma le Nofoala"]];
+        $content['content'][] = ["Malaefono" => ["Malaealetalu"]];
+        return $content;
+    }
+    
+    function getSiuniu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 9;
+        $content['name'] = "Siuniu";
+        $content['content'][] = ["Siuniu" => [
+            "Afio mai le Taufia a Moeitalalelei (Togiailupe, Meleisea, Teo)",
+            "Maliu mai oe le Taufā (Sasala, Taelega, Tali, Lauvao)"]];
+        return $content;
+    }
 }
