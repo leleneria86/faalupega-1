@@ -17,7 +17,8 @@ var myApp = angular.module('MyApp');
         $scope.current_nuu;
         $scope.nuu_view = false;
         $scope.pitonuu_view = false;
-        $scope.exact_match = true;
+        $scope.exact_match = false;
+        $scope.name_only = false;
 
         $scope.load = function() {
 
@@ -225,69 +226,35 @@ var myApp = angular.module('MyApp');
 
             let found = false;
 
-            if(search_term && search_term.length > 2 && nuu.content) {
+            if($scope.name_only) {
 
-                let term = search_term.toLowerCase();
-                for(var i = 0; i < nuu.content.length; i++) {
+                found = $scope.filterString(nuu.name, search_term);
+            } else {
 
-                    let content = nuu.content[i];
-                    for (var k in content) {
+                found = $scope.filterContent(nuu.content, search_term);
+            }
 
-                        if (content.hasOwnProperty(k)) {
+            return found;
+        };
 
-                            let lines = content[k];
-                            for(var j = 0; j < lines.length; j++) {
+        $scope.filterContent = function(contents, term) {
 
-                                let str = lines[j].toLowerCase();
-                                if($scope.exact_match) {
+            let found = false;
+            for(var i = 0; i < contents.length; i++) {
 
-                                    let term1 = " " + term + " ";
-                                    found = (str.indexOf(term1) > -1);
-                                    if (found) {
+                let content = contents[i];
+                for (var k in content) {
 
-                                        break;
-                                    }
+                    if (content.hasOwnProperty(k)) {
 
-                                    term1 = "(" + term + ")";
-                                    found = (str.indexOf(term1) > -1);
-                                    if (found) {
+                        let lines = content[k];
+                        for(var j = 0; j < lines.length; j++) {
 
-                                        break;
-                                    }
+                            found = $scope.filterString(lines[j].toLowerCase(), term);
+                            if(found) {
 
-                                    term1 = "(" + term + ",";
-                                    found = (str.indexOf(term1) > -1);
-                                    if (found) {
-
-                                        break;
-                                    }
-
-                                    term1 = " " + term + ")";
-                                    found = (str.indexOf(term1) > -1);
-                                    if (found) {
-
-                                        break;
-                                    }
-
-                                    erm1 = " " + term + ",";
-                                    found = (str.indexOf(term1) > -1);
-                                    if (found) {
-
-                                        break;
-                                    }
-                                } else {
-
-                                    found = (str.indexOf(term) > -1);
-                                    if (found) {
-
-                                        break;
-                                    }
-                                }
+                                break;
                             }
-                        }
-                        if(found) {
-
-                            break;
                         }
                     }
                     if(found) {
@@ -295,9 +262,60 @@ var myApp = angular.module('MyApp');
                         break;
                     }
                 }
-            }
+                if(found) {
 
+                    break;
+                }
+            }
             return found;
+        };
+
+        $scope.filterString = function(str, term) {
+
+            if($scope.exact_match) {
+
+                if (str.indexOf(term) > -1) {
+
+                    return true;
+                }
+                
+                let term1 = " " + term + " ";
+                if (str.indexOf(term1) > -1) {
+
+                    return true;
+                }
+
+                term1 = "(" + term + ")";
+                if (str.indexOf(term1) > -1) {
+
+                    return true;
+                }
+
+                term1 = "(" + term + ",";
+                if (str.indexOf(term1) > -1) {
+
+                    return true;
+                }
+
+                term1 = " " + term + ")";
+                if (str.indexOf(term1) > -1) {
+
+                    return true;
+                }
+
+                term1 = " " + term + ",";
+                if (str.indexOf(term1) > -1) {
+
+                    return true;
+                }
+            } else {
+
+                if (str.indexOf(term) > -1) {
+
+                    return true;
+                }
+            }
+            return false;
         };
 
         $scope.safeApply = function(fn) {
