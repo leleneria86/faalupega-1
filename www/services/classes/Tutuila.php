@@ -27,7 +27,9 @@ class Tutuila
             ["id"=>$this->sua_id, "name"=>"Sua","motu_id"=>$this->motu_id, "content"=>["Afio mai Sua"]],
             ["id"=>$this->vaifanua_id, "name"=>"Vaifanua","motu_id"=>$this->motu_id, "content"=>[""]],
             ["id"=>$this->saole_id, "name"=>"Sa'ole","motu_id"=>$this->motu_id, "content"=>["Afio maia lau afioga Faumuina, ma aiga","Susu mai Lupega","Susu mai le matua (Utu) ma le suafa o Gogo","Mamalu mai oulua le Sa'ole"]],
-            ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Afio mai Itu'au"]]
+            ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Susu mai Mo'opu, ma le to'afia o alii",
+                                                                                           "Susu mai oulua matua (Savea, Leaeno)",
+                                                                                           "mamalu mai le fetalaiga i le falevalu (Lagafuaina, Maluia, Taufetee, Seui, Sili, Atuatasi, Tua, Vaitausala)"]]
         ];
         return $data;
     }
@@ -38,12 +40,47 @@ class Tutuila
         $sua = $this->getSua();
         $saole = $this->getSaole();
         $vaifanua = $this->getVaifanua();
-        return array_merge($launiusaelua, $sua, $saole, $vaifanua);
+        $ituau = $this->getItuau();
+        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau);
     }
 
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getItuau() {
+        $ret = [];
+        $ret[] = $this->getFagasa();
+        
+        return $ret;
+    }
+        
+    function getFagasa() {
+        $nuu = [];
+        $nuu['id'] = $this->ituau_id + 1;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->ituau_id;
+        $nuu['name'] = "Fagasa";
+        $nuu['content'][] = ["Aoao tetele o Fagasa" => [
+            "Afio mai le toafia o alii",
+            "Susu mai le Matua ma usaoalii",
+            "Mamalu mai lo outou to'afa ma le Lauti na laulelei",
+            "Ma upu ia te oe Itu'au"]];
+        $nuu['content'][] = ["Faga Tele" => [
+            "Afio mai Tupuola",
+            "Susu mai le alii o aiga (Tuinei)",
+            "Susu mai Tauatama ma Tupua",
+            "Mamalu mai lo oulua to'alua (Sili, Tua)"]];
+        nuu['content'][] = ["Faga Le'a" => [
+            "Afio mai le afioga ia Alo, o oe o le Sa'o, ma lou nofoa vaevae loloa",
+            "Afio mai le matua o Mamea",
+            "Susu mai Tago ma Lealaisalanoa ma le Fuimaono",
+            "Susu mai Faiumu ma Suesueamanogi ma Tua i Vaotu",
+            "Maliu mai lau tofa le Vaitausala",
+            "Faapea le lauti na laulelei"]];
+        $nuu['content'][] = ["Malaefono" => ["Malaepule","Malaeti'a"]];
+        return $nuu;
     }
     
     function getVaifanua() {
