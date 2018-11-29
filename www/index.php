@@ -23,7 +23,8 @@
         <div>
             <br/>
             <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
-            <input type="checkbox" ng-model="exact_match"/>&nbspExact Match
+            <input type="checkbox" ng-model="exact_match"/>&nbspExact
+            <input type="checkbox" ng-model="name_only"/>&nbspName
         </div>
         <br/>
         <div class="input-group">
