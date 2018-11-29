@@ -72,7 +72,7 @@ class Tutuila
             "Susu mai le alii o aiga (Tuinei)",
             "Susu mai Tauatama ma Tupua",
             "Mamalu mai lo oulua to'alua (Sili, Tua)"]];
-        nuu['content'][] = ["Faga Le'a" => [
+        $nuu['content'][] = ["Faga Le'a" => [
             "Afio mai le afioga ia Alo, o oe o le Sa'o, ma lou nofoa vaevae loloa",
             "Afio mai le matua o Mamea",
             "Susu mai Tago ma Lealaisalanoa ma le Fuimaono",
