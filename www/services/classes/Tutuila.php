@@ -47,8 +47,8 @@ class Tutuila
         $saole = $this->getSaole();
         $vaifanua = $this->getVaifanua();
         $ituau = $this->getItuau();
-        $tualauta = $this->Tualauta();
-        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau, $tualauta);
+        //$tualauta = $this->Tualauta();
+        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau);//, $tualauta);
     }
 
     function getPitonuus() {
@@ -56,12 +56,12 @@ class Tutuila
         return $this->pitonuus;
     }
     
-    function getTualauta() {
-        $ret = [];
-        $ret[] = $this->getTafuna();
-        $ret[] = $this->getFaleniu();
-        return $ret;
-    }
+//     function getTualauta() {
+//         $ret = [];
+//         $ret[] = $this->getTafuna();
+//         $ret[] = $this->getFaleniu();
+//         return $ret;
+//     }
     
     function getTafuna() {
         $nuu = [];
