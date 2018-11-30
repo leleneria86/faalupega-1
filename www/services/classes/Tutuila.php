@@ -61,6 +61,8 @@ class Tutuila
         $ret[] = $this->getTafuna();
         $ret[] = $this->getFaleniu();
         $ret[] = $this->getPavaiai();
+        $ret[] = $this->getIliili();
+        $ret[] = $this->getVaitogi();
         return $ret;
     }
     
@@ -114,6 +116,40 @@ class Tutuila
             "Faapea foi oe le fofoga o Lufilufi (Fuapapa)",
             "Ma le fetalaiga ia te oulua Salemeana'i"]];
         $nuu['content'][] = ["Malaefono" => ["Fale o Alatea"]];
+        return $nuu;
+    }
+    
+    function getIliili() {
+        $nuu = [];
+        $nuu['id'] = $this->tualauta_id + 4;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualauta_id;
+        $nuu['name'] = "Iliili";
+        $nuu['content'][] = ["Iliili" => [
+            "Afio mai lau afioga Letuli, o le Punefu o le motu, o oe fo'i o le Maopu",
+            "Susu mai oulua sa'o (Lealaimatafao, Letuligasenoa)",
+            "Susu mai lo oulua faauluuluga o le meana'i (Leatualevao)",
+            "Susu mai le Matua (Timuiaiala)",
+            "Susu mai le Taauso (Leituala, Tauaimulimuli)",
+            "Mamalu mai upu i le Tagaloa (Sagapolutele, Funaiipaogo)"]];
+        $nuu['content'][] = ["Malaefono" => ["Lupelele"]];
+        return $nuu;
+    }
+    
+    function getVaitogi() {
+        $nuu = [];
+        $nuu['id'] = $this->tualauta_id + 5;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualauta_id;
+        $nuu['name'] = "Vaitogi";
+        $nuu['content'][] = ["Vaitogi" => [
+            "Susu mai lau susuga Auaumaga ma ou Ma'opu (Ufuti, Patea)",
+            "Susu mai le Autapa'au (Liu)",
+            "Susu mai Tupua ma ou Ma'opu (Faletagoai, La'asiapa)",
+            "Mamalu mai oulua Auala, lau tofa Uluga'ono ma Talolo, ma le vae o lo oulua tootoo, ma le fetalaiga i lo oulua ao",
+            "Maliu mai lau tofa le igoa matua (Tofoiofoia) ma le aiga Sataeleava (Veletaloola, Laugase'e)",
+            "Maliu mai le Falelima (Mase, Naea)"]];
+        $nuu['content'][] = ["Malaefono" => ["Falesau", "Falesiliga"]];
         return $nuu;
     }
     
