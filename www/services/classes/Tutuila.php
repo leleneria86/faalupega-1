@@ -80,20 +80,20 @@ class Tutuila
     
     function getFaleniu() {
         $nuu = [];
-//         $nuu['id'] = $this->tualauta_id + 2;
-//         $nuu['motu_id'] = $this->motu_id;
-//         $nuu['itumalo_id'] = $this->tualauta_id;
-//         $nuu['name'] = "Faleniu";
-//         $nuu['content'][] = ["Faleniu" => [
-//             "Afio mai le sa'o o Magalei ma le Matua o Muasau",
-//             "Afio mai Aiono ma Solatoa, o tei o Magalei",
-//             "Afio mai le falefia o Taupolo (Savea, Alaiasa, Lili'i)",
-//             "Afio mai le tama a Aitulagi (Malufau)",
-//             "Susu mai Taumafaalofi (Tuiaana, Maea)",
-//             "Susu mai le ma'opu o Tuiaana (Maiava)",
-//             "Alala mai i la'ua na totoe (Seigafo, Moea'itino)",
-//             "Maliu mai le fetalaiga is Siuolefanuafaiga"]];
-//         $nuu['content'][] = ["Malaefono" => ["Malaeimi","Faleniu"]];
+        $nuu['id'] = $this->tualauta_id + 2;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualauta_id;
+        $nuu['name'] = "Faleniu";
+        $nuu['content'][] = ["Faleniu" => [
+            "Afio mai le sa'o o Magalei ma le Matua o Muasau",
+            "Afio mai Aiono ma Solatoa, o tei o Magalei",
+            "Afio mai le falefia o Taupolo (Savea, Alaiasa, Lili'i)",
+            "Afio mai le tama a Aitulagi (Malufau)",
+            "Susu mai Taumafaalofi (Tuiaana, Maea)",
+            "Susu mai le ma'opu o Tuiaana (Maiava)",
+            "Alala mai i la'ua na totoe (Seigafo, Moea'itino)",
+            "Maliu mai le fetalaiga is Siuolefanuafaiga"]];
+        $nuu['content'][] = ["Malaefono" => ["Malaeimi","Faleniu"]];
         return $nuu;
     }
     
