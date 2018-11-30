@@ -113,7 +113,7 @@ class Tutuila
             "Maliu mai le nofo a Tualauta (Leomiti, Faimalo)",
             "Faapea foi oe le fofoga o Lufilufi (Fuapapa)",
             "Ma le fetalaiga ia te oulua Salemeana'i"]];
-        $nuu['content'][] = ["Malaefono" => ["Malaeimi","Fale o Alatea"]];
+        $nuu['content'][] = ["Malaefono" => ["Fale o Alatea"]];
         return $nuu;
     }
     
