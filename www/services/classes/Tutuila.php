@@ -85,9 +85,9 @@ class Tutuila
     
     function getMatuu() {
         $nuu = [];
-        $nuu['id'] = $this->vaifanua_id + 2;
+        $nuu['id'] = $this->ituau_id + 2;
         $nuu['motu_id'] = $this->motu_id;
-        $nuu['itumalo_id'] = $this->vaifanua_id;
+        $nuu['itumalo_id'] = $this->ituau_id;
         $nuu['name'] = "Matuu ma Faganeanea";
         $nuu['content'][] = ["Matuu ma Faganeanea" => [
             "Susu maia oulua Matua (Savea, Leaeno)",
