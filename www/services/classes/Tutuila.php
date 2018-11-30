@@ -30,11 +30,11 @@ class Tutuila
             ["id"=>$this->saole_id, "name"=>"Sa'ole","motu_id"=>$this->motu_id, "content"=>["Afio maia lau afioga Faumuina, ma aiga","Susu mai Lupega","Susu mai le matua (Utu) ma le suafa o Gogo","Mamalu mai oulua le Sa'ole"]],
             ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Susu mai Mo'opu, ma le to'afia o alii",
                                                                                            "Susu mai oulua matua (Savea, Leaeno)",
-                                                                                           "mamalu mai le fetalaiga i le falevalu (Lagafuaina, Maluia, Taufetee, Seui, Sili, Atuatasi, Tua, Vaitausala)"]]
-//             ["id"=>$this->tualauta_id, "name"=>"Tualauta","motu_id"=>$this->motu_id, "content"=>["Afio mai lau afioga a le Punefu (Letuli)",
-//                                                                                            "Susu mai le nofo-a-Sa'o",
-//                                                                                            "ma e na taimatalii i le Tualauta",
-//                                                                                            "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]]
+                                                                                           "mamalu mai le fetalaiga i le falevalu (Lagafuaina, Maluia, Taufetee, Seui, Sili, Atuatasi, Tua, Vaitausala)"]],
+            ["id"=>$this->tualauta_id, "name"=>"Tualauta","motu_id"=>$this->motu_id, "content"=>["Afio mai lau afioga a le Punefu (Letuli)",
+                                                                                           "Susu mai le nofo-a-Sa'o",
+                                                                                           "ma e na taimatalii i le Tualauta",
+                                                                                           "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]]
 
         ];
         return $data;
