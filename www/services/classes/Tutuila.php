@@ -31,10 +31,10 @@ class Tutuila
             ["id"=>$this->ituau_id, "name"=>"Itu'au","motu_id"=>$this->motu_id, "content"=>["Susu mai Mo'opu, ma le to'afia o alii",
                                                                                            "Susu mai oulua matua (Savea, Leaeno)",
                                                                                            "mamalu mai le fetalaiga i le falevalu (Lagafuaina, Maluia, Taufetee, Seui, Sili, Atuatasi, Tua, Vaitausala)"]]
-            ["id"=>$this->tualauta_id, "name"=>"Tualauta","motu_id"=>$this->motu_id, "content"=>["Afio mai lau afioga a le Punefu (Letuli)",
-                                                                                           "Susu mai le nofo-a-Sa'o",
-                                                                                           "ma e na taimatalii i le Tualauta",
-                                                                                           "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]]
+//             ["id"=>$this->tualauta_id, "name"=>"Tualauta","motu_id"=>$this->motu_id, "content"=>["Afio mai lau afioga a le Punefu (Letuli)",
+//                                                                                            "Susu mai le nofo-a-Sa'o",
+//                                                                                            "ma e na taimatalii i le Tualauta",
+//                                                                                            "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]]
 
         ];
         return $data;
