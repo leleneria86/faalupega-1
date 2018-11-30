@@ -65,16 +65,16 @@ class Tutuila
     
     function getTafuna() {
         $nuu = [];
-        $nuu['id'] = $this->tualauta_id + 1;
-        $nuu['motu_id'] = $this->motu_id;
-        $nuu['itumalo_id'] = $this->tualauta_id;
-        $nuu['name'] = "Tafuna";
-        $nuu['content'][] = ["Tafuna" => [
-            "Afio mai lau afioga i le Sa'o (Fonoti)",
-            "Susu mai le ulua'i sa'o (Maugamua)",
-            "Susu mai Ma'opu (Lie, Lauofo)",
-            "Maliu mai lau fetalaiga Fagaima ma lou matafagatele"]];
-        $nuu['content'][] = ["Malaefono" => ["Moeitai"]];
+//         $nuu['id'] = $this->tualauta_id + 1;
+//         $nuu['motu_id'] = $this->motu_id;
+//         $nuu['itumalo_id'] = $this->tualauta_id;
+//         $nuu['name'] = "Tafuna";
+//         $nuu['content'][] = ["Tafuna" => [
+//             "Afio mai lau afioga i le Sa'o (Fonoti)",
+//             "Susu mai le ulua'i sa'o (Maugamua)",
+//             "Susu mai Ma'opu (Lie, Lauofo)",
+//             "Maliu mai lau fetalaiga Fagaima ma lou matafagatele"]];
+//         $nuu['content'][] = ["Malaefono" => ["Moeitai"]];
         return $nuu;
     }
     
