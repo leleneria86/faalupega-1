@@ -60,6 +60,7 @@ class Tutuila
         $ret = [];
         $ret[] = $this->getTafuna();
         $ret[] = $this->getFaleniu();
+        $ret[] = $this->getPavaiai();
         return $ret;
     }
     
@@ -94,6 +95,25 @@ class Tutuila
             "Alala mai i la'ua na totoe (Seigafo, Moea'itino)",
             "Maliu mai le fetalaiga is Siuolefanuafaiga"]];
         $nuu['content'][] = ["Malaefono" => ["Malaeimi","Faleniu"]];
+        return $nuu;
+    }
+    
+    function getPavaiai() {
+        $nuu = [];
+        $nuu['id'] = $this->tualauta_id + 3;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualauta_id;
+        $nuu['name'] = "Pavaiai";
+        $nuu['content'][] = ["Pavaiai" => [
+            "Afio mai lau afioga i le Sa'o (Tuanaitau)",
+            "Susu mai Tei (Saunavele, Ava)",
+            "Susu mai le na mua i malae (Letelesa)",
+            "Susu mai Taumafaalofi (Toluao, Toilolo)",
+            "Mamalu mai matua (Galoia, Pagofie, Poloai)",
+            "Maliu mai le nofo a Tualauta (Leomiti, Faimalo)",
+            "Faapea foi oe le fofoga o Lufilufi (Fuapapa)",
+            "Ma le fetalaiga ia te oulua Salemeana'i"]];
+        $nuu['content'][] = ["Malaefono" => ["Malaeimi","Fale o Alatea"]];
         return $nuu;
     }
     
