@@ -52,7 +52,7 @@ class Tutuila
     function getItuau() {
         $ret = [];
         $ret[] = $this->getFagasa();
-        
+        $ret[] = $this->getMatuu();
         return $ret;
     }
         
@@ -80,6 +80,21 @@ class Tutuila
             "Maliu mai lau tofa le Vaitausala",
             "Faapea le lauti na laulelei"]];
         $nuu['content'][] = ["Malaefono" => ["Malaepule","Malaeti'a"]];
+        return $nuu;
+    }
+    
+    function getMatuu() {
+        $nuu = [];
+        $nuu['id'] = $this->vaifanua_id + 2;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->vaifanua_id;
+        $nuu['name'] = "Matuu ma Faganeanea";
+        $nuu['content'][] = ["Matuu ma Faganeanea" => [
+            "Susu maia oulua Matua (Savea, Leaeno)",
+            "Susu mai vae o lo oulua tootoo (Taito, Afo)",
+            "Alala mai lau Tofa Faagau o le Launatausala ia Itu'au",
+            "Ma le mamalu ia te oe Itu'au"]];
+        $nuu['content'][] = ["Malaefono" => ["Vainiu"]];
         return $nuu;
     }
     
