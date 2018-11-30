@@ -53,6 +53,7 @@ class Tutuila
         $ret = [];
         $ret[] = $this->getFagasa();
         $ret[] = $this->getMatuu();
+        $ret[] = $this->getNuuuli();
         return $ret;
     }
         
@@ -95,6 +96,22 @@ class Tutuila
             "Alala mai lau Tofa Faagau o le Launatausala ia Itu'au",
             "Ma le mamalu ia te oe Itu'au"]];
         $nuu['content'][] = ["Malaefono" => ["Vainiu"]];
+        return $nuu;
+    }
+    
+    function getNuuuli() {
+        $nuu = [];
+        $nuu['id'] = $this->ituau_id + 3;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->ituau_id;
+        $nuu['name'] = "Nuuuli";
+        $nuu['content'][] = ["Nuuuli" => [
+            "Afio mai Maopu (Levu, Tago, Savusa, Soliai)",
+            "Susu mai Usoalii (Lavata'i, Leapagatele)",
+            "Susu mai Taumafaalofi (Sialega, Fanene, Fagasoaia, Puailoa)",
+            "Mamalu mai lo outou To'afa (Lagafuaina, Maluia, Taufetee, Seui)",
+            "Mamalu mai upu i le Atimamea ma oe le Itu'au malosi"]];
+        $nuu['content'][] = ["Malaefono" => ["Nuuuli", "Paepaeuli"]];
         return $nuu;
     }
     
