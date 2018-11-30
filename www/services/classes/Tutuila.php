@@ -56,12 +56,12 @@ class Tutuila
         return $this->pitonuus;
     }
     
-//     function getTualauta() {
-//         $ret = [];
-//         $ret[] = $this->getTafuna();
-//         $ret[] = $this->getFaleniu();
-//         return $ret;
-//     }
+    function getTualauta() {
+        $ret = [];
+        $ret[] = $this->getTafuna();
+        $ret[] = $this->getFaleniu();
+        return $ret;
+    }
     
     function getTafuna() {
         $nuu = [];
