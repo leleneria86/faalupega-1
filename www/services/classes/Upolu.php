@@ -795,6 +795,49 @@ class Upolu
         $content['content'][] = ["Malaefono" => ["Malae o le toto"]];
         return $content;
     }
+    
+    function getLotofaga() {
+
+        $content = [];
+        $content['id'] = $id = $this->atua_id + 13;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->atua_id;
+        $content['pitonuus'] = [];
+        $content['name'] = "Lotofaga";
+        $content['content'][] = ["Aoaotetele o le Itumalo" => [
+            "Afio mai Fiame ma Salevalasi, ma le latou tama",
+            "Maliu ai oulua ali'imau o faleupolu ma le Faleatua",
+            "Susu mai Sitagata ma lo outou aiga Sa Sitagata"]];
+
+        $content['pitonuus'][] = $this->getMatatufu($id);
+//         $content['pitonuus'][] = $this->getTafatafa($id);
+//         $content['pitonuus'][] = $this->getMatavai($id);
+//         $content['pitonuus'][] = $this->getMalaemalu($id);
+//         $content['pitonuus'][] = $this->getSatalo($id);
+//         $content['pitonuus'][] = $this->getSapunaoaMaFaleulu($id);
+//         $content['pitonuus'][] = $this->getPiu($id);
+//         $content['pitonuus'][] = $this->getSalesatele($id);
+//         $content['pitonuus'][] = $this->getSiuniu($id);
+//         $content['pitonuus'][] = $this->getSalani($id);
+//         $content['pitonuus'][] = $this->getUtulaelae($id);
+//         $content['pitonuus'][] = $this->getSapoe($id);
+        return $content;
+    }
+    
+    function getMatatufu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 1;
+        $content['name'] = "Matatufu";
+        $content['content'][] = ["Matatufu"=> [
+            "Afio mai le paia o Alala Maota (Tauiliili, Fiaola)",
+            "Afio mai le paia o le Usoalii ma le Matua o Tapu",
+            "Afio mai le alii o Aiga, o lau Afioga Tuia",
+            "Maliu mai le mamalu i le Falefa o Saleapaga ma Ituala",
+            "faapea le Faleatua"]];
+        return $content;
+    }
 
     function getFalealili() {
 
