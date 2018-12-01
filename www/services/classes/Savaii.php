@@ -133,6 +133,11 @@ class Savaii
             "Maliu mai lau fetalaiga Fa'imanu, o le fofoga o Usoalii (Faafeagai, Laulu)",
             "Maliu mai le lauti na laulelei ia te oe le Alataua"]];
         $content['content'][] = ["Malaefono" => ["Malae o le Ma"]];
+        $content['content'][] = ["Tuufatasiga o Fai'a'ai ma Fogatuli" => [
+            "Afio mai Fualau ma le agia alii",
+            "Afio mai Fepuleai",
+            "Afio mai Usoalii Taufeagai",
+            "Maliu mai Tuisalega ma le fofoga o Usoalii ma le Alataua"]];
         return $content;
     }
     
@@ -151,6 +156,11 @@ class Savaii
             "Na alii oe i lou Itu ma pule i lou Itu ona lou pito fanua",
             "Maliu mai oe le Alataua"]];
         $content['content'][] = ["Malaefono" => ["Malae o le Ma"]];
+        $content['content'][] = ["Tuufatasiga o Fai'a'ai ma Fogatuli" => [
+            "Afio mai Fualau ma le agia alii",
+            "Afio mai Fepuleai",
+            "Afio mai Usoalii Taufeagai",
+            "Maliu mai Tuisalega ma le fofoga o Usoalii ma le Alataua"]];
         return $content;
     }
     
