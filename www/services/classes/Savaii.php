@@ -60,6 +60,11 @@ class Savaii
         $ret[] = $this->getSiuvao();
         $ret[] = $this->getFagafau();
         $ret[] = $this->getSamata();
+        $ret[] = $this->getFogatuli();
+        $ret[] = $this->getFaiaai();
+        $ret[] = $this->getVaipua();
+        $ret[] = $this->getFogasavaii();
+        $ret[] = $this->getSagone();
         return $ret;
     }
     
@@ -113,6 +118,88 @@ class Savaii
             "Afio mai le toatolu o alii (Pupumai, Fasavalu, Togaga'e)",
             "Maliu mai sa Leutogi ma le nofo i Ituaiga"]];
         $content['content'][] = ["Malaefono" => ["Malefia"]];
+        return $content;
+    }
+    
+    function getFogatuli() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 4;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Fogatuli";
+        $content['content'][] = ["Fogatuli" => [
+            "Afio mai lau afioga Afualo ma alo (Taala, Leone)",
+            "Maliu mai lau fetalaiga Fa'imanu, o le fofoga o Usoalii (Faafeagai, Laulu)",
+            "Maliu mai le lauti na laulelei ia te oe le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Malae o le Ma"]];
+        return $content;
+    }
+    
+    function getFaiaai() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 5;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Fai'a'ai";
+        $content['content'][] = ["Fai'a'ai" => [
+            "Afio mai Fualau ma le aiaga alii (Levu, Gaia)",
+            "Afio mai lau afioga Fepuleai",
+            "Afio mai lau afioga Tilafono ma le Faavaoga (Su'a, Gisa)",
+            "Maliu mai lau fetalaiga Tuisalega",
+            "Na alii oe i lou Itu ma pule i lou Itu ona lou pito fanua",
+            "Maliu mai oe le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Malae o le Ma"]];
+        return $content;
+    }
+    
+    function getVaipua() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 6;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Vaipu'a";
+        $content['content'][] = ["Vaipu'a" => [
+            "Susu mai Samoeileoi (Loli) ma aiga (Mafuatu, Gasū, Mataioaopo)",
+            "Susu mai alala Maota (Mae'e, Maunuileatua",
+            "Maliu mai sa Utuvai ma upu i le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Siumalae","Vaipu'a"]];
+        return $content;
+    }
+    
+    function getFogasavaii() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 7;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Fogasavaii";
+        $content['content'][] = ["Fogasavaii" => [
+            "Afio mai Matautia ma le toafa (Togafau, Fepuleai, Alosamoa, Fonoti)",
+            "Susu mai le matua o Mooui",
+            "Afio mai le Ma'opu o Itutu ma Vaoga",
+            "Maliu mai le fuaiala o Sanu'ū o Sela ma 'Olo",
+            "Maliu mai le taupolo alii"]];
+        $content['content'][] = ["Malaefono" => ["Maota o Tumua"]];
+        return $content;
+    }
+    
+    function getSagone() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 8;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Sagone";
+        $content['content'][] = ["Sagone" => [
+            "Afio mai le aiga Samoeileoi (Tapuai)",
+            "Afio mai sa Lilomaiava (Leilua)",
+            "Afio mai Ma'opu (Leaupepe, Laiataua)",
+            "Susu mai le matua o Mailata ma le suafa o Luagalau",
+            "Maliu mai le falesefulu o le Atitogia ma upu i le Alataua"]];
+        $content['content'][] = ["Malaefono" => ["Fetoloa'i","Vaimoliai"]];
         return $content;
     }
     
