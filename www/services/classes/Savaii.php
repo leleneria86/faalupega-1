@@ -59,6 +59,7 @@ class Savaii
         $ret = [];
         $ret[] = $this->getSiuvao();
         $ret[] = $this->getFagafau();
+        $ret[] = $this->getSamata();
         return $ret;
     }
     
@@ -87,6 +88,31 @@ class Savaii
             "Afio mai Tuimaugapo ma le aiga",
             "Maliu mai Sa Soā ma le falefa o Sama'i"]];
         $content['content'][] = ["Malaefono" => ["Tapapa ma Matailiili"]];
+        return $content;
+    }
+    
+    function getSamata() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 3;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Samata";
+        $content['content'][] = ["Samata" => [
+            "Afio mai lau afioga a le Sa'o",
+            "Afio mai le Taufia a Malietoa Taulapapa",
+            "Maliu mai le mamalu ia sa Leutogi"]];
+        $content['content'][] = ["Samata I Tai" => [
+            "Afio mai lau afioga a le Sa'o (Toomata)",
+            "Afio mai le Toafa o alii (Mase, Togagae, Aloi, Saveasoi) ma le matua o Mase",
+            "Afio mai Toleafoa ma Amituanai",
+            "Afio mai le Aloalii (Galumalemana)",
+            "Maliu mai Sa Leutogi"]];
+        $content['content'][] = ["Malaefono" => ["Iliili"]];
+        $content['content'][] = ["Samata I Uta" => [
+            "Afio mai le toatolu o alii (Pupumai, Fasavalu, Togaga'e)",
+            "Maliu mai sa Leutogi ma le nofo i Ituaiga"]];
+        $content['content'][] = ["Malaefono" => ["Malefia"]];
         return $content;
     }
     
