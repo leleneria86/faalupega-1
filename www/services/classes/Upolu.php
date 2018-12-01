@@ -874,10 +874,6 @@ class Upolu
             "Afio mai Tauiliili ma le nofo a Maopu (Fuimapoao, Salimaletoloa)",
             "Maliu mai le Aliimau o Faleupolu (lau Tofa Fotua'aututusa)",
             "Mamalu maia le Tauā na eseese ma upu ia te oe le Faleatua"]];
-        $content['content'][] = ["Malaefono" => [
-            "Lotofaga",
-            "Tanumaleu",
-            "Mulifusi"]];
         return $content;
     }
 
