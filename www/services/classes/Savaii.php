@@ -21,7 +21,8 @@ class Savaii
     {
         $data = [
             ["id"=>$this->faasaleleaga_id, "name"=>"Fa'asalele'aga","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Fa'asalele"]],
-            ["id"=>$this->salega_id, "name"=>"Salega","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Salega"]],
+            ["id"=>$this->salega_id, "name"=>"Salega","motu_id"=>$this->motu_id, "content"=>["AFifio mai tupu o le Itu",
+                                                                                            "Maliu mai lau fetalaiga Tuisalega, le na ali'ita'i i le Itu, faapea foi Tootoo o le Itu"]],
             ["id"=>$this->asau_id, "name"=>"Asau","motu_id"=>$this->motu_id, "content"=>["Fa'alupega o Asau"]],
             ["id"=>$this->palauli_id, "name"=>"Palauli","motu_id"=>$this->motu_id, "content"=>[
                                                                                               "Afifio mai Faasisina ma Sa Lilomaiava",
@@ -49,6 +50,42 @@ class Savaii
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getSalega()
+    {
+        $ret = [];
+        $ret[] = $this->getSiuvao();
+        $ret[] = $this->getFagafau();
+        return $ret;
+    }
+    
+    function getSiuvao() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 1;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Si'uvao";
+        $content['content'][] = ["Si'uvao" => ["Susu mai Pesefea ma le susuga ia Tilimafana",
+            "Maliu mai sa Soā ma Sama'i"]];
+        $content['content'][] = ["Malaefono" => ["Olotuuga"]];
+        return $content;
+    }
+    
+    function getFagafau() {
+
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 2;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Fagafau";
+        $content['content'][] = ["Fagafau" => [
+            "Susu mai alo o Lilomaiava (Seve, Faga) ma le la tamafanau o Sa'u",
+            "Afio mai Tuimaugapo ma le aiga",
+            "Maliu mai Sa Soā ma le falefa o Sama'i"]];
+        $content['content'][] = ["Malaefono" => ["Tapapa ma Matailiili"]];
+        return $content;
     }
     
     function getVaisigano()
