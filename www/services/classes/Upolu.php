@@ -812,16 +812,7 @@ class Upolu
 
         $content['pitonuus'][] = $this->getMatatufu($id);
         $content['pitonuus'][] = $this->getLotofaga($id);
-//         $content['pitonuus'][] = $this->getMatavai($id);
-//         $content['pitonuus'][] = $this->getMalaemalu($id);
-//         $content['pitonuus'][] = $this->getSatalo($id);
-//         $content['pitonuus'][] = $this->getSapunaoaMaFaleulu($id);
-//         $content['pitonuus'][] = $this->getPiu($id);
-//         $content['pitonuus'][] = $this->getSalesatele($id);
-//         $content['pitonuus'][] = $this->getSiuniu($id);
-//         $content['pitonuus'][] = $this->getSalani($id);
-//         $content['pitonuus'][] = $this->getUtulaelae($id);
-//         $content['pitonuus'][] = $this->getSapoe($id);
+        $content['pitonuus'][] = $this->getVavau($id);
         return $content;
     }
     
@@ -859,6 +850,30 @@ class Upolu
             "Mamalu maia oe le Faleatua",
             "susu mai le vaa Taumuatasi i Faigamalo, o oe o le tamasa o Ituau ma Alataua, o lau susuga Sitagata a lau Faalauateaga",
             "ma le aiga sa Sitagata"]];
+        $content['content'][] = ["Malaefono" => [
+            "Lotofaga",
+            "Tanumaleu",
+            "Mulifusi"]];
+        return $content;
+    }
+    
+    function getVavau($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 3;
+        $content['name'] = "Vavau";
+        $content['content'][] = ["Vavau"=> [
+            "Afio mai Tago, o le sa'o o le aiga sa Tago (O le tao e tasi o Atua)",
+            "Afio mai le Faasisina (Leota)",
+            "Afio mai Polaia o le Faatui",
+            "Afio mai Fonoti ma Telegalolou",
+            "Afio mai Saofa'ileta (O le Tamapa'a o le alo o Fiame)",
+            "Afio mai Luailelupe (O le Alii o le Toavalu)",
+            "Afio mai Lelili'o ma Taua'a",
+            "Afio mai Tauiliili ma le nofo a Maopu (Fuimapoao, Salimaletoloa)",
+            "Maliu mai le Aliimau o Faleupolu (lau Tofa Fotua'aututusa)",
+            "Mamalu maia le Tauā na eseese ma upu ia te oe le Faleatua"]];
         $content['content'][] = ["Malaefono" => [
             "Lotofaga",
             "Tanumaleu",
