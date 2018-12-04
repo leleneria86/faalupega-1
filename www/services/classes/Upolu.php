@@ -820,6 +820,9 @@ class Upolu
             "Afio mai Faolotoi ma Maoputaulagi ma Alalamalae",
             "Afio mai Tupuola ma Salevalasi",
             "Maliu mai oulua Punefu, Malielegaoi ma le Faleatua ma upu ia Sa Lefao"]];
+                $content['content'][] = ["Malaefono" => [
+            "Lepa - Malae o le Totoa (Auelua)",
+            "Feuu - Malae o le Aava (Fatialofa)"]];
 
         $content['pitonuus'][] = $this->getVaigalu($id);
         $content['pitonuus'][] = $this->getLealatele($id);
@@ -896,9 +899,6 @@ class Upolu
             "Afio mai Tupuola ma Tago ma le Falefia o le Usoalii",
             "Susu mai le Tama a Pa'a ma le matua o Pue'e",
             "Mamalu maia le fetalaiga ia Popo ma Talimao ma upu ia Sa Lefao"]];
-        $content['content'][] = ["Malaefono" => [
-            "Lepa - Malae o le Totoa (Auelua)",
-            "Feuu - Malae o le Aava (Fatialofa)"]];
         return $content;
     }
     
