@@ -125,7 +125,7 @@ class Tutuila
         $nuu['id'] = $this->tualatai_id + 4;
         $nuu['motu_id'] = $this->motu_id;
         $nuu['itumalo_id'] = $this->tualatai_id;
-        $nuu['name'] = "Malaeloa";
+        $nuu['name'] = "Malaeloa Ituau";
         $nuu['content'][] = ["Maleloa Ituau" => [
             "Afio mai lau afioga Amituanai, o le Tupe na tanoa ese ma le Falefia o alii",
             "Afio mai Toilolo, o le Launatausala, ma le suafa o Tuileata",
