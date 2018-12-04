@@ -228,7 +228,7 @@ var myApp = angular.module('MyApp');
 
             if($scope.name_only) {
 
-                found = $scope.filterString(nuu.name, search_term);
+                found = $scope.filterString(nuu.name.toLowerCase(), search_term);
             } else {
 
                 found = $scope.filterContent(nuu.content, search_term);
