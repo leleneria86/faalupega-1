@@ -16,6 +16,7 @@ class Tutuila
     protected $saole_id = 1400;
     protected $ituau_id = 1500;
     protected $tualauta_id = 1600;
+    protected $tualatai_id = 1700;
     protected $pitonuus = [];
 
     function getItumalo()
@@ -34,7 +35,13 @@ class Tutuila
             ["id"=>$this->tualauta_id, "name"=>"Tualauta","motu_id"=>$this->motu_id, "content"=>["Afio mai lau afioga a le Punefu (Letuli)",
                                                                                            "Susu mai le nofo-a-Sa'o",
                                                                                            "ma e na taimatalii i le Tualauta",
-                                                                                           "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]]
+                                                                                           "Mamalu mai upu ia te outou nofo-a-pule o le Alataua"]],
+            ["id"=>$this->tualatai_id, "name"=>"Tualatai","motu_id"=>$this->motu_id, "content"=>[
+                "Afio mai Satele ma alo o Fanene",
+               "Susu mai matua (Afoa, Ulufaleilupe)",
+               "Susu mai le Falefia",
+               "Alalatai mai Tautootoo",
+                "Falealili ma le Faletolu ma le fetaliga i Ituau"]]
 
         ];
         return $data;
@@ -48,12 +55,85 @@ class Tutuila
         $vaifanua = $this->getVaifanua();
         $ituau = $this->getItuau();
         $tualauta = $this->getTualauta();
-        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau, $tualauta);
+        $tualatai = $this->getTualatai();
+        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau, $tualauta, $tualatai);
     }
 
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getTualatai() {
+        $ret = [];
+        $ret[] = $this->getVailoa();
+        $ret[] = $this->getTaputimu();
+        $ret[] = $this->getFutiga();
+        $ret[] = $this->getMalaeloa();
+        return $ret;
+    }
+    
+    function getVailoa() {
+        $nuu = [];
+        $nuu['id'] = $this->tualatai_id + 1;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualatai_id;
+        $nuu['name'] = "Vailoa ma Tuaulu";
+        $nuu['content'][] = ["Vailoa ma Tuaulu" => [
+            "Afio mai lau afioga Satele o le alo o Salamasina",
+            "Afio mai alo o Fanene (Tuatagloa, Teo)",
+            "Susu mai le sa'o o Tuiasina ma le aiga sa Tuiasiana",
+            "Alala mai lau tofa Maiavatele, ma le fofoga o le Availopa",
+            "Mamalu mai le aiga Faletolu ma Falealili"]];
+        $nuu['content'][] = ["Malaefono" => ["Asotau"]];
+        return $nuu;
+    }
+    
+    function getTaputimu() {
+        $nuu = [];
+        $nuu['id'] = $this->tualatai_id + 2;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualatai_id;
+        $nuu['name'] = "Taputimu";
+        $nuu['content'][] = ["Taputimu" => [
+            "Susu mai Afoa o le matua o le Satele",
+            "Susu mai Meleisea o le alo o Fanene o le sa'o aualuma",
+            "Susu mai le Usoalii (Aii, Tulifua, Asi, Sili)",
+            "Sosopo mai Tapunuu (Tuisaloo, Tuna'i)",
+            "Mamalu mai Falealili (Maaelopa, Le'avasa, Taituuga)",
+            "Faapea foi le Lutinalaulelei"]];
+        $nuu['content'][] = ["Malaefono" => ["Asotau"]];
+        return $nuu;
+    }
+    
+    function getFutiga() {
+        $nuu = [];
+        $nuu['id'] = $this->tualatai_id + 3;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualatai_id;
+        $nuu['name'] = "Futiga";
+        $nuu['content'][] = ["Futiga" => [
+            "Afio mai lau Afioga Ulufaleilupe o le alo o le Tuiatua ma lou Sa'o tamaitai (Namu)",
+            "Susu mai Tuifaleamato",
+            "Maliu mai le matua o Tautootoo o Uiagalelei ma lou Atituigaeseese ma upu ia Ituau"]];
+        $nuu['content'][] = ["Malaefono" => ["Paepaetele"]];
+        return $nuu;
+    }
+    
+    function getMalaeloa() {
+        $nuu = [];
+        $nuu['id'] = $this->tualatai_id + 4;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->tualatai_id;
+        $nuu['name'] = "Malaeloa";
+        $nuu['content'][] = ["Maleloa Ituau" => [
+            "Afio mai lau afioga Amituanai, o le Tupe na tanoa ese ma le Falefia o alii",
+            "Afio mai Toilolo, o le Launatausala, ma le suafa o Tuileata",
+            "Susu mai le matua, i lau susuga Taulapapa",
+            "Mamalu mai oulua Tautootoo (Setalia'aueafe, Nanai)",
+            "Maliu mai le fetalaiga ia te oulua Ituau"]];
+        $nuu['content'][] = ["Malaefono" => ["Asotau"]];
+        return $nuu;
     }
     
     function getTualauta() {
