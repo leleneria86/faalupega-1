@@ -60,6 +60,7 @@ class Upolu
         $ret = [];
         $ret[] = $this->getFalealili();
         $ret[] = $this->getItumaloLotofaga();
+        $ret[] = $this->getLepa();
         return $ret;
     }
 
