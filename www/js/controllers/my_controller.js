@@ -18,7 +18,7 @@ var myApp = angular.module('MyApp');
         $scope.nuu_view = false;
         $scope.pitonuu_view = false;
         $scope.exact_match = false;
-        $scope.name_only = false;
+        $scope.name_only = true;
 
         $scope.load = function() {
 
@@ -274,37 +274,37 @@ var myApp = angular.module('MyApp');
 
             if($scope.exact_match) {
 
-                if (str.indexOf(term) > -1) {
+                if(str === term) {
 
                     return true;
                 }
-                
+
                 let term1 = " " + term + " ";
-                if (str.indexOf(term1) > -1) {
+                if(str === term1) {
 
                     return true;
                 }
 
                 term1 = "(" + term + ")";
-                if (str.indexOf(term1) > -1) {
+                if(str === term1) {
 
                     return true;
                 }
 
                 term1 = "(" + term + ",";
-                if (str.indexOf(term1) > -1) {
+                if(str === term1) {
 
                     return true;
                 }
 
                 term1 = " " + term + ")";
-                if (str.indexOf(term1) > -1) {
+                if(str === term1) {
 
                     return true;
                 }
 
                 term1 = " " + term + ",";
-                if (str.indexOf(term1) > -1) {
+                if(str === term1) {
 
                     return true;
                 }
