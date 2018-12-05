@@ -23,8 +23,8 @@
         <div>
             <br/>
             <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
-            <input type="checkbox" ng-model="exact_match"/>&nbspExact
-            <input type="checkbox" ng-model="name_only"/>&nbspName
+            <input type="checkbox" ng-model="name_only" ng-change="onChangeEvent()"/>&nbspName
+            <input type="checkbox" ng-model="exact_match" ng-change="onChangeEvent()"/>&nbspExact
         </div>
         <br/>
         <div class="input-group">
@@ -68,10 +68,6 @@
         <div ng-show="search_text || (selected_motu.id && selected_itumalo.id)" ng-repeat="nuu in nuus_filtered">
             <span ng-click="onNuu(nuu);" style="color:blue;cursor:pointer;font-size: large">{{nuu.name}}</span> <span ng-show="!selected_itumalo.id"> - {{getItumaloNameById(nuu.itumalo_id)}}</span>
         </div>
-
-        <!--div ng-show="selected_nuu || search_text" ng-repeat="greatgrandchild in greatgranditumalo_filtered | filter:{motu_id:selected_nuu.id,content:search_text}">
-            <span ng-click="onGrandchild(grandchild);" style="color:blue;cursor:pointer;font-size: large">{{greatgrandchild.name}}</span>
-        </div-->
     </div>
 
     <div class="col-sm-12" ng-if="selected_nuu">
@@ -102,21 +98,6 @@
         <br/>
         <span ng-click="onBack();" style="color:blue;cursor:pointer">Back</span>
     </div>
-
-    <!--div class="col-sm-12" ng-show="pitonuu_view">
-        <br/>
-        <div ng-repeat="content in selected_pitonuu.content">
-            <div ng-repeat="(key,lines) in content">
-                <br/>
-                <strong>{{key}}</strong>
-                <div ng-repeat="line in lines">
-                    {{line}}
-                </div>
-            </div>
-        </div>
-        <br/>
-        <span ng-click="onBackToNuu();" style="color:blue;cursor:pointer">Back</span>
-    </div-->
 </div>
 
 </body>
