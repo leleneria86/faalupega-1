@@ -62,12 +62,7 @@ class Savaii
         $ret = [];
         $ret[] = $this->getManase();
         $ret[] = $this->getSafotu();
-        $ret[] = $this->getPaiaSamauga();
-        $ret[] = $this->getFogatuli();
-        $ret[] = $this->getFaiaai();
-        $ret[] = $this->getVaipua();
-        $ret[] = $this->getFogasavaii();
-        $ret[] = $this->getSagone();
+        //$ret[] = $this->getPaiaSamauga();
         return $ret;
     }
     
