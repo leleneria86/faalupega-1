@@ -62,7 +62,7 @@ class Savaii
         $ret = [];
         $ret[] = $this->getManase();
         $ret[] = $this->getSafotu();
-        $ret[] = $this->getSamata();
+        $ret[] = $this->getPaiaSamauga();
         $ret[] = $this->getFogatuli();
         $ret[] = $this->getFaiaai();
         $ret[] = $this->getVaipua();
@@ -107,6 +107,23 @@ class Savaii
             "Maliu mai le Pouniu ma le Faasau",
             "Maliu mai lau tofa a le tulafale"]];
         $content['content'][] = ["Malaefono" => ["Finao"]];
+        return $content;
+    }
+    
+    function getPaia() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 3;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Paia";
+        $content['content'][] = ["Paia" => [
+            "Afio mai le aiga sa Peseta",
+            "Afio mai le Toafia o alii",
+            "Susu foi Faalogoū, o le foetuese",
+            "Maliu mai Mausautele, ma lau fetalaiga Maua'i",
+            "Maliu mai foi le Atu Tui Savaii"]];
+        $content['content'][] = ["Malaefono" => ["Maiaesā"]];
         return $content;
     }
     
