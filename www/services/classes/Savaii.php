@@ -60,67 +60,67 @@ class Savaii
     function getGagaifomauga()
     {
         $ret = [];
-        $ret[] = $this->getManase();
-        $ret[] = $this->getSafotu();
-        //$ret[] = $this->getPaiaSamauga();
+//         $ret[] = $this->getManase();
+//         $ret[] = $this->getSafotu();
+//         //$ret[] = $this->getPaiaSamauga();
         return $ret;
     }
     
-    function getManase() {
+//     function getManase() {
 
-        $content = [];
-        $content['id'] = $id = $this->gagaifomauga_id + 1;
-        $content['motu_id'] = $this->motu_id;
-        $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Manase";
-        $content['content'][] = ["Manase" => [
-            "Susu mai Taito ma ona alo",
-            "Susu mai le aiga Saumalau",
-            "Maliu mai Tauāsā ma le lautinalaulelei i le Faleupolu"]];
-        $content['content'][] = ["Malaefono" => ["Finao"]];
-        return $content;
-    }
+//         $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 1;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Manase";
+//         $content['content'][] = ["Manase" => [
+//             "Susu mai Taito ma ona alo",
+//             "Susu mai le aiga Saumalau",
+//             "Maliu mai Tauāsā ma le lautinalaulelei i le Faleupolu"]];
+//         $content['content'][] = ["Malaefono" => ["Finao"]];
+//         return $content;
+//     }
     
-    function getSafotu() {
+//     function getSafotu() {
 
-        $content = [];
-        $content['id'] = $id = $this->gagaifomauga_id + 2;
-        $content['motu_id'] = $this->motu_id;
-        $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Safotu";
-        $content['content'][] = ["Safotu" => [
-            "Afio mai sa'o e fa",
-            "Afio mai Afitu, ma le aiga sa Afitu",
-            "Afio mai Tapusoa o le matua o le aiga Salele'aalii",
-            "Afio mai lau afioga Utumapu ma lou Usoalii",
-            "Maliu mai lau tofa a le tulafale ma ou aiga (Timu, U'uga)",
-            "Susu mai le Lilomaiava ma vae o le Nofoafia",
-            "Maliu mai lau tofa Lavea, o le alii o le Itu, na e mua i malae"]];
-        $content['content'][] = ["Faapuupuuga" => [
-            "Afio mai sa'o e fa",
-            "Susu mai le aiga Saumalau",
-            "Maliu mai le Pouniu ma le Faasau",
-            "Maliu mai lau tofa a le tulafale"]];
-        $content['content'][] = ["Malaefono" => ["Finao"]];
-        return $content;
-    }
+//         $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 2;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Safotu";
+//         $content['content'][] = ["Safotu" => [
+//             "Afio mai sa'o e fa",
+//             "Afio mai Afitu, ma le aiga sa Afitu",
+//             "Afio mai Tapusoa o le matua o le aiga Salele'aalii",
+//             "Afio mai lau afioga Utumapu ma lou Usoalii",
+//             "Maliu mai lau tofa a le tulafale ma ou aiga (Timu, U'uga)",
+//             "Susu mai le Lilomaiava ma vae o le Nofoafia",
+//             "Maliu mai lau tofa Lavea, o le alii o le Itu, na e mua i malae"]];
+//         $content['content'][] = ["Faapuupuuga" => [
+//             "Afio mai sa'o e fa",
+//             "Susu mai le aiga Saumalau",
+//             "Maliu mai le Pouniu ma le Faasau",
+//             "Maliu mai lau tofa a le tulafale"]];
+//         $content['content'][] = ["Malaefono" => ["Finao"]];
+//         return $content;
+//     }
     
-    function getPaia() {
+//     function getPaia() {
 
-        $content = [];
-        $content['id'] = $id = $this->gagaifomauga_id + 3;
-        $content['motu_id'] = $this->motu_id;
-        $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Paia";
-        $content['content'][] = ["Paia" => [
-            "Afio mai le aiga sa Peseta",
-            "Afio mai le Toafia o alii",
-            "Susu foi Faalogoū, o le foetuese",
-            "Maliu mai Mausautele, ma lau fetalaiga Maua'i",
-            "Maliu mai foi le Atu Tui Savaii"]];
-        $content['content'][] = ["Malaefono" => ["Maiaesā"]];
-        return $content;
-    }
+//         $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 3;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Paia";
+//         $content['content'][] = ["Paia" => [
+//             "Afio mai le aiga sa Peseta",
+//             "Afio mai le Toafia o alii",
+//             "Susu foi Faalogoū, o le foetuese",
+//             "Maliu mai Mausautele, ma lau fetalaiga Maua'i",
+//             "Maliu mai foi le Atu Tui Savaii"]];
+//         $content['content'][] = ["Malaefono" => ["Maiaesā"]];
+//         return $content;
+//     }
     
     function getSalega()
     {
