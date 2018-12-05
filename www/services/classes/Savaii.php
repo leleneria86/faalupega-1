@@ -24,7 +24,7 @@ class Savaii
             ["id"=>$this->salega_id, "name"=>"Salega","motu_id"=>$this->motu_id, "content"=>["AFifio mai tupu o le Itu",
                                                                                             "Maliu mai lau fetalaiga Tuisalega, le na ali'ita'i i le Itu", 
                                                                                              "faapea foi Tootoo o le Itu"]],
-            ["id"=>$this->$this->gagaifomauga_id, "name"=>"Gagaifomauga","motu_id"=>$this->motu_id, "content"=>[
+            ["id"=>$this->gagaifomauga_id, "name"=>"Gagaifomauga","motu_id"=>$this->motu_id, "content"=>[
                 "Afio mai le alii o le Itu, ma tupu o le Itu",
                 "Maliu mai Tootoo Finao, ma le Gagaifomauga"]],
             ["id"=>$this->palauli_id, "name"=>"Palauli","motu_id"=>$this->motu_id, "content"=>[
