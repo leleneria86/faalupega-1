@@ -62,11 +62,11 @@ class Savaii
         $ret = [];
         $ret[] = $this->getManase();
         $ret[] = $this->getSafotu();
-        $ret[] = $this->getPaiaSamauga();
-        $ret[] = $this->getPaia();
-        $ret[] = $this->getSamauga();
-        $ret[] = $this->getLefagaoalii();
-        $ret[] = $this->getSiufaga();
+//         $ret[] = $this->getPaiaSamauga();
+//         $ret[] = $this->getPaia();
+//         $ret[] = $this->getSamauga();
+//         $ret[] = $this->getLefagaoalii();
+//         $ret[] = $this->getSiufaga();
         return $ret;
     }
     
