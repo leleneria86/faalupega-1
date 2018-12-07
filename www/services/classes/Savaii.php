@@ -62,7 +62,7 @@ class Savaii
         $ret = [];
         $ret[] = $this->getManase();
         $ret[] = $this->getSafotu();
-        //$ret[] = $this->getPaiaSamauga();
+        $ret[] = $this->getPaia();
         return $ret;
     }
     
@@ -111,7 +111,12 @@ class Savaii
         $content['id'] = $id = $this->gagaifomauga_id + 3;
         $content['motu_id'] = $this->motu_id;
         $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Paia";
+        $content['name'] = "Paia, Samuga, Lefagaoalii";
+        $content['content'][] = ["Tuufatasiga o Paia, Samauga, Lefagaoalii" => [
+            "Afio mai le aiga o sa Peseta",
+            "Afio mai Sa'o",
+            "Maliu mai le mamalu o le falefa o Samauga"]];
+        $content['content'][] = ["Malaefono" => ["Malo'autasi - Malaefono o Sa'o"]];
         $content['content'][] = ["Paia" => [
             "Afio mai le aiga sa Peseta",
             "Afio mai le Toafia o alii",
@@ -119,6 +124,16 @@ class Savaii
             "Maliu mai Mausautele, ma lau fetalaiga Maua'i",
             "Maliu mai foi le Atu Tui Savaii"]];
         $content['content'][] = ["Malaefono" => ["Maiaesā"]];
+        $content['content'][] = ["Samauga" => [
+            "Afio mai le aiga Sa Peseta",
+            "Maliu mai Sooalo ma le tamatane",
+            "Maliu mai lau fetalaiga Laupu'e ma upu ia Samauga"]];
+        $content['content'][] = ["Lefagaoalii" => [
+            "Afio mai Tuu o le nofomatua ma lou faleagafulu ma le Falelima o alo o Na'i",
+            "Afio mai Fuimaono ma le Usoalii",
+            "Afio mai Malaitai ma le Usoalii ma le faletolu",
+            "Afio mai Tuailemafua ma Tamapaa ma le Usoalii",
+            "Maliu mai oe Samauga"]];
         return $content;
     }
     
