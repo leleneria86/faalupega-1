@@ -141,35 +141,35 @@ class Savaii
         return $content;
     }
     
-//     function getSamauga() {
+    function getSamauga() {
 
-//         $content = [];
-// //         $content['id'] = $id = $this->gagaifomauga_id + 5;
-// //         $content['motu_id'] = $this->motu_id;
-// //         $content['itumalo_id'] = $this->gagaifomauga_id;
-// //         $content['name'] = "Samauga";
-// //         $content['content'][] = ["Samauga" => [
-// //             "Afio mai le aiga Sa Peseta",
-// //             "Maliu mai Sooalo ma le tamatane",
-// //             "Maliu mai lau fetalaiga Laupu'e ma upu ia Samauga"]];
-//         return $content;
-//     }
+        $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 5;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Samauga";
+//         $content['content'][] = ["Samauga" => [
+//             "Afio mai le aiga Sa Peseta",
+//             "Maliu mai Sooalo ma le tamatane",
+//             "Maliu mai lau fetalaiga Laupu'e ma upu ia Samauga"]];
+        return $content;
+    }
     
-//     function getLefagaoalii() {
+    function getLefagaoalii() {
 
-//         $content = [];
-// //         $content['id'] = $id = $this->gagaifomauga_id + 6;
-// //         $content['motu_id'] = $this->motu_id;
-// //         $content['itumalo_id'] = $this->gagaifomauga_id;
-// //         $content['name'] = "Lefagaoalii";
-// //         $content['content'][] = ["Lefagaoalii" => [
-// //             "Afio mai Tuu o le nofomatua ma lou faleagafulu ma le Falelima o alo o Na'i",
-// //             "Afio mai Fuimaono ma le Usoalii",
-// //             "Afio mai Malaitai ma le Usoalii ma le faletolu",
-// //             "Afio mai Tuailemafua ma Tamapaa ma le Usoalii",
-// //             "Maliu mai oe Samauga"]];
-//         return $content;
-//     }
+        $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 6;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Lefagaoalii";
+//         $content['content'][] = ["Lefagaoalii" => [
+//             "Afio mai Tuu o le nofomatua ma lou faleagafulu ma le Falelima o alo o Na'i",
+//             "Afio mai Fuimaono ma le Usoalii",
+//             "Afio mai Malaitai ma le Usoalii ma le faletolu",
+//             "Afio mai Tuailemafua ma Tamapaa ma le Usoalii",
+//             "Maliu mai oe Samauga"]];
+        return $content;
+    }
     
 //     function getSiufaga() {
 
