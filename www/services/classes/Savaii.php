@@ -171,7 +171,7 @@ class Savaii
         return $content;
     }
     
-    function getSiufaga() {
+    function getSiufaga2() {
         $content = [];
 //         $content['id'] = $id = $this->gagaifomauga_id + 7;
 //         $content['motu_id'] = $this->motu_id;
