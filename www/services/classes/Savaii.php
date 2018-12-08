@@ -171,21 +171,21 @@ class Savaii
         return $content;
     }
     
-//     function getSiufaga() {
+    function getSiufaga() {
 
-//         $content = [];
-// //         $content['id'] = $id = $this->gagaifomauga_id + 7;
-// //         $content['motu_id'] = $this->motu_id;
-// //         $content['itumalo_id'] = $this->gagaifomauga_id;
-// //         $content['name'] = "Si'ufaga";
-// //         $content['content'][] = ["Si'ufaga" => [
-// //             "Afio mai Tuu o le nofo matua ma lou faleagafulu",
-// //             "Afio mai le Falelima o alo o Na'i",
-// //             "Afio mai le Suafa o Fuimaono ma le Matua (Alai, Aitauia)",
-// //             "Afio mai le Usoalii (Vaiouga, Tumanuvao)",
-// //             "E faapea le mamalu o le aiga o Siufagā"]];
-//         return $content;
-//     }
+        $content = [];
+//         $content['id'] = $id = $this->gagaifomauga_id + 7;
+//         $content['motu_id'] = $this->motu_id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Si'ufaga";
+//         $content['content'][] = ["Si'ufaga" => [
+//             "Afio mai Tuu o le nofo matua ma lou faleagafulu",
+//             "Afio mai le Falelima o alo o Na'i",
+//             "Afio mai le Suafa o Fuimaono ma le Matua (Alai, Aitauia)",
+//             "Afio mai le Usoalii (Vaiouga, Tumanuvao)",
+//             "E faapea le mamalu o le aiga o Siufagā"]];
+        return $content;
+    }
     
     function getSalega()
     {
