@@ -67,6 +67,8 @@ class Savaii
         $ret[] = $this->getSamauga();
         $ret[] = $this->getLefagaoalii();
         $ret[] = $this->getSiufaga2();
+        $ret[] = $this->getLolua();
+        $ret[] = $this->getAsu();
         return $ret;
     }
     
@@ -183,6 +185,35 @@ class Savaii
             "Afio mai le Suafa o Fuimaono ma le Matua (Alai, Aitauia)",
             "Afio mai le Usoalii (Vaiouga, Tumanuvao)",
             "E faapea le mamalu o le aiga o Siufagā"]];
+        return $content;
+    }
+    
+    function getLolua() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 8;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Lolua";
+        $content['content'][] = ["Lolua" => [
+            "Afio mai Malaitai",
+            "Afio mai le Usoalii (Va'ele, Lemana)",
+            "E faapea upu i le faletolu (Tauti, Sifuiva, Taala, Lafai, Vaaiiva, Lesoa)"]];
+        return $content;
+    }
+    
+    function getAsu() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 9;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Lolua";
+        $content['content'][] = ["Lolua" => [
+            "Susu mai Tauilemafua",
+            "Susu mai le Usoalii (Feo, Ufagalilo, Savaii, Uilaau, Matalavea)",
+            "ma upu i Tamapaa (Taa'au Leota, Pesefea, Tagaloa, Amituanai Pepe ma Pula)",
+            "ma lo outou aiga i Asu"]];
         return $content;
     }
     
