@@ -1,265 +1,282 @@
 var myApp = angular.module('MyApp');
-    myApp.controller('MyController', function($scope, $filter, MyService) {
-        $scope.name = null;
-        $scope.itumalos;
-        $scope.itumalos_filtered;
-        $scope.selected_itumalo;
-        $scope.nuus;
-        $scope.nuus_filtered;
-        $scope.selected_nuu;
-        $scope.selected_pitonuu;
-        $scope.pitonuus_filtered;
-        $scope.motus;
-        $scope.selected_motu;
-        $scope.search_text = null;
-        $scope.show_motu_content;
-        $scope.show_itumalo_content;
-        $scope.current_nuu;
-        $scope.nuu_view = false;
-        $scope.pitonuu_view = false;
-        $scope.exact_match = false;
-        $scope.name_only = true;
+myApp.controller('MyController', function($scope, $filter, MyService) {
+    $scope.name = null;
+    $scope.itumalos;
+    $scope.itumalos_filtered;
+    $scope.selected_itumalo;
+    $scope.nuus;
+    $scope.nuus_filtered;
+    $scope.selected_nuu;
+    $scope.selected_pitonuu;
+    $scope.pitonuus_filtered;
+    $scope.motus;
+    $scope.selected_motu;
+    $scope.search_text = null;
+    $scope.show_motu_content;
+    $scope.show_itumalo_content;
+    $scope.current_nuu;
+    $scope.nuu_view = false;
+    $scope.pitonuu_view = false;
+    $scope.exact_match = false;
+    $scope.name_only = true;
+    $scope.mode = 'active';
 
-        $scope.load = function() {
+    $scope.load = function() {
 
-            MyService.load().then(function(data) {
+        MyService.load().then(function(data) {
 
-                    $scope.itumalos = data.itumalos;
-                    $scope.motus = data.motus;
-                    $scope.nuus_filtered = $scope.nuus = data.nuus;
-                    $scope.pitonuus_filtered = $scope.pitonuus = data.pitonuus;
-                    $scope.selected_motu = $scope.motus[0];
-                    $scope.safeApply();
-                },
-                function(result) {
+                $scope.itumalos = data.itumalos;
+                $scope.motus = data.motus;
+                $scope.nuus_filtered = $scope.nuus = data.nuus;
+                $scope.pitonuus_filtered = $scope.pitonuus = data.pitonuus;
+                $scope.selected_motu = $scope.motus[0];
+                $scope.safeApply();
+            },
+            function(result) {
 
-                    //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
-                });
-        };
+                //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
+            });
+    };
 
-        $scope.isSearchable = function() {
+    $scope.isSearchable = function() {
 
-            return (($scope.search_text && $scope.search_text.length > 1));
-        };
+        return (($scope.search_text && $scope.search_text.length > 1));
+    };
 
-        $scope.onChangeEvent = function() {
+    $scope.onChangeEvent = function() {
 
-            $scope.nuus_filtered = [];
+        $scope.nuus_filtered = [];
 
-            $scope.filterNuus();
-        };
+        $scope.filterNuus();
+    };
 
-        $scope.onChangeMotu = function() {
+    $scope.onChangeMotu = function() {
 
-            $scope.setItumalos($scope.selected_motu.id);
-            $scope.selected_itumalo = $scope.itumalos_filtered[0];
+        $scope.setItumalos($scope.selected_motu.id);
+        $scope.selected_itumalo = $scope.itumalos_filtered[0];
 
-            $scope.filterNuus();
-        };
+        $scope.filterNuus();
+    };
 
-        $scope.filterNuus = function() {
+    $scope.filterNuus = function() {
 
-            if($scope.isSearchable()) {
+        if($scope.isSearchable()) {
 
-                $scope.nuus_filtered = $scope.filterArray($scope.nuus, $scope.search_text);
-            }
+            $scope.nuus_filtered = $scope.filterArray($scope.nuus, $scope.search_text);
+        }
 
-            if($scope.selected_motu.id) {
+        if($scope.selected_motu.id) {
 
-                if($scope.nuus_filtered.length == 0) {
+            if($scope.nuus_filtered.length == 0) {
 
-                    $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_itumalo.id, $scope.nuus);
-                } else {
-
-                    $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_motu.id, $scope.nuus_filtered);
-                }
-            }
-
-            if ($scope.selected_itumalo && $scope.selected_itumalo.id) {
-
-                if($scope.nuus_filtered.length == 0) {
-
-                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus);
-                } else {
-
-                    $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus_filtered);
-                }
-            }
-        };
-
-        $scope.onClickItumaloContents = function() {
-
-            $scope.show_itumalo_content = !$scope.show_itumalo_content;
-        };
-
-        $scope.onClickMotuContents = function() {
-
-            $scope.show_motu_content = !$scope.show_motu_content;
-        };
-
-        $scope.onNuu = function(nuu) {
-
-            $scope.selected_nuu = nuu;
-            $scope.pitonuus_filtered = $scope.selected_nuu.pitonuus;
-        };
-
-        $scope.onPitonuu = function(pitonuu) {
-
-            $scope.current_nuu = $scope.selected_nuu;
-            pitonuu.expanded = !pitonuu.expanded;
-            $scope.selected_pitonuu = pitonuu;
-        };
-
-        $scope.onBack = function() {
-
-            $scope.selected_nuu = null;
-            $scope.onChangeEvent();
-        };
-
-        $scope.onBackToNuu = function() {
-
-            $scope.selected_pitonuu = null;
-            $scope.selected_nuu = $scope.current_nuu;
-        };
-
-        $scope.setItumalos = function(motu_id) {
-
-            $scope.itumalos_filtered = [{id:0, name:"All", content:"",motu_id:null}];
-            for(var i = 0; i < $scope.itumalos.length; i++) {
-
-                if($scope.itumalos[i].motu_id == motu_id) {
-
-                    $scope.itumalos_filtered.push($scope.itumalos[i]);
-                }
-            }
-        };
-
-        $scope.getMotuNameById = function(id) {
-
-            for(var i = 0; i < $scope.motus.length; i++) {
-
-                if(id == $scope.motus[i].id) {
-
-                    return $scope.motus[i].name;
-                }
-            }
-        };
-
-        $scope.getItumaloNameById = function(id) {
-
-            for(var i = 0; i < $scope.itumalos.length; i++) {
-
-                if(id == $scope.itumalos[i].id) {
-
-                    return $scope.itumalos[i].name;
-                }
-            }
-        };
-
-        $scope.filterNuusByMotuId = function(motu_id, nuus) {
-
-            let nuus_filtered = [];
-            if(motu_id > 0) {
-
-                for (var i = 0; i < nuus.length; i++) {
-
-                    if (nuus[i].motu_id == motu_id) {
-
-                        nuus_filtered.push(nuus[i]);
-                    }
-                }
-            }
-            return nuus_filtered;
-        };
-
-        $scope.filterNuusByItumaloId = function(motu_id, nuus) {
-
-            let nuus_filtered = [];
-            if(motu_id > 0) {
-
-                for (var i = 0; i < nuus.length; i++) {
-
-                    if (nuus[i].itumalo_id == motu_id) {
-
-                        nuus_filtered.push(nuus[i]);
-                    }
-                }
-            }
-            return nuus_filtered;
-        };
-
-        $scope.filterArray = function(nuus, search_term) {
-
-            let temp_nuus = [];
-            for(var i = 0; i < nuus.length; i++) {
-
-                let nuu = nuus[i];
-                if($scope.myFilter(nuu, search_term)) {
-
-                    temp_nuus.push(nuu);
-                }
-            }
-            return temp_nuus;
-        };
-
-
-        $scope.myFilter = function(nuu, search_term){
-
-            let match = $scope.searchMatch(nuu, search_term);
-
-            if(!match && nuu.pitonuus){
-
-                for(let i = 0; i < nuu.pitonuus.length; i++) {
-
-                    match = $scope.searchMatch(nuu.pitonuus[i], search_term);
-                    if(match) {
-
-                        break;
-                    }
-                }
-            }
-
-            return match;
-        };
-
-        $scope.searchMatch = function(nuu, search_term) {
-
-            let found = false;
-
-            if($scope.name_only) {
-
-                found = $scope.filterString(nuu.name.toLowerCase(), search_term);
+                $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_itumalo.id, $scope.nuus);
             } else {
 
-                found = $scope.filterContent(nuu.content, search_term);
+                $scope.nuus_filtered = $scope.filterNuusByMotuId($scope.selected_motu.id, $scope.nuus_filtered);
             }
+        }
 
-            return found;
-        };
+        if ($scope.selected_itumalo && $scope.selected_itumalo.id) {
 
-        $scope.filterContent = function(contents, term) {
+            if($scope.nuus_filtered.length == 0) {
 
-            let found = false;
-            for(var i = 0; i < contents.length; i++) {
+                $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus);
+            } else {
 
-                let content = contents[i];
-                for (var k in content) {
+                $scope.nuus_filtered = $scope.filterNuusByItumaloId($scope.selected_itumalo.id, $scope.nuus_filtered);
+            }
+        }
+    };
 
-                    if (content.hasOwnProperty(k)) {
+    $scope.onClickItumaloContents = function() {
 
-                        let lines = content[k];
-                        for(var j = 0; j < lines.length; j++) {
+        $scope.show_itumalo_content = !$scope.show_itumalo_content;
+    };
 
-                            found = $scope.filterString(lines[j].toLowerCase(), term);
-                            if(found) {
+    $scope.onClickMotuContents = function() {
 
-                                break;
+        $scope.show_motu_content = !$scope.show_motu_content;
+    };
+
+    $scope.onNuu = function(nuu) {
+
+        $scope.selected_nuu = nuu;
+        $scope.pitonuus_filtered = $scope.selected_nuu.pitonuus;
+    };
+
+    $scope.onPitonuu = function(pitonuu) {
+
+        $scope.current_nuu = $scope.selected_nuu;
+        pitonuu.expanded = !pitonuu.expanded;
+        $scope.selected_pitonuu = pitonuu;
+    };
+
+    $scope.onBack = function() {
+
+        $scope.selected_nuu = null;
+        $scope.onChangeEvent();
+    };
+
+    $scope.onBackToNuu = function() {
+
+        $scope.selected_pitonuu = null;
+        $scope.selected_nuu = $scope.current_nuu;
+    };
+
+    $scope.setItumalos = function(motu_id) {
+
+        $scope.itumalos_filtered = [{id:0, name:"All", content:"",motu_id:null}];
+        for(var i = 0; i < $scope.itumalos.length; i++) {
+
+            if($scope.itumalos[i].motu_id == motu_id) {
+
+                $scope.itumalos_filtered.push($scope.itumalos[i]);
+            }
+        }
+    };
+
+    $scope.getMotuNameById = function(id) {
+
+        for(var i = 0; i < $scope.motus.length; i++) {
+
+            if(id == $scope.motus[i].id) {
+
+                return $scope.motus[i].name;
+            }
+        }
+    };
+
+    $scope.getItumaloNameById = function(id) {
+
+        for(var i = 0; i < $scope.itumalos.length; i++) {
+
+            if(id == $scope.itumalos[i].id) {
+
+                return $scope.itumalos[i].name;
+            }
+        }
+    };
+
+    $scope.filterNuusByMotuId = function(motu_id, nuus) {
+
+        let nuus_filtered = [];
+        if(motu_id > 0) {
+
+            for (var i = 0; i < nuus.length; i++) {
+
+                if (nuus[i].motu_id == motu_id) {
+
+                    nuus_filtered.push(nuus[i]);
+                }
+            }
+        }
+        return nuus_filtered;
+    };
+
+    $scope.filterNuusByItumaloId = function(motu_id, nuus) {
+
+        let nuus_filtered = [];
+        if(motu_id > 0) {
+
+            for (var i = 0; i < nuus.length; i++) {
+
+                if (nuus[i].itumalo_id == motu_id) {
+
+                    nuus_filtered.push(nuus[i]);
+                }
+            }
+        }
+        return nuus_filtered;
+    };
+
+    $scope.filterArray = function(nuus, search_term) {
+
+        let temp_nuus = [];
+        for(var i = 0; i < nuus.length; i++) {
+
+            let nuu = nuus[i];
+            if($scope.myFilter(nuu, search_term)) {
+
+                temp_nuus.push(nuu);
+            }
+        }
+        return temp_nuus;
+    };
+
+
+    $scope.myFilter = function(nuu, search_term){
+
+        let match = $scope.searchMatch(nuu, search_term);
+
+        if(!match && nuu.pitonuus){
+
+            for(let i = 0; i < nuu.pitonuus.length; i++) {
+
+                match = $scope.searchMatch(nuu.pitonuus[i], search_term);
+                if(match) {
+
+                    break;
+                }
+            }
+        }
+
+        return match;
+    };
+
+    $scope.searchMatch = function(nuu, search_term) {
+
+        let found = false;
+
+        if($scope.name_only) {
+
+            let str = nuu.name.toLowerCase();
+            if($scope.exact_match) {
+
+                found = $scope.exactValue(str, search_term);
+            } else {
+
+                if (str.indexOf(search_term) > -1) {
+
+                    found = true;
+                }
+            }
+        } else {
+
+            found = $scope.filterContent(nuu.content, search_term);
+        }
+
+        return found;
+    };
+
+    $scope.filterContent = function(contents, term) {
+
+        let found = false;
+        for(var i = 0; i < contents.length; i++) {
+
+            let content = contents[i];
+            for (var k in content) {
+
+                if (content.hasOwnProperty(k)) {
+
+                    let lines = content[k];
+                    for(var j = 0; j < lines.length; j++) {
+
+                        let str = lines[j].toLowerCase();
+                        if($scope.exact_match) {
+
+                            found = $scope.exactValueInString(str, term);
+                        } else {
+
+                            if (str.indexOf(term) > -1) {
+
+                                found = true;
                             }
                         }
-                    }
-                    if(found) {
 
-                        break;
+                        if(found) {
+
+                            break;
+                        }
                     }
                 }
                 if(found) {
@@ -267,65 +284,102 @@ var myApp = angular.module('MyApp');
                     break;
                 }
             }
-            return found;
-        };
+            if(found) {
 
-        $scope.filterString = function(str, term) {
-
-            if($scope.exact_match) {
-
-                if(str === term) {
-
-                    return true;
-                }
-
-                let term1 = " " + term + " ";
-                if(str === term1) {
-
-                    return true;
-                }
-
-                term1 = "(" + term + ")";
-                if(str === term1) {
-
-                    return true;
-                }
-
-                term1 = "(" + term + ",";
-                if(str === term1) {
-
-                    return true;
-                }
-
-                term1 = " " + term + ")";
-                if(str === term1) {
-
-                    return true;
-                }
-
-                term1 = " " + term + ",";
-                if(str === term1) {
-
-                    return true;
-                }
-            } else {
-
-                if (str.indexOf(term) > -1) {
-
-                    return true;
-                }
+                break;
             }
-            return false;
-        };
+        }
+        return found;
+    };
 
-        $scope.safeApply = function(fn) {
-            var phase = this.$root.$$phase;
-            if(phase === '$apply' || phase === '$digest') {
-                if(fn && (typeof(fn) === 'function')) {
-                    fn();
-                }
-            } else {
-                this.$apply(fn);
+    $scope.exactValueInString = function(str, term) {
+
+        if(str === term) {
+
+            return true;
+        }
+
+        let term1 = " " + term + " ";
+        if (str.indexOf(term1) > -1) {
+
+            return true;
+        }
+
+        term1 = "(" + term + ")";
+        if (str.indexOf(term1) > -1) {
+
+            return true;
+        }
+
+        term1 = "(" + term + ",";
+        if (str.indexOf(term1) > -1) {
+
+            return true;
+        }
+
+        term1 = " " + term + ")";
+        if (str.indexOf(term1) > -1) {
+
+            return true;
+        }
+
+        term1 = " " + term + ",";
+        if (str.indexOf(term1) > -1) {
+
+            return true;
+        }
+
+        return false;
+    };
+
+    $scope.exactValue = function(str, term) {
+
+        if(str === term) {
+
+            return true;
+        }
+
+        let term1 = " " + term + " ";
+        if(str === term1) {
+
+            return true;
+        }
+
+        term1 = "(" + term + ")";
+        if(str === term1) {
+
+            return true;
+        }
+
+        term1 = "(" + term + ",";
+        if(str === term1) {
+
+            return true;
+        }
+
+        term1 = " " + term + ")";
+        if(str === term1) {
+
+            return true;
+        }
+
+        term1 = " " + term + ",";
+        if(str === term1) {
+
+            return true;
+        }
+
+        return false;
+    };
+
+    $scope.safeApply = function(fn) {
+        var phase = this.$root.$$phase;
+        if(phase === '$apply' || phase === '$digest') {
+            if(fn && (typeof(fn) === 'function')) {
+                fn();
             }
-        };
-    });
+        } else {
+            this.$apply(fn);
+        }
+    };
+});
