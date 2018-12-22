@@ -69,6 +69,10 @@ class Savaii
         $ret[] = $this->getSiufaga2();
         $ret[] = $this->getLolua();
         $ret[] = $this->getAsu();
+        $ret[] = $this->getFaleupolu();
+        $ret[] = $this->getMatavai();
+        $ret[] = $this->getFatuvalu();
+        $ret[] = $this->getFaletagaloa();
         return $ret;
     }
     
@@ -208,12 +212,69 @@ class Savaii
         $content['id'] = $id = $this->gagaifomauga_id + 9;
         $content['motu_id'] = $this->motu_id;
         $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Lolua";
-        $content['content'][] = ["Lolua" => [
+        $content['name'] = "Asu";
+        $content['content'][] = ["Asu" => [
             "Susu mai Tauilemafua",
             "Susu mai le Usoalii (Feo, Ufagalilo, Savaii, Uilaau, Matalavea)",
             "ma upu i Tamapaa (Taa'au Leota, Pesefea, Tagaloa, Amituanai Pepe ma Pula)",
             "ma lo outou aiga i Asu"]];
+        return $content;
+    }
+    
+    function getFaleupolu() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 10;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Faleupolu";
+        $content['content'][] = ["Faleupolu" => [
+            "Maliu mai lau tofa Pagamalie",
+            "Maliu mai lo outou Itualasa",
+            "E faapea lo outou faleupolu Samauga"]];
+        return $content;
+    }
+    
+    function getMatavai() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 11;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Matavai (Safune)";
+        $content['content'][] = ["Matavai (Safune)" => [
+            "Afio mai le Toafa o Alii",
+            "Faapea sa Toe'eti",
+            "Maliu mai lau fetalaiga Tuumatavai ma Safune"]];
+        return $content;
+    }
+    
+    function getFatuvalu() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 12;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Fatuvalu";
+        $content['content'][] = ["Fatuvalu" => [
+            "Afio mai Tapaau",
+            "Maliu mai le falefa o Sausi ma Safune"]];
+        return $content;
+    }
+    
+    function getFaletagaloa() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 13;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "Faletagaloa";
+        $content['content'][] = ["Faletagaloa" => [
+            "Susu mai le Tagaloasusū (Pāpā)",
+            "Afio mai le Alii o le Nuu (Leota)",
+            "Afio mai Iliganoa (Taupou)",
+            "Maliu mai lo outou Toafia o Taulauniu",
+            "Faapea Saoloapu ma Safune"]];
         return $content;
     }
     
