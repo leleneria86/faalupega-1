@@ -74,6 +74,7 @@ class Savaii
         $ret[] = $this->getFatuvalu();
         $ret[] = $this->getFaletagaloa();
         $ret[] = $this->getSasinaFagaee();
+        $ret[] = $this->getAopo();
         return $ret;
     }
     
@@ -311,6 +312,7 @@ class Savaii
             "Afio mai Usoalii o Suafa",
             "Maliu mai lo outou falelua o Saletolo ma Sa Lealiifano",
             "o le mamalu lava lea o le faletolu"]];
+        $content['content'][] = ["Malaefono" => ["Malaefilogia"]];
         return $content;
     }
     
@@ -325,6 +327,7 @@ class Savaii
             ["Afio mai le Sa'o (Polataivao)",
             "Afio mai le aiga Sa Igoā",
             "Maliu mai Saitupua ma lau fetalaiga Nuu"]];
+        $content['content'][] = ["Malaefono" => ["Malaetele"]];
         return $content;
     }
     
@@ -339,6 +342,25 @@ class Savaii
             ["Afio mai le Aiga o Mavaega",
             "Maliu mai le Fatua ma le Falelupe",
             "Maliu mai lau fetalaiga Fiu"]];
+        $content['content'][] = ["Malaefono" => ["Puna'oa"]];
+        return $content;
+    }
+    
+    function getAopo() {
+
+        $content = [];
+        $content['id'] = $id = $this->gagaifomauga_id + 15;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->gagaifomauga_id;
+        $content['name'] = "A'opo";
+        $content['content'][] = ["A'opo" => [
+            "Susu mai Eetau ma le Ati Eetau",
+            "Afio mai Tauaanae ma Matofai",
+            "Susu mai lou Tapaau le Tagaloa A'opo",
+            "Afio mai le aiga o Mavaega",
+            "Maliu le Falelima o Sa Eseese o le Faleselau",
+            "Maliu mai foi lau fetalaiga Pa'õ]];
+        $content['content'][] = ["Malaefono" => ["Maota"]];
         return $content;
     }
     
