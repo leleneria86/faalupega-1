@@ -303,14 +303,14 @@ class Savaii
         $content['motu_id'] = $id;
         $content['itumalo_id'] = $this->gagaifomauga_id;
         $content['name'] = "Sasina";
-        $content['content'][] = ["Sasina" => 
-            ["Afio mai le toatolu o Suafa (Leasi, Vagana, Togoiu)",
-            "Afio mai e na fa'asa'osa'o (Togoiu, Vagana)",
-            "Afio mai le matua, o Leasi ma le aiga Sa Leasi faapea lo latou vaafetalai",
-            "Susu mai Laauli",
-            "Afio mai Usoalii o Suafa",
-            "Maliu mai lo outou falelua o Saletolo ma Sa Lealiifano",
-            "o le mamalu lava lea o le faletolu"]];
+//         $content['content'][] = ["Sasina" => 
+//             ["Afio mai le toatolu o Suafa (Leasi, Vagana, Togoiu)",
+//             "Afio mai e na fa'asa'osa'o (Togoiu, Vagana)",
+//             "Afio mai le matua, o Leasi ma le aiga Sa Leasi faapea lo latou vaafetalai",
+//             "Susu mai Laauli",
+//             "Afio mai Usoalii o Suafa",
+//             "Maliu mai lo outou falelua o Saletolo ma Sa Lealiifano",
+//             "o le mamalu lava lea o le faletolu"]];
         return $content;
     }
     
