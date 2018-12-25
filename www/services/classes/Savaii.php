@@ -292,7 +292,7 @@ class Savaii
         
         $content['pitonuus'][] = $this->getSasina($id);
         $content['pitonuus'][] = $this->getFagaee($id);
-        $content['pitonuus'][] = $this->getLetui($id);
+        //$content['pitonuus'][] = $this->getLetui($id);
         return $content;
     }
     
@@ -328,19 +328,19 @@ class Savaii
         return $content;
     }
     
-    function Letui($id) {
+//     function Letui($id) {
 
-        $content = [];
-        $content['id'] = $id + 3;
-        $content['motu_id'] = $id;
-        $content['itumalo_id'] = $this->gagaifomauga_id;
-        $content['name'] = "Letui";
-        $content['content'][] = ["Letui" => 
-            ["Afio mai le Aiga o Mavaega",
-            "Maliu mai le Fatua ma le Falelupe",
-            "Maliu mai lau fetalaiga Fiu"]];
-        return $content;
-    }
+//         $content = [];
+//         $content['id'] = $id + 3;
+//         $content['motu_id'] = $id;
+//         $content['itumalo_id'] = $this->gagaifomauga_id;
+//         $content['name'] = "Letui";
+//         $content['content'][] = ["Letui" => 
+//             ["Afio mai le Aiga o Mavaega",
+//             "Maliu mai le Fatua ma le Falelupe",
+//             "Maliu mai lau fetalaiga Fiu"]];
+//         return $content;
+//     }
     
     function getSalega()
     {
