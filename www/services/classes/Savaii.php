@@ -73,7 +73,7 @@ class Savaii
         $ret[] = $this->getMatavai();
         $ret[] = $this->getFatuvalu();
         $ret[] = $this->getFaletagaloa();
-        $ret[] = $this->getSasina();
+        $ret[] = $this->getSasinaFagaee();
         return $ret;
     }
     
@@ -279,7 +279,7 @@ class Savaii
         return $content;
     }
     
-    function getSasina() {
+    function getSasinaFagaee() {
 
         $content = [];
         $content['id'] = $id = $this->gagaifomauga_id + 14;
@@ -290,7 +290,7 @@ class Savaii
             "Afio mai aiga e lua (Sa Tupua, Sa Malietoa)",
             "Maliu ai oe le faletolu"]];
         
-//         $content['pitonuus'][] = $this->getSasina($id);
+        $content['pitonuus'][] = $this->getSasina($id);
 //         $content['pitonuus'][] = $this->getFagaee($id);
 //         $content['pitonuus'][] = $this->getLetui($id);
         return $content;
@@ -303,14 +303,14 @@ class Savaii
         $content['motu_id'] = $id;
         $content['itumalo_id'] = $this->gagaifomauga_id;
         $content['name'] = "Sasina";
-//         $content['content'][] = ["Sasina" => 
-//             ["Afio mai le toatolu o Suafa (Leasi, Vagana, Togoiu)",
-//             "Afio mai e na fa'asa'osa'o (Togoiu, Vagana)",
-//             "Afio mai le matua, o Leasi ma le aiga Sa Leasi faapea lo latou vaafetalai",
-//             "Susu mai Laauli",
-//             "Afio mai Usoalii o Suafa",
-//             "Maliu mai lo outou falelua o Saletolo ma Sa Lealiifano",
-//             "o le mamalu lava lea o le faletolu"]];
+        $content['content'][] = ["Sasina" => 
+            ["Afio mai le toatolu o Suafa (Leasi, Vagana, Togoiu)",
+            "Afio mai e na fa'asa'osa'o (Togoiu, Vagana)",
+            "Afio mai le matua, o Leasi ma le aiga Sa Leasi faapea lo latou vaafetalai",
+            "Susu mai Laauli",
+            "Afio mai Usoalii o Suafa",
+            "Maliu mai lo outou falelua o Saletolo ma Sa Lealiifano",
+            "o le mamalu lava lea o le faletolu"]];
         return $content;
     }
     
