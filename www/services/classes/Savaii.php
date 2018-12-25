@@ -328,7 +328,7 @@ class Savaii
         return $content;
     }
     
-    function Letui($id) {
+    function getLetui($id) {
 
         $content = [];
         $content['id'] = $id + 3;
