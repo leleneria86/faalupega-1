@@ -359,7 +359,7 @@ class Savaii
             "Susu mai lou Tapaau le Tagaloa A'opo",
             "Afio mai le aiga o Mavaega",
             "Maliu le Falelima o Sa Eseese o le Faleselau",
-            "Maliu mai foi lau fetalaiga Pa'õ]];
+            "Maliu mai foi lau fetalaiga Pa'õ"]];
         $content['content'][] = ["Malaefono" => ["Maota"]];
         return $content;
     }
