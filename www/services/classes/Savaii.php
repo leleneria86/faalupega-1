@@ -73,6 +73,7 @@ class Savaii
         $ret[] = $this->getMatavai();
         $ret[] = $this->getFatuvalu();
         $ret[] = $this->getFaletagaloa();
+        $ret[] = $this->getSasina();
         return $ret;
     }
     
