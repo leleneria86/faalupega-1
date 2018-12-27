@@ -82,6 +82,7 @@ class Upolu
             "Maliu mai Saleaumua"]];
 
         $content['pitonuus'][] = $this->getLalomanu($id);
+        $content['pitonuus'][] = $this->getVailoaAleipata($id);
         return $content;
     }
     
@@ -103,6 +104,25 @@ class Upolu
         return $content;
     }
 
+    function getVailoaAleipata($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 2;
+        $content['name'] = "Vailoa";
+        $content['content'][] = ["Vailoa"=> [
+            "Afio mai Alalamalae",
+            "Afio mai Alo o Sina (Saumalu, Amiatuatolu, Utumatagitagi, Toomalatai, ma le teine o Suluifaleese)",
+            "Afio mai Saumalu o oe o le Sa'ofetalai ma lou Usoalii (Amiatuatolu, Utumatagitagi, Toomalatai)",
+            "Afio mai Alo o le Tuiatua, lau Afioga Puepuemai, o oe o le Aomavaega, o le Tapunuu",
+            "Afio mai le Aloalii, lau Afioga Palelei",
+            "Afio mai Suluifaleese na toalima i ai le Usoalii",
+            "Afio mai Fuaava o le Tapaau o Saleleaalii",
+            "Maliu mai le Matua o Tualemoso",
+            "Maliu mai Saleleaalii ma upu ia te oe Saleaaumua"]];
+        $content['content'][] = ["Malaefono" => ["Fanuaea","Vailoa"]];
+        return $content;
+    }
 
     function getTuamasagaMatu() {
 
