@@ -61,8 +61,44 @@ class Upolu
         $ret[] = $this->getFalealili();
         $ret[] = $this->getItumaloLotofaga();
         $ret[] = $this->getLepa();
+        $ret[] = $this->getAleipata();
         return $ret;
     }
+    
+        function getAleipata() {
+
+        $content = [];
+        $content['id'] = $id = $this->atua_id + 100;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->atua_id;
+        $content['pitonuus'] = [];
+        $content['name'] = "Aleipata";
+        $content['content'][] = ["Aleipata" => [
+            "Afio mai Tuiatua fa'anofonofo, ia ia la'ua Matua (Fuataga, Tafua)",
+            "Afio mai Alalamalae (Saumalu, Laupola)",
+            "Susu mai Pule na ta'ita'i i Lalovi ma Malaefonoa (Satitoa, Ti'avea)",
+            "Susu mai le alii o le Itu (Tauiliili)",
+            "Susu mai le tane o le Itu (Amoa)",
+            "Maliu mai Sale'aumua"]];
+
+        $content['pitonuus'][] = $this->getLalomanu($id);
+        return $content;
+    }
+    
+    function getLalomanu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 1;
+        $content['name'] = "Lalomanu";
+        $content['content'][] = ["Lalomanu"=> [
+            "Afio mai Faolotoi ma Taua'a",
+            "Susu mai le matua o Niumata ma le Maopu o le Tuiaana",
+            "Susu mai Ponemafua ma ou alo, Teo ma Afutai",
+            "Mamalu maia le fetalaiga ia Semua ma Utaia'ana ma upu ia Salefao"]];
+        return $content;
+    }
+
 
     function getTuamasagaMatu() {
 
