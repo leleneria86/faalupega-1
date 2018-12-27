@@ -79,7 +79,7 @@ class Upolu
             "Susu mai Pule na ta'ita'i i Lalovi ma Malaefonoa (Satitoa, Ti'avea)",
             "Susu mai le alii o le Itu (Tauiliili)",
             "Susu mai le tane o le Itu (Amoa)",
-            "Maliu mai Sale'aumua"]];
+            "Maliu mai Saleaumua"]];
 
         $content['pitonuus'][] = $this->getLalomanu($id);
         return $content;
@@ -92,10 +92,14 @@ class Upolu
         $content['id'] = $id + 1;
         $content['name'] = "Lalomanu";
         $content['content'][] = ["Lalomanu"=> [
-            "Afio mai Faolotoi ma Taua'a",
-            "Susu mai le matua o Niumata ma le Maopu o le Tuiaana",
-            "Susu mai Ponemafua ma ou alo, Teo ma Afutai",
-            "Mamalu maia le fetalaiga ia Semua ma Utaia'ana ma upu ia Salefao"]];
+            "Afio mai le Tuiatua fa'anofonofo (Fuataga) o oe o le matua",
+            "Afio mai le Falefia (Aulaumea, Lutau, Lefale) o alii ma o outou Maopu (Poloaalii, Alailesulu, Maeataanoa)",
+            "Afio mai Amituanai o le Maopu o le Tuiaana",
+            "Susu mai suafa o Letalu ma Le'ula",
+            "Maliu mai outou Tootoo (Satama, Tiatia, Seuala, Mauu), o le fofoga o le Fuataga",
+            "Maliu mai le igoa matua o lau Tofa Leifi",
+            "Maliu mai le mamalu ia te oe Saleaumua"]];
+        $content['content'][] = ["Malaefono" => ["Malaefonoa - Ona o le tali loifono i le aumaiga o malo"]];
         return $content;
     }
 
