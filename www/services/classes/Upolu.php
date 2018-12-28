@@ -88,6 +88,7 @@ class Upolu
         $content['pitonuus'][] = $this->getMutiatele($id);
         $content['pitonuus'][] = $this->getSaleaaumua($id);
         $content['pitonuus'][] = $this->getUtufaalalafa($id);
+        $content['pitonuus'][] = $this->getSamusu($id);
         return $content;
     }
     
@@ -209,6 +210,20 @@ class Upolu
             "Susu mai Ifopo ma Sasaumalu ma le matua o Oa",
             "Mamalu mai lau fetalaiga Leteu (Lēteu) ma upu ia Saleaaumua"]];
         $content['content'][] = ["Malaefono" => ["Utufa'alalafa"]];
+        return $content;
+    }
+    
+    function getSamusu($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 8;
+        $content['name'] = "Samusu";
+        $content['content'][] = ["Samusu"=> [
+            "Afio mai lau Afioga Tago ma le aiga Sa Tago (Vaotogo, Foutanu)",
+            "Maliu mai lau fetalaiga Amoa, o oe o le Matua, o le tane o le Itu",
+            "Mamalu mai le nofo a Vaega ia Samusu ma upu ia te oe le Faleatua"]];
+        $content['content'][] = ["Malaefono" => ["Alafa'alava"]];
         return $content;
     }
 
