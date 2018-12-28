@@ -90,6 +90,7 @@ class Upolu
         $content['pitonuus'][] = $this->getUtufaalalafa($id);
         $content['pitonuus'][] = $this->getSamusu($id);
         $content['pitonuus'][] = $this->getAmaile($id);
+        $content['pitonuus'][] = $this->getTiavea($id);
         return $content;
     }
     
@@ -242,6 +243,23 @@ class Upolu
             "Afifio mai Tama a Paa (Ilimaleota, Tuimaseve, Luamanuvae)",
             "Alala mai oe le Aualuma o Fonoti"]];
         $content['content'][] = ["Malaefono" => ["Anapapa"]];
+        return $content;
+    }
+    
+    function getTiavea($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 10;
+        $content['name'] = "Ti'avea";
+        $content['content'][] = ["Ti'avea"=> [
+            "Afio mai Tuiavii ma le Usoalii",
+            "Susu mai Valai ma le Taauso (Seiuli)",
+            "Susu mai le Ma'opu (Su'a)",
+            "Maliu mai le Faleulu (Lautinalaulelei i le Faleupolu)",
+            "Maliu mai la lua nofo Falelua (Fiu, Malaesala)",
+            "Maliu mai oe Saleaauma ma le Faga o alii"]];
+        $content['content'][] = ["Malaefono" => ["Faleulu"]];
         return $content;
     }
 
