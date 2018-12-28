@@ -85,6 +85,7 @@ class Upolu
         $content['pitonuus'][] = $this->getVailoaAleipata($id);
         $content['pitonuus'][] = $this->getUlutogia($id);
         $content['pitonuus'][] = $this->getSatitoa($id);
+        $content['pitonuus'][] = $this->getMutiatele($id);
         return $content;
     }
     
@@ -154,6 +155,26 @@ class Upolu
             "Susu mai aiga e lua, o Oso ma Seupule",
             "Maliu mai Oe le Faleatua ma upu ia te oe Leatitoafaigā"]];
         $content['content'][] = ["Malaefono" => ["Vaifalesa"]];
+        return $content;
+    }
+    
+    function getMutiatele($id)
+    {
+        $content = [];
+        $content['motu_id'] = $id;
+        $content['id'] = $id + 5;
+        $content['name'] = "Mutiatele, Malaela, Pu'ē";
+        $content['content'][] = ["Mutiatele, Malaela, Pu'ē"=> [
+            "Afio mai le paia o Alalamalae",
+            "Afio mai Laupola, o le Sa'ofetalai, ma le toalima o le aiga o Sa Laupola (Mase, Toa, Ena, Anae, Saomai)",
+            "Afio mai la outou tama o lou saota, o le Valasi o le Afioga a Tuisila",
+            "Afio mai oe Tuisila, o le vaa fauese, o le tama o le faasuage a i laua matua o le Solosolo i Savili",
+            "Afio mai Tuitogamaatoe, o le faauluuluga o le aiga o Salevalasi",
+            "Afio mai Fagasoaia o le alo o le Tuiatua",
+            "Afio mai Lesamatauanuu ma Luamanuvae",
+            "Afio mai oulua alii o le fono (Mainuuoti, Sitamafuata",
+            "Maliu mai Siu ma le Afolau ma le mamalu ia te oe Saleaaumua"]];
+        $content['content'][] = ["Malaefono" => ["Mutiaele","Lotopu'ē","Olosepu ma Alosaia"]];
         return $content;
     }
 
