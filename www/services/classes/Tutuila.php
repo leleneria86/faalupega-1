@@ -64,12 +64,43 @@ class Tutuila
         $ituau = $this->getItuau();
         $tualauta = $this->getTualauta();
         $tualatai = $this->getTualatai();
-        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau, $tualauta, $tualatai);
+        $leasina = $this->getLeasina();
+        return array_merge($launiusaelua, $sua, $saole, $vaifanua, $ituau, $tualauta, $tualatai, $leasina);
     }
 
     function getPitonuus() {
 
         return $this->pitonuus;
+    }
+    
+    function getLeasina() {
+        $ret = [];
+        $ret[] = $this->getAloau();
+//         $ret[] = $this->getTaputimu();
+//         $ret[] = $this->getFutiga();
+//         $ret[] = $this->getMalaeloa();
+        return $ret;
+    }
+    
+    function getAloau() {
+        $nuu = [];
+        $nuu['id'] = $this->leasina_id + 1;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->leasina_id;
+        $nuu['name'] = "Aloau";
+        $nuu['content'][] = ["Aloau" => [
+            "Afio mai lau afioga Fuimaono o le Gafatasi, o le tama a le malo",
+            "Susu mai tei o Fuimaono (Afalava, Malumaleumu, Atualevao)",
+            "Susu mai le matua o Fuimaono (Tagaleo'o)",
+            "Susu mai le alo o Fuimaono (Tuilesu)",
+            "Susu mai Lealai'asa, o le na fitaituga",
+            "Susu mai Gatā (Gata) o le matua o Tei",
+            "Susu mai Leotaleulua'ialii, o le faasisina o Alataua",
+            "Mamalu mai tula malolosi o Fuimaono (Lefotu, Faiaimasepulea, Moananu, Tauola)",
+            "Alalatai maia Falealili ma le 'a'ai, faapea foi Saleutogi Poe, ma le fetalaiga ia te i laua Leasina"
+        ]];
+        $nuu['content'][] = ["Malaefono" => ["Sili'aga"]];
+        return $nuu;
     }
     
     function getTualatai() {
