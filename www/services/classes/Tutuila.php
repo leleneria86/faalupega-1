@@ -17,6 +17,7 @@ class Tutuila
     protected $ituau_id = 1500;
     protected $tualauta_id = 1600;
     protected $tualatai_id = 1700;
+    protected $leasina_id = 1800;
     protected $pitonuus = [];
 
     function getItumalo()
@@ -41,7 +42,14 @@ class Tutuila
                "Susu mai matua (Afoa, Ulufaleilupe)",
                "Susu mai le Falefia",
                "Alalatai mai Tautootoo",
-                "Falealili ma le Faletolu ma le fetaliga i Ituau"]]
+                "Falealili ma le Faletolu ma le fetaliga i Ituau"]],
+            ["id"=>$this->leasina_id, "name"=>"Leāsina","motu_id"=>$this->motu_id, "content"=>[
+                "Afio mai lau afioga Fuimaono o le Gafatasi",
+               "Susu mai Lualemana, o le tama aitu ma tagata",
+               "Susu mai Maluolefale",
+               "Susu mai tei o Fuimaono",
+                "Susu mai le falefa o le aiga, ma le falefia o Taupolo",
+                "Mamalu mai matua o Aitulagi ma le fetalaiga ia te oulua Tula ma Satoafaiga"]]
 
         ];
         return $data;
