@@ -77,8 +77,7 @@ class Tutuila
         $ret = [];
         $ret[] = $this->getAloau();
         $ret[] = $this->getAsu();
-//         $ret[] = $this->getFutiga();
-//         $ret[] = $this->getMalaeloa();
+        $ret[] = $this->getMalaeloaAitulagi();
         return $ret;
     }
     
@@ -108,17 +107,33 @@ class Tutuila
         $nuu['id'] = $this->leasina_id + 2;
         $nuu['motu_id'] = $this->motu_id;
         $nuu['itumalo_id'] = $this->leasina_id;
-        $nuu['name'] = "Aloau";
-        $nuu['content'][] = ["Aloau" => [
+        $nuu['name'] = "Asu";
+        $nuu['content'][] = ["Asu" => [
             "Afio mai Lualemana, o le tama a aitu ma tagata, ma ou tafa'i na leiloa, ma lou nofoa vaevaeloloa",
             "Susu mai le falefa o aiga (Muagututi'a, Fonomasitalo, Foumai, Puā (Pua))",
-            "Susu mai le falefia o Taupolo (Tuimafuiva, Tialavea, Falefata, Taputū (Taputu))",
+            "Susu mai le falefia o Taupolo (Tuimafuiva, Tialavea, Falefata, Taputu (Taputū))",
             "Susu mai Tupua o le aloalii",
             "Susu mai le Sa'o ao o Leasiolagi",
             "Mamalu mai la oulua fetalaiga Satoafaiga (Utuga, Lea'e, Fatuvaolo, Mageafaiga, Faaolo)",
             "Ma upu ia te oulua Aitulagi"
         ]];
         $nuu['content'][] = ["Malaefono" => ["Aniutea","Tupapa"]];
+        return $nuu;
+    }
+    
+    function getMalaeloaAitulagi() {
+        $nuu = [];
+        $nuu['id'] = $this->leasina_id + 3;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->leasina_id;
+        $nuu['name'] = "Malaeloa Aitulagi";
+        $nuu['content'][] = ["Malaeloa Aitulagi" => [
+            "Afio mai le afioga i Malu o le fale, na malu ai le fale o Itu'au ma Alataua (Malota (Malotā), Ulutu (Ulutū))",
+            "Alalata'i maia le paia i le aiga Aitulagi, i le mamalu i tama matua, i lo outou toaono (Tuiagamoa, Tuilefano, Tuitasi, Faatuiolemotu, Alaipalelei, Leaitunaleiloa)",
+            "Mamalu maia le to'afa o Alataua (Nuu, Ailetua (Ailetuā), Taomataava (Taomatāāva), Fuafuaimealelei)",
+            "Maliu mai le fetalaiga i le Falealataua"
+        ]];
+        $nuu['content'][] = ["Malaefono" => ["Aniutea"]];
         return $nuu;
     }
     
