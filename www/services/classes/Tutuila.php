@@ -76,7 +76,7 @@ class Tutuila
     function getLeasina() {
         $ret = [];
         $ret[] = $this->getAloau();
-//         $ret[] = $this->getTaputimu();
+        $ret[] = $this->getAsu();
 //         $ret[] = $this->getFutiga();
 //         $ret[] = $this->getMalaeloa();
         return $ret;
@@ -100,6 +100,25 @@ class Tutuila
             "Alalatai maia Falealili ma le 'a'ai, faapea foi Saleutogi Poe, ma le fetalaiga ia te i laua Leasina"
         ]];
         $nuu['content'][] = ["Malaefono" => ["Sili'aga"]];
+        return $nuu;
+    }
+    
+    function getAsu() {
+        $nuu = [];
+        $nuu['id'] = $this->leasina_id + 2;
+        $nuu['motu_id'] = $this->motu_id;
+        $nuu['itumalo_id'] = $this->leasina_id;
+        $nuu['name'] = "Aloau";
+        $nuu['content'][] = ["Aloau" => [
+            "Afio mai Lualemana, o le tama a aitu ma tagata, ma ou tafa'i na leiloa, ma lou nofoa vaevaeloloa",
+            "Susu mai le falefa o aiga (Muagututi'a, Fonomasitalo, Foumai, Puā (Pua))",
+            "Susu mai le falefia o Taupolo (Tuimafuiva, Tialavea, Falefata, Taputū (Taputu))",
+            "Susu mai Tupua o le aloalii",
+            "Susu mai le Sa'o ao o Leasiolagi",
+            "Mamalu mai la oulua fetalaiga Satoafaiga (Utuga, Lea'e, Fatuvaolo, Mageafaiga, Faaolo)",
+            "Ma upu ia te oulua Aitulagi"
+        ]];
+        $nuu['content'][] = ["Malaefono" => ["Aniutea","Tupapa"]];
         return $nuu;
     }
     
