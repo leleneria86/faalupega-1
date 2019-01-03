@@ -403,6 +403,7 @@ class Savaii
         
         $content['pitonuus'][] = $this->getVaega($id);
         $content['pitonuus'][] = $this->getPitonuu($id);
+        $content['pitonuus'][] = $this->getSatufia($id);
         return $content;
     }
     
@@ -434,6 +435,20 @@ class Savaii
             "Afio mai le alo o Lilomaiava",
             "Afio mai Tapa'au",
             "Afio mai oe le Tapaaulefano"]];
+        return $content;
+    }
+    
+    function getSatufia($id) {
+
+        $content = [];
+        $content['id'] = $id + 3;
+        $content['motu_id'] = $id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Satufia";
+        $content['content'][] = ["Satufia" => 
+            ["Afio mai lau Afioga i le Sa'o o Fa'anana (Fa'anānā) ma le aiga",
+            "Susu mai le suafa Fauatea",
+            "Maliu mai le Matuafia ma le Alataua"]];
         return $content;
     }
     
