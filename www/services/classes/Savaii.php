@@ -408,16 +408,16 @@ class Savaii
     function getVaega($id) {
 
         $content = [];
-        $content['id'] = $id +1;
-        $content['motu_id'] = $id;
-        $content['itumalo_id'] = $this->salega_id;
-        $content['name'] = "Vaega";
-        $content['content'][] = ["Vaega" => 
-            ["Susu mai le paia i le nofo fealoa'i ia Sa Asiata (Asiatā)",
-            "lau tofa le vaa i malae le na tausi vaa tele",
-            "Susu mai le vaa i ti",
-            "Susu mai le suafa Fauatea ma le aiga sa Valomua",
-            "Maliu mai le Nofoa a pule, ia te oe le Alataua"]];
+//         $content['id'] = $id +1;
+//         $content['motu_id'] = $id;
+//         $content['itumalo_id'] = $this->salega_id;
+//         $content['name'] = "Vaega";
+//         $content['content'][] = ["Vaega" => 
+//             ["Susu mai le paia i le nofo fealoa'i ia Sa Asiata (Asiatā)",
+//             "lau tofa le vaa i malae le na tausi vaa tele",
+//             "Susu mai le vaa i ti",
+//             "Susu mai le suafa Fauatea ma le aiga sa Valomua",
+//             "Maliu mai le Nofoa a pule, ia te oe le Alataua"]];
         return $content;
     }
     
