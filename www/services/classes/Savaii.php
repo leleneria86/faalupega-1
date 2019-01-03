@@ -404,6 +404,8 @@ class Savaii
         $content['pitonuus'][] = $this->getVaega($id);
         $content['pitonuus'][] = $this->getPitonuu($id);
         $content['pitonuus'][] = $this->getSatufia($id);
+        
+        $content['content'][] = ["Malaefono" => ["Faletoi - Malae tāuā","Tausunu (Tausunū) - O le igoa o le alafale o Nafanua na sunu'i iai","Saua - Na toto ai le tava'etoto, sa mau ai Toilolo ma Tupuivao ma le alii o Valomua"]];
         return $content;
     }
     
