@@ -375,35 +375,35 @@ class Savaii
         $ret[] = $this->getVaipua();
         $ret[] = $this->getFogasavaii();
         $ret[] = $this->getSagone();
-        //$ret[] = $this->getSatupaitea();
+        $ret[] = $this->getSatupaitea();
         return $ret;
     }
     
-//     function getSatupaitea() {
+    function getSatupaitea() {
 
-//         $content = [];
-// //         $content['id'] = $id = $this->salega_id + 9;
-// //         $content['motu_id'] = $this->motu_id;
-// //         $content['itumalo_id'] = $this->salega_id;
-// //         $content['name'] = "Satupa'itea";
-// //         $content['content'][] = ["Satupa'itea - Aoao tetele o le Itumalo" => [
-// //             "Susu mai le va'a-I-malae, ma le va'a-I-ti ma Tapaau na e tausi",
-// //             "Susu mai tupu o le Itu, ma lau fetalaiga Tuisalega",
-// //             "Maliu mai To'oto'o Faletoi",
-// //             "Alalata'i mai le Alataua, ma upu ia te oe le pule"]];
-// //         $content['content'][] = ["Aotelega o Satupa'itea" => [
-// //             "Susu mai Asiata, oe na falefa i ai Tumua o le vaa I malae",
-// //             "Susu mai Tupa'i, o le vaa I ti",
-// //             "Susu mai le aiga Samoeleoi (Tavui, Gasu (Gasū)",
-// //             "Afio mai alo o Lilomaiava (Tuimaseve, Faanana (Faanānā))",
-// //             "Afio mai Fauatea ma le aiga sa Valomua",
-// //             "Afio mai lou Tapa'au o le Tonumaipe'a",
-// //             "Maliu mai le mamalu o le nofo a ituaiga ia te oe le Alataua",
-// //             "Tapa'au le fano, Nofoapule, ma le Matuafia"]];
+        $content = [];
+        $content['id'] = $id = $this->salega_id + 9;
+        $content['motu_id'] = $this->motu_id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Satupa'itea";
+        $content['content'][] = ["Satupa'itea - Aoao tetele o le Itumalo" => [
+            "Susu mai le va'a-I-malae, ma le va'a-I-ti ma Tapaau na e tausi",
+            "Susu mai tupu o le Itu, ma lau fetalaiga Tuisalega",
+            "Maliu mai To'oto'o Faletoi",
+            "Alalata'i mai le Alataua, ma upu ia te oe le pule"]];
+        $content['content'][] = ["Aotelega o Satupa'itea" => [
+            "Susu mai Asiata, oe na falefa i ai Tumua o le vaa I malae",
+            "Susu mai Tupa'i, o le vaa I ti",
+            "Susu mai le aiga Samoeleoi (Tavui, Gasu (Gasū)",
+            "Afio mai alo o Lilomaiava (Tuimaseve, Faanana (Faanānā))",
+            "Afio mai Fauatea ma le aiga sa Valomua",
+            "Afio mai lou Tapa'au o le Tonumaipe'a",
+            "Maliu mai le mamalu o le nofo a ituaiga ia te oe le Alataua",
+            "Tapa'au le fano, Nofoapule, ma le Matuafia"]];
         
-//         //$content['pitonuus'][] = $this->getVaega($id);
-//         return $content;
-//     }
+        //$content['pitonuus'][] = $this->getVaega($id);
+        return $content;
+    }
     
     function getVaega($id) {
 
@@ -1021,23 +1021,6 @@ class Savaii
             "Afio mai le tamaitai (Taematua)",
             "Maliu mai lau fetalaiga Mauisi'i ma upu ia te oe sa Uluitoga"]];
         $content['content'][] = ["Malaefono" => ["Faleulu"]];
-        return $content;
-    }
-    
-    function getSatupaitea() {
-
-        $content = [];
-        $content['id'] = $id = $this->palauli_id + 2;
-        $content['motu_id'] = $this->motu_id;
-        $content['itumalo_id'] = $this->palauli_id;
-        $content['name'] = "Palauli Le Falefa";
-        $content['content'][] = ["Palauli Le Falefa" => ["Afifio mai Ao e fa",
-            "Maliu mai Felupolu e fa"]];
-
-        $content['pitonuus'][] = $this->getGataivai($id);
-        $content['pitonuus'][] = $this->getGautavaiMaSili($id);
-        $content['pitonuus'][] = $this->getPuleia($id);
-        $content['pitonuus'][] = $this->getPapaIPuleia($id);
         return $content;
     }
     
