@@ -425,7 +425,7 @@ class Savaii
     function getPitonuu($id) {
 
         $content = [];
-        $content['id'] = $id 21;
+        $content['id'] = $id + 2;
         $content['motu_id'] = $id;
         $content['itumalo_id'] = $this->salega_id;
         $content['name'] = "Pitonuu (Pitonuū)";
