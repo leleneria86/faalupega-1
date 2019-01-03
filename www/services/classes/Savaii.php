@@ -402,6 +402,7 @@ class Savaii
             "Tapa'au le fano, Nofoapule, ma le Matuafia"]];
         
         $content['pitonuus'][] = $this->getVaega($id);
+        $content['pitonuus'][] = $this->getPitonuu($id);
         return $content;
     }
     
@@ -418,6 +419,21 @@ class Savaii
             "Susu mai le vaa i ti",
             "Susu mai le suafa Fauatea ma le aiga sa Valomua",
             "Maliu mai le Nofoa a pule, ia te oe le Alataua"]];
+        return $content;
+    }
+    
+    function getPitonuu($id) {
+
+        $content = [];
+        $content['id'] = $id 21;
+        $content['motu_id'] = $id;
+        $content['itumalo_id'] = $this->salega_id;
+        $content['name'] = "Pitonuu (Pitonuū)";
+        $content['content'][] = ["Pitonuu (Pitonuū)" => 
+            ["Susu mai le aiga Sa Moeleoi (Tavui, Gasu (Gasū))",
+            "Afio mai le alo o Lilomaiava",
+            "Afio mai Tapa'au",
+            "Afio mai oe le Tapaaulefano"]];
         return $content;
     }
     
