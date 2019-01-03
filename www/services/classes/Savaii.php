@@ -401,7 +401,7 @@ class Savaii
             "Maliu mai le mamalu o le nofo a ituaiga ia te oe le Alataua",
             "Tapa'au le fano, Nofoapule, ma le Matuafia"]];
         
-        $content['pitonuus'][] = $this->getVaega($id);
+        //$content['pitonuus'][] = $this->getVaega($id);
         return $content;
     }
     
