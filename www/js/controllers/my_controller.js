@@ -434,8 +434,15 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
 
     $scope.onLoginUser = function() {
 
-        $scope.user.email = 'fululele@gmail.com';
-        $scope.user.password = 'konpass';
+        if($scope.user.email == 'lele' && $scope.user.password == 'lelepass') {
+            
+            $scope.jwt = "good-token";
+            $scope.load();
+        } else {
+            
+            $scope.message = 'Login Failed';
+        }
+        $scope.safeApply();
 
         $scope.message = null;
         MyService.loginUser($scope.user.email, $scope.user.password).then(function (data) {
