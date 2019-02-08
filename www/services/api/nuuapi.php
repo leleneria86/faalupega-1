@@ -1,8 +1,8 @@
 <?php
 
-require_once('classes/Upolu.php');
-require_once('classes/Tutuila.php');
-require_once ('classes/Savaii.php');
+require_once('../../../classes/Upolu.php');
+require_once('../../../classes/Tutuila.php');
+require_once('../../../classes/Savaii.php');
 
 use classes\Upolu;
 use classes\Tutuila;
