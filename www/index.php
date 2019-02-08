@@ -107,6 +107,9 @@
 <?php
 ?>
 
+<?php
+?>
+
 <!DOCTYPE html>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -147,7 +150,7 @@
     <div class="col-sm-12" ng-show="!selected_nuu && isActiveMode()">
         <div>
             <br/>
-                        <div class="columns">
+            <div class="columns">
                 <div class="column">
                     <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
                 </div>
@@ -214,7 +217,7 @@
         </div>
         <br/>
         <div ng-repeat="pitonuu in pitonuus_filtered">
-            <span ng-click="onPitonuu(pitonuu);" style="color:blue;cursor:pointer;font-size: large">{{pitonuu.name}}</span>
+            <span ng-click="onPitonuu(pitonuu);" style="cursor:pointer;font-size: large">{{pitonuu.name}}</span>
             <div ng-if="pitonuu.expanded" ng-repeat="content in pitonuu.content">
                 <div ng-repeat="(key,lines) in content">
                     <br/>
@@ -233,3 +236,5 @@
 
 </body>
 </html>
+
+
