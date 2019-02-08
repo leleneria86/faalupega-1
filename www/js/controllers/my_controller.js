@@ -435,7 +435,7 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
     $scope.onLoginUser = function() {
 
         $scope.message = null;
-        if($scope.user.email == 'lele' && $scope.user.password == 'lelepass') {
+        if($scope.user.email.toLowerCase() == 'lele' && $scope.user.password.toLowerCase() == 'lelepass') {
             
             $scope.jwt = "good-token";
             $scope.load();
