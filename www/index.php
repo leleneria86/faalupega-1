@@ -153,15 +153,9 @@
                 </div>
                 <div class="column">
                     <input type="checkbox" ng-model="name_only" ng-change="onChangeEvent()"/>&nbspName
-                </div>
-                <div class="column">
                     <input type="checkbox" ng-model="exact_match" ng-change="onChangeEvent()"/>&nbspExact
                 </div>
             </div>
-            
-            <input ng-model="search_text" type="text" placeholder="Search" ng-change="onChangeEvent()">
-            <input type="checkbox" ng-model="name_only" ng-change="onChangeEvent()"/>&nbspName
-            <input type="checkbox" ng-model="exact_match" ng-change="onChangeEvent()"/>&nbspExact
         </div>
         <br/>
         <div class="input-group">
