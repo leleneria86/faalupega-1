@@ -545,6 +545,12 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
 
     $scope.onChangeEvent = function() {
 
+        // temp code until we get db
+        $scope.nuus_filtered = [];
+
+                    $scope.filterNuus();
+        return;
+        
         MyService.checkToken($scope.jwt).then(function (data) {
 
                 if(data.success) {
@@ -568,6 +574,13 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
 
     $scope.onChangeMotu = function() {
 
+        // code
+        $scope.setItumalos($scope.selected_motu.id);
+                $scope.selected_itumalo = $scope.itumalos_filtered[0];
+
+                $scope.filterNuus();
+        return;
+        
         MyService.checkToken($scope.jwt).then(function (data) {
 
             if(data.success) {
