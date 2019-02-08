@@ -17,9 +17,9 @@
         <div>
             <button class="button is-primary" id="login_user_btn" ng-click="onLoginUser()">Log In</button>
         </div>
-        <div>
+        <!--div>
             <span ng-click="gotoRegisterView()" style="color:blue;cursor:pointer;font-size: large">Register</span>
-        </div>
+        </div-->
         <div>
             <span class="text-danger">{{message}}</span>
         </div>
