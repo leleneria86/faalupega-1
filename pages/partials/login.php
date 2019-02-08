@@ -21,7 +21,7 @@
             <span ng-click="gotoRegisterView()" style="color:blue;cursor:pointer;font-size: large">Register</span>
         </div>
         <div>
-            <span class="text-danger">{{login_message}}</span>
+            <span class="text-danger">{{message}}</span>
         </div>
     </div>
 </div>
