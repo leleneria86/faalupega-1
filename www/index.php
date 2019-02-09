@@ -206,6 +206,7 @@
 
     <div class="col-sm-12" ng-if="selected_nuu">
         <br/>
+        <span ng-click="onBack();" style="cursor:pointer"><i class="fa fa-arrow-left"></i></span>
         <div ng-repeat="content in selected_nuu.content">
             <div ng-repeat="(key,lines) in content">
                 <br/>
@@ -229,8 +230,6 @@
                 <br/>
             </div>
         </div>
-        <br/>
-        <span ng-click="onBack();" style="cursor:pointer"><i class="fa fa-arrow-left"></i></span>
     </div>
 </div>
 
