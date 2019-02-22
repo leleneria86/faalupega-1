@@ -12,6 +12,9 @@ require_once('../../../classes/User.php');
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+
 $user = new User();
 $user->setFirstname($request->first_name);
 $user->setLastname($request->last_name);
@@ -61,8 +64,8 @@ function sendConfirmationEmail($email, $verCode)
     $to      = $email;
     $subject = 'the subject';
     $message = "<h2>Verification Code: ".$verCode."</h2></br></br>";
-    $message .= "http://mytest.com/services/api/verifyemail.php?vercode=$verCode";
-    $headers = "From: my test \r\n";
+    $message .= "http://tusifaalupega.com/services/api/verifyemail.php?vercode=$verCode";
+    $headers = "From: info@tusifaalupega.com \r\n";
     $headers .= "MIME-VERSION:1.0 \r\n";
     $headers .= "Content-type:text/html \r\n";
 
