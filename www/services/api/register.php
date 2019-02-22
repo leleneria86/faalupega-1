@@ -22,13 +22,15 @@ $user->setEmail($request->email);
 $user->setPassword($request->password);
 $verCode = getVerificationCode();
 $user->setVerificationCode($verCode);
-
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
 $conn = DBUtil::getConnection();
 
 $service = new UserService($conn);
 if($service->create($user)){
 
-    sendConfirmationEmail($user->getEmail(), $verCode);
+    $mailSent = sendConfirmationEmail($user->getEmail(), $verCode);
 
     // set response code
     http_response_code(200);
@@ -62,12 +64,12 @@ function getVerificationCode()
 function sendConfirmationEmail($email, $verCode)
 {
     $to      = $email;
-    $subject = 'the subject';
-    $message = "<h2>Verification Code: ".$verCode."</h2></br></br>";
+    $subject = 'Verfication Code';
+    $message = "Click on the link to verify your email.  If you did not register on tusifaalupega, ignore this email.";
     $message .= "http://tusifaalupega.com/services/api/verifyemail.php?vercode=$verCode";
-    $headers = "From: info@tusifaalupega.com \r\n";
-    $headers .= "MIME-VERSION:1.0 \r\n";
-    $headers .= "Content-type:text/html \r\n";
+    $headers = "From: tusifaalupega<info@tusifaalupega.com> \r\n";
+    // $headers .= "MIME-VERSION:1.0 \r\n";
+    // $headers .= "Content-type:text/html \r\n";
 
     return mail($to, $subject, $message, $headers);
 }
