@@ -12,7 +12,7 @@ use \Firebase\JWT\JWT;
 $conn = DBUtil::getConnection();
 $service = new UserService($conn);
 
-$user = $service->getUserByEmail($_GET['email']);
+$user = $service->getActiveUserByEmail($_GET['email']);
 
 if($user instanceof User && password_verify($_GET['pass'], $user->getPassword())) {
 
@@ -48,7 +48,7 @@ if($user instanceof User && password_verify($_GET['pass'], $user->getPassword())
     http_response_code(401);
 
     // tell the user login failed
-    echo json_encode(array("message" => "Login failed."));
+    echo json_encode(array("message" => "Login Failed."));
 }
 
 
