@@ -25,6 +25,53 @@ class UserService
         }
         return false;
     }
+    
+    public function getActiveUserByEmail($email){
+
+        if($this->db_conn && $email) {
+            // query to check if email exists
+            $query = "SELECT user_id, first_name, last_name, password
+                FROM user
+                WHERE email = ? AND status='active'
+                LIMIT 0,1";
+
+            // prepare the query
+            $stmt = $this->db_conn->prepare($query);
+
+            // sanitize
+            $email = htmlspecialchars(strip_tags($email));
+
+            // bind given email value
+            $stmt->bindParam(1, $email);
+
+            // execute the query
+            $stmt->execute();
+
+            // get number of rows
+            $num = $stmt->rowCount();
+
+            // if email exists, assign values to object properties for easy access and use for php sessions
+            if ($num > 0) {
+
+                $user = new User();
+                // get record details / values
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                // assign values to object properties
+                $user->setId($row['user_id']);
+                $user->setFirstname($row['first_name']);
+                $user->setLastname($row['last_name']);
+                $user->setPassword($row['password']);
+                $user->setEmail($row['email']);
+
+                // return true because email exists in the database
+                return $user;
+            }
+        }
+
+        // return false if email does not exist in the database
+        return false;
+    }
 
     public function getUserByEmail($email){
 
