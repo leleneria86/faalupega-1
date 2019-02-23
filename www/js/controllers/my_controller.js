@@ -74,7 +74,7 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
             },
             function (result) {
 
-                //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
+                $scope.login_message = result.data.message;
             });
     };
 
