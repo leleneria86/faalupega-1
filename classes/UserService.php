@@ -30,9 +30,9 @@ class UserService
 
         if($this->db_conn && $email) {
             // query to check if email exists
-            $query = "SELECT user_id, first_name, last_name, password
+            $query = "SELECT user_id, first_name, email, last_name, password
                 FROM user
-                WHERE email = ? AND status='active'
+                WHERE email = ? AND status='Active'
                 LIMIT 0,1";
 
             // prepare the query
@@ -77,7 +77,7 @@ class UserService
 
         if($this->db_conn && $email) {
             // query to check if email exists
-            $query = "SELECT user_id, first_name, last_name, password
+            $query = "SELECT user_id, first_name, email, last_name, password
                 FROM user
                 WHERE email = ?
                 LIMIT 0,1";
