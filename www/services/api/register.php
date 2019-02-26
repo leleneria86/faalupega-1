@@ -15,38 +15,47 @@ $request = json_decode($postdata);
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 
-$user = new User();
-$user->setFirstname($request->first_name);
-$user->setLastname($request->last_name);
-$user->setEmail($request->email);
-$user->setPassword($request->password);
-$verCode = getVerificationCode();
-$user->setVerificationCode($verCode);
-error_reporting(-1);
-ini_set('display_errors', 'On');
-set_error_handler("var_dump");
 $conn = DBUtil::getConnection();
-
 $service = new UserService($conn);
-if($service->create($user)){
 
-    $mailSent = sendConfirmationEmail($user->getEmail(), $verCode);
+$existingUser = $service->getActiveUserByEmail($request->email);
 
-    // set response code
-    http_response_code(200);
-
-    // display message: user was created
-    echo json_encode(array("message" => "User was created."));
-}
-
-// message if unable to create user
-else{
-
-    // set response code
+if($existingUser instanceof User) {
+    
     http_response_code(400);
-
+    
     // display message: unable to create user
-    echo json_encode(array("message" => "Unable to create user."));
+    echo json_encode(array("message" => "This email is already registered."));
+} else {
+
+    $user = new User();
+    $user->setFirstname($request->first_name);
+    $user->setLastname($request->last_name);
+    $user->setEmail($request->email);
+    $user->setPassword($request->password);
+    $verCode = getVerificationCode();
+    $user->setVerificationCode($verCode);
+    
+    if($service->create($user)){
+    
+        $mailSent = sendConfirmationEmail($user->getEmail(), $verCode);
+    
+        // set response code
+        http_response_code(200);
+    
+        // display message: user was created
+        echo json_encode(array("message" => "User was created."));
+    }
+    
+    // message if unable to create user
+    else{
+    
+        // set response code
+        http_response_code(400);
+    
+        // display message: unable to create user
+        echo json_encode(array("message" => "Unable to create user."));
+    }
 }
 
 function getVerificationCode()
