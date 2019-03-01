@@ -4,6 +4,9 @@
 
 <div>
     <div class="col-sm-12">
+                <h1 class="title">
+            Tusi Fa'alupega
+        </h1>
         <div>
             <span class="text-danger">* </span>
             <label class="control-label" for="given_name">First Name</label>
@@ -25,6 +28,7 @@
             <input required type="password" style="width:160px" class="form-control" ng-model="user.password" id='register_password' placeholder="Password"/>
         </div>
         <div>
+            <br/>
             <button class="button is-primary" id="register_user_btn" ng-click="onRegisterUser()">Register</button>
         </div>
         <div>
