@@ -132,6 +132,7 @@
                 <br/>
             </div>
         </div>
+        <span ng-click="onBack();" style="cursor:pointer"><i class="fa fa-arrow-left"></i></span>
     </div>
 </div>
 </div>
