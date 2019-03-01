@@ -58,6 +58,23 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
         // }
         // $scope.safeApply();
         // return;
+        
+        var emailIsValid = $scope.validateEmail($scope.user.email);
+        if(!emailIsValid) {
+
+            $scope.login_message = "Invalid Email";
+            $("#register_email").focus();
+            return;
+        }
+        
+        
+        let pass = ($scope.user.password && $scope.user.password.length > 0);
+        if(!pass) {
+            
+            $scope.login_message = "Enter password";
+            $("#register_password").focus();
+            return;
+        }
 
         MyService.loginUser($scope.user.email, $scope.user.password).then(function (data) {
 
@@ -83,7 +100,6 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
             && $scope.user.first_name && $scope.user.first_name.length > 0
             && $scope.user.last_name && $scope.user.last_name.length > 0
             && $scope.user.email && $scope.user.email.length > 0
-            && $scope.user.username && $scope.user.username.length > 0
             && $scope.user.password && $scope.user.password.length > 0);
     };
 
@@ -102,17 +118,35 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
 
     $scope.onRegisterUser = function() {
 
-        // $scope.user.first_name = 'kon';
-        // $scope.user.last_name = 'doe';
-        // $scope.user.email = 'fululele@gmail.com';
-        // $scope.user.password = 'konpass';
+        let firstNameIsValid = ($scope.user.first_name && $scope.user.first_name.length > 0);
+        if(!firstNameIsValid) {
+            
+            $scope.message = "Enter first name";
+            $("#register_first_name").focus();
+            return;
+        }
+        
+        let lastNameIsValid = ($scope.user.last_name && $scope.user.last_name.length > 0);
+        if(!lastNameIsValid) {
+            
+            $scope.message = "Enter last name";
+            $("#register_last_name").focus();
+            return;
+        }
 
         var emailIsValid = $scope.validateEmail($scope.user.email);
         if(!emailIsValid) {
 
             $scope.message = "Invalid Email";
             $("#register_email").focus();
-            //$scope.safeApply();
+            return;
+        }
+        
+        let pass = ($scope.user.password && $scope.user.password.length > 0);
+        if(!pass) {
+            
+            $scope.message = "Enter password";
+            $("#register_password").focus();
             return;
         }
 
