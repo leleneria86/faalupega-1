@@ -31,6 +31,9 @@
 
 <div ng-app="MyApp" ng-controller="MyController" data-ng-init="load()">
 
+<section>
+    <div class="container">
+        
     <div class="col-sm-12" ng-show="isLandingMode()">
         <?php require_once '../pages/partials/landing.php' ?>
     </div>
@@ -44,6 +47,9 @@
     </div>
 
     <div class="col-sm-12" ng-show="!selected_nuu && isActiveMode()">
+        <h1 class="title">
+                Tusi Fa'alupega
+            </h1>
         <div>
             <br/>
             <div class="columns">
@@ -128,8 +134,8 @@
         </div>
     </div>
 </div>
+</div>
+</section>
 
-</body>
-</html>
 
 
