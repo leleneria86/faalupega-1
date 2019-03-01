@@ -19,7 +19,7 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
     $scope.pitonuu_view = false;
     $scope.exact_match = false;
     $scope.name_only = true;
-    $scope.mode = 'login';
+    $scope.mode = 'landing';
     $scope.jwt = null;
     $scope.user = null;
     $scope.message = null;
@@ -41,7 +41,6 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
                 },
                 function (result) {
 
-                    //$.growlUI('Oops<i class="fa fa-exclamation text-danger"></i>', 'There was an error loading the list of features.');
                 });
         }
     };
@@ -154,6 +153,11 @@ myApp.controller('MyController', function($scope, $filter, MyService, $rootScope
     $scope.isLoginMode = function() {
 
         return ($scope.mode == "login");
+    };
+    
+    $scope.isLandingMode = function() {
+
+        return ($scope.mode == "landing");
     };
 
     $scope.isSearchable = function() {
